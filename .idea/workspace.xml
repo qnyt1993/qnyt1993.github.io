@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faefcb69-8de4-4aac-bf65-2daa826a16f2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/_posts/本地管理多个rsa的key.md" beforeDir="false" afterPath="$PROJECT_DIR$/source/_posts/本地管理多个rsa的key.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/3-hexo" beforeDir="false" afterPath="$PROJECT_DIR$/themes/3-hexo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/3-hexo/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/themes/3-hexo/_config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/themes/3-hexo/layout/indexs.md" beforeDir="false" afterPath="$PROJECT_DIR$/themes/3-hexo/layout/indexs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/3-hexo/source/img/alipay.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/themes/3-hexo/source/img/weixin.jpg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +26,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/source/_posts/centos7安装docker-ce.md">
+        <entry file="file://$PROJECT_DIR$/source/_posts/腾讯云免费申请https证书.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="200">
-                <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <first_editor relative-caret-position="225">
+                <caret line="9" column="49" lean-forward="true" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
               </first_editor>
               <second_editor />
             </state>
@@ -69,6 +69,9 @@
         <option value="$PROJECT_DIR$/source/_posts/centos7安装docker-ce.md" />
         <option value="$PROJECT_DIR$/source/_posts/Nginx-配置二级虚拟目录访问-Laravel-重写.md" />
         <option value="$PROJECT_DIR$/source/_posts/centos7使用kubeadm搭建kubernetes集群.md" />
+        <option value="$PROJECT_DIR$/source/_posts/centos7安装最新稳定版nginx.md" />
+        <option value="$PROJECT_DIR$/source/_posts/phpstorm配合xdebug进行本地调试代码.md" />
+        <option value="$PROJECT_DIR$/source/_posts/腾讯云免费申请https证书.md" />
       </list>
     </option>
   </component>
@@ -103,31 +106,6 @@
               <item name="blog" type="462c0819:PsiDirectoryNode" />
               <item name="source" type="462c0819:PsiDirectoryNode" />
               <item name="_posts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="3-hexo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="3-hexo" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="themes" type="462c0819:PsiDirectoryNode" />
-              <item name="3-hexo" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -165,7 +143,7 @@
       <option name="presentableId" value="Default" />
       <updated>1568861366031</updated>
       <workItem from="1568861367777" duration="14220000" />
-      <workItem from="1568940581147" duration="3667000" />
+      <workItem from="1568940581147" duration="7940000" />
     </task>
     <task id="LOCAL-00001" summary="初始化的hexo代码">
       <created>1568878812340</created>
@@ -178,13 +156,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17887000" />
+    <option name="totallyTimeSpent" value="22160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18923241" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.18923241" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -308,6 +286,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/themes/3-hexo/source/img/alipay.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/3-hexo/source/img/school-book.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/centos7安装docker-ce.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="23" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/centos7安装最新稳定版nginx.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="25">
+            <caret line="1" column="26" lean-forward="true" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source/_posts/phpstorm配合xdebug进行本地调试代码.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="75">
+            <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="4" selection-end-column="29" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -315,11 +329,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source/_posts/centos7安装docker-ce.md">
+    <entry file="file://$PROJECT_DIR$/source/_posts/腾讯云免费申请https证书.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="200">
-            <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <first_editor relative-caret-position="225">
+            <caret line="9" column="49" lean-forward="true" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
           </first_editor>
           <second_editor />
         </state>
