@@ -104,12 +104,9 @@ description: 关于电脑的多个ssh key管理的文章
 在终端执行
 
 
-    cat id_rsa_github_hexo.pub
+    cat ~/.ssh/id_rsa_github_hexo.pub
 
-
-
-
-github具体位置在 点击账户的`Settings`中的`SSH and FPG keys` 点击`New SSH key`绿色按钮 输入自己本地`id_rsa_github_hexo.pub`中的内容
+`github`具体位置在 点击账户的`Settings`中的`SSH and FPG keys` 点击`New SSH key`绿色按钮 输入自己本地`id_rsa_github_hexo.pub`中的内容
 
 #### 5. 在 .ssh 目录创建 config 配置文件
 
