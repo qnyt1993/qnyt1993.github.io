@@ -1,7 +1,7 @@
 ---
 title: centos7使用kubeadm搭建kubernetes集群
 date: 2019-09-19 16:58:15
-categories: 服务器
+categories: [运维,容器]
 tags: [k8s集群,docker,centos7] 
 ---
 
