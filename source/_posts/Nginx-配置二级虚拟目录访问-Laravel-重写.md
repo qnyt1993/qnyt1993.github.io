@@ -1,7 +1,7 @@
 ---
 title: Nginx 配置二级虚拟目录访问 Laravel 重写
 date: 2019-09-20 10:30:39
-categories: [后端,php,laravel]
+categories: [后端,php,Laravel]
 tags: [laravel,php,nginx] 
 ---
 
