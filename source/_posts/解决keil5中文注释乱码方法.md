@@ -1,7 +1,7 @@
 ---
 title: 解决keil5中文注释乱码方法
-tags: [keil,单片机]
-categories: [硬件,开发工具,keil]
+tags: [other]
+categories: [杂记]
 date: 2019-09-27 20:40:41
 ---
 

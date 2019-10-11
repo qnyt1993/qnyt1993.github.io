@@ -1,7 +1,7 @@
 ---
 title: 本地管理多个rsa的key
 date: 2019-09-19 15:49:02
-categories: [运维,环境配置]
+categories: [杂记]
 tags: [rsa,ssh,github] 
 description: 关于电脑的多个ssh key管理的文章
 ---

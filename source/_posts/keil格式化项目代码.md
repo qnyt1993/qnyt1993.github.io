@@ -1,7 +1,7 @@
 ---
 title: keil格式化项目代码
-tags: [keil,单片机]
-categories: [硬件,开发工具,keil]
+tags: [other]
+categories: [杂记]
 date: 2019-09-27 21:00:28
 ---
 
