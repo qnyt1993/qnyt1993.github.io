@@ -5,9 +5,9 @@ tags: [fedora]
 date: 2019-10-11 12:28:47
 ---
 
-## 以下以添加`Eclips`为例
+## 以下以添加`Eclipse`为例
 
-在桌面上新建`Eclips.desktop` 文件，向其写入如下代码
+在桌面上新建`Eclipse.desktop` 文件，向其写入如下代码
 
     [Desktop Entry]  
     Name=Eclipse  
