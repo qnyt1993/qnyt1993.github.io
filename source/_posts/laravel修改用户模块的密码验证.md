@@ -139,6 +139,7 @@ date: 2019-10-16 17:28:15
 
 * 配置`admins`提供器，假设依旧使用`eloquent`作为驱动，并创建好了`admins`表的模型
 
+
     'providers' => [
             'admins' => [
                 'driver' => 'eloquent',
