@@ -1,5 +1,5 @@
 ---
-title: 解决跨域问题（ CORS ）——barryvdh/laravel-cors
+title: 解决跨域问题CORS
 categories: [后端,php,Laravel]
 tags: [laravel,php]
 date: 2019-10-17 08:43:13

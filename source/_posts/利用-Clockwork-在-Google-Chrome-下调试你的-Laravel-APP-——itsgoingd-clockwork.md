@@ -1,5 +1,5 @@
 ---
-title: 利用 Clockwork 在 Google Chrome 下调试你的 Laravel APP ——itsgoingd/clockwork
+title: 利用 Clockwork 在 Google Chrome 下调试你的 Laravel APP 
 categories: [后端,php,Laravel]
 tags: [laravel,php]
 date: 2019-10-16 18:55:59

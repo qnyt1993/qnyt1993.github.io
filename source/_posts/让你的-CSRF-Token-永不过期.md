@@ -1,5 +1,5 @@
 ---
-title: 让你的 CSRF Token 永不过期
+title: 让你的CSRF Token永不过期
 categories: [后端,php,Laravel]
 tags: [laravel,php]
 date: 2019-10-17 15:13:54
