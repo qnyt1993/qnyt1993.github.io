@@ -11,15 +11,24 @@ tags: [https]
 
 #### 2. 点击立即购买
 
-![SSL证书选购页面](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/20/20190920123826.png)
+![20190920123826.png](https://i.loli.net/2019/10/29/523jiWvxGfhSQ6o.png)
+
+
+
 
 #### 3. 点击免费快速申请
 
-![证书申请页面](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/20/20190920124016.png)
+![20190920124016.png](https://i.loli.net/2019/10/29/ywKNBRvDuMqUGh5.png)
+
+
+
 
 #### 4. 根据提示填写(私钥密码可以不填)，点击下一步
 
-![证书申请页面](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/20/20190920124057.png)
+![20190920124057.png](https://i.loli.net/2019/10/29/RmWADFQ6Cy5eN4T.png)
+
+
+
 
 
 #### 5. 点击确认申请
@@ -28,11 +37,14 @@ tags: [https]
 #### 6. 配置https证书
 将`https`证书下载下来，默认是一个`zip`包，解压打开后有
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/20/20190920124202.png)
+![20190920124202.png](https://i.loli.net/2019/10/29/u4Mq6S85h2AFdmn.png)
+
+
 
 #### 7. 根据自己的服务器选择对应的证书,我这里用的是`nginx`,将证书两个上传到对应的腾讯云服务器,要给予证书执行权限
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/20/20190920124228.png)
+
+![20190920124228.png](https://i.loli.net/2019/10/29/pumPRvh8DENoAIF.png)
 
 #### 8. 在`nginx`的配置文件中添加`https`的配置
 

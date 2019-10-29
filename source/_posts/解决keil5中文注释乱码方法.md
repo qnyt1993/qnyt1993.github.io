@@ -8,10 +8,10 @@ date: 2019-09-27 20:40:41
 菜单上面的`edit`-->`Configuration`-->`Editor`-->`Encoding`
 选择`Chinese GB2312` 点击`OK`即可解决
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/27/QQ%E6%88%AA%E5%9B%BE20190927204923.png)
+![QQ截图20190927204923.png](https://i.loli.net/2019/10/29/KbqwISemc8zP6yG.png)
+![QQ截图20190927204957.png](https://i.loli.net/2019/10/29/Ln7HVd4jxYDhErX.png)
 
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/27/QQ%E6%88%AA%E5%9B%BE20190927204957.png)
 
 ## 参考
 

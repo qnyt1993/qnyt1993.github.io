@@ -16,7 +16,7 @@ date: 2019-10-15 12:06:21
 
 ## 2. 流程图
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/15/QQ%E6%88%AA%E5%9B%BE20191015103943.png)
+![QQ截图20191015103943.png](https://i.loli.net/2019/10/29/V9bszSwYZAIJgy6.png)
 
 
 ## 3. 微信二次分享功能实现的具体步骤
@@ -27,7 +27,7 @@ date: 2019-10-15 12:06:21
 
 备注：登录后可在“开发者中心”查看对应的接口权限。
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/15/20190103210645498.png)
+![20190103210645498.png](https://i.loli.net/2019/10/29/pVliaIkF3L9SGX8.png)
 
 需要配置白名单
 
@@ -234,5 +234,5 @@ date: 2019-10-15 12:06:21
 
 ### 最终效果如下
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/15/QQ%E6%88%AA%E5%9B%BE20191015091334.png)
+![QQ截图20191029185426.png](https://i.loli.net/2019/10/29/LNr8mvMtgdxC4yQ.png)
 

@@ -20,7 +20,7 @@ date: 2019-10-17 09:39:57
 
     $ composer require torann/geoip
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/SJHTvv9T78.png)
+![SJHTvv9T78.png](https://i.loli.net/2019/10/29/45NsLmpMUAgqJkQ.png)
 
 
 将配置文件发布出来：
@@ -28,7 +28,7 @@ date: 2019-10-17 09:39:57
     $ php artisan vendor:publish --provider="Torann\GeoIP\GeoIPServiceProvider" --tag=config
 
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/4DaCxfVcae.png)
+![4DaCxfVcae.png](https://i.loli.net/2019/10/29/jKvep168lTVEWf2.png)
 
 
 > 注意如果不发布配置文件会遇到报错： `Exception with message 'The GeoIP service is not valid.'`
@@ -53,7 +53,7 @@ date: 2019-10-17 09:39:57
     geoip($ip)->toArray();
 
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/Jvkj64w9Ww.png)
+![Jvkj64w9Ww.png](https://i.loli.net/2019/10/29/pG2FELT9PHfXzIO.png)
 
 
 可以看到 IP 对应的地址信息了，但是返回的信息都是英文的，我们需要中文的数据，方便显示。
@@ -80,7 +80,7 @@ date: 2019-10-17 09:39:57
 
 关闭 `tinker`，任何的代码修改都需要重启 `tinker` 才会生效，同时使用 `cache:clear` 清除缓存，再次打开 tinker，运行上述调试代码：
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/oKPIA0vcm5.png)
+![oKPIA0vcm5.png](https://i.loli.net/2019/10/29/ltLQZ9RgmMwvoJC.png)
 
 
 正确的返回了中文数据。
@@ -93,7 +93,7 @@ date: 2019-10-17 09:39:57
 
     $ php artisan make:provider ComposerServiceProvider
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/TtWe2QvX57.png)
+![TtWe2QvX57.png](https://i.loli.net/2019/10/29/wRfYrN1OgkpeSo4.png)
 
 
 将 ComposerServiceProvider 增加到 `config/app.php` 中:
@@ -160,7 +160,7 @@ date: 2019-10-17 09:39:57
 
 打开 http://larabbs.test/ 查看底部的 `footer`:
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/JL4N3IQRM8.png)
+![JL4N3IQRM8.png](https://i.loli.net/2019/10/29/rcyT7kOzuYpKNgB.png)
 
 
 显示了数据，但是显示的是数据貌似有点问题，这是因为我们在本地的虚拟机中调试，并没有真实的 IP，所以 `torann/geoip` 显示了一个默认的位置信息，这个信息配置在了 `geoip.default_location` 中，我们可以修改一下默认的配置：
@@ -192,7 +192,7 @@ date: 2019-10-17 09:39:57
 
 刷新 http://larabbs.test/ 显示了我们配置的默认信息。
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/jxpqAQyIpC.png)
+![jxpqAQyIpC.png](https://i.loli.net/2019/10/29/1P6GBdQeDsEMFr3.png)
 
 
 ## 使用其他 Service
@@ -208,7 +208,7 @@ date: 2019-10-17 09:39:57
 
 要使用 `maxmind_database` 需要先安装 `geoip2/geoip2` 这个扩展包。
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/wQQm73abnC.png)
+![wQQm73abnC.png](https://i.loli.net/2019/10/29/IWTH61VZ8cv2PS7.png)
 
 
 安装成功后，修改一下配置，将使用的 service 切换为 `maxmind_database`，同时修改使用的语言为 `zh-CN`：
@@ -238,14 +238,14 @@ date: 2019-10-17 09:39:57
 
     $ php artisan geoip:update
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/uKKbZ90mpe.png)
+![uKKbZ90mpe.png](https://i.loli.net/2019/10/29/UNdVXavGr1JpH74.png)
 
 
 数据文件下载到了 `storage/app/geoip.mmdb` 中。
 
 清空缓存，打开tinker，随便输入一个 IP 进行调试：
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/1WXJU1t21w.png)
+![1WXJU1t21w.png](https://i.loli.net/2019/10/29/zO18KnfmR3EaYov.png)
 
 
 可以得到正确的结果。

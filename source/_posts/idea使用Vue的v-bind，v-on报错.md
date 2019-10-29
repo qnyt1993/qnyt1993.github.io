@@ -13,6 +13,6 @@ date: 2019-10-21 17:17:08
 把 `Unbound XML namespace prefix`的勾去掉
 `应用`即可
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191021172004.png)
+![QQ截图20191021172004.png](https://i.loli.net/2019/10/29/AL1RE8er5xZtgco.png)
 
 

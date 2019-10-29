@@ -12,7 +12,8 @@ date: 2019-10-11 09:09:53
 
 `File`-->`Settings`-->`Editor`-->`Code Style` 在代码格式化选项中开启部分代码忽略功能
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/24/QQ%E6%88%AA%E5%9B%BE20191011091945.png)
+![](https://i.loli.net/2019/10/29/duvrcJPUwzqlX7S.png)
+
 
 勾选开启代码部分格式化
 点击应用,结束配置
@@ -29,17 +30,18 @@ date: 2019-10-11 09:09:53
 
 源代码
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/24/QQ%E6%88%AA%E5%9B%BE20191011092301.png)
+![](https://i.loli.net/2019/10/29/HEGjVOq7fhuUx93.png)
+
 
 
 格式化代码
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/24/QQ%E6%88%AA%E5%9B%BE20191011092250.png)
+![QQ截图20191011092250.png](https://i.loli.net/2019/10/29/3Uj9z4pyPXBCqGl.png)
 
 
 添加代码忽略后，执行格式化后的代码
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/24/QQ%E6%88%AA%E5%9B%BE20191011092223.png)
+![QQ截图20191011092223.png](https://i.loli.net/2019/10/29/CFRx61zrsuYAcDe.png)
 
 ## 参考
 

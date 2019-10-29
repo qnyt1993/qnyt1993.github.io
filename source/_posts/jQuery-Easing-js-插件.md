@@ -63,4 +63,4 @@ date: 2019-10-14 09:47:58
 31. easeOutBounce
 32. easeInOutBounce
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/24/esse.png)
+![esse.png](https://i.loli.net/2019/10/29/OofAwYiau3vLRgk.png)

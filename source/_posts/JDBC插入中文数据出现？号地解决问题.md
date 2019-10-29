@@ -25,7 +25,7 @@ date: 2019-10-11 10:59:39
 
 ### 2. 查看mysql数据库及表编码格式是否正常
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/24/5850452-74e7221937f47251.jpg)
+![QQ截图20191029180810.png](https://i.loli.net/2019/10/29/csSZJDGpgE6A5WP.png)
 
 上面的即是正确配置，防止中文字符乱码
 

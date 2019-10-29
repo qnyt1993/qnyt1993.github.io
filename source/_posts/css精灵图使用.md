@@ -23,7 +23,8 @@ CSS 精灵其实是将网页中的一些背景图像整合到一张大图中（�
 ```
 ### 3.以京东的精灵图为例
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/24/23f3ddf914b1b527d0429a3d713cfe3a.png)
+![](https://i.loli.net/2019/10/29/Kw6aJsR4xQg5eBi.png)
+
 
 使用如下
 
@@ -50,7 +51,8 @@ CSS 精灵其实是将网页中的一些背景图像整合到一张大图中（�
 
 效果如图所示
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/24/QQ%E6%88%AA%E5%9B%BE20190930113039.png)
+![](https://i.loli.net/2019/10/29/BVdERmPzlT5ZHix.png)
+
 
 ### 4. 总结
 

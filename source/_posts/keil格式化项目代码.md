@@ -12,7 +12,7 @@ date: 2019-09-27 21:00:28
 #### 1. `Astyle` 下载链接 ：链接：`https://share.weiyun.com/5FsV7Ob` 密码：`aqfkk3` 下载并把软件解压
 #### 2. `keil5`单击`Tools`菜单--->`Customize Tools Menu`
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/27/QQ%E6%88%AA%E5%9B%BE20190927211321.png)
+![QQ截图20190927211321.png](https://i.loli.net/2019/10/29/ifOeS7pPNHbaMQ6.png)
 
 #### 3. 添加`Astyle All Files` 和`Astyle Current File`自定义菜单(可以使用中文)
 
@@ -23,7 +23,7 @@ date: 2019-09-27 21:00:28
    `Astyle Current File`即`格式化当前文件`菜单填写  `!E`
 4. 点击`OK`
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/27/QQ%E6%88%AA%E5%9B%BE20190927211604.png)
+![QQ截图20190927211604.png](https://i.loli.net/2019/10/29/RUhA1VSWsMnE9NF.png)
 
 ##### 添加`格式化project中的所有文件`菜单的方法：
 1. 新建命令为`格式化project中的所有文件`
@@ -32,7 +32,7 @@ date: 2019-09-27 21:00:28
    `Astyle All Files`即`格式化项目所有文件`菜单填写  `"$E*.c" "$E*.h"`
 4. 点击`OK`
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/27/QQ%E6%88%AA%E5%9B%BE20190927211535.png)
+![QQ截图20190927211535.png](https://i.loli.net/2019/10/29/UEeMSHmPgBCORzf.png)
 
 
 >注：!E 表示的是当前获得焦点且正在编辑的文件。
@@ -44,15 +44,15 @@ date: 2019-09-27 21:00:28
 
 格式化前 
    
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/27/QQ%E6%88%AA%E5%9B%BE20190927212350.png)
+![QQ截图20190927212350.png](https://i.loli.net/2019/10/29/l1gXxd7fIaqShO2.png)
 
 执行格式化命令
 
- ![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/27/QQ%E6%88%AA%E5%9B%BE20190927212504.png)
+![QQ截图20190927212504.png](https://i.loli.net/2019/10/29/3ASkOvXUrZ8b6ce.png)
               
 格式化后  
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/27/QQ%E6%88%AA%E5%9B%BE20190927212409.png)
+![QQ截图20190927212409.png](https://i.loli.net/2019/10/29/a1NdvDqp27K5eQl.png)
 
 
 

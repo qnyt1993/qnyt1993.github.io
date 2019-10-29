@@ -32,7 +32,8 @@ date: 2019-10-11 11:22:04
     #将baseurl中的路径修改为 file://media/dvd1和ile://media/dvd2
     #保存退出
     
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/24/5850452-6f5587b952fb9898.jpg)
+![](https://i.loli.net/2019/10/29/NlaWG1zYLxeQ4tU.png)
+
 
 ### 4. 清空yum已存在的所有源信息,重新生成缓存
 

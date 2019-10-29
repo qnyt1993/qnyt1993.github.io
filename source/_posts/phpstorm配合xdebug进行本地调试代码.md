@@ -10,7 +10,7 @@ tags: [php,phpstorm,xdebuge]
 #### 1. 在`php.ini`中添加`xdebug`的配置信息
 首先建议是先找对`php.ini`的位置,可以在`phpinfo()`方法中找到`php.ini`文件的位置
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%811580998-20190312105534466-205518377.png)
+![img、1580998-20190312105534466-205518377.png](https://i.loli.net/2019/10/29/LNVHcO8fKnDxu1l.png)
 
 
 用编辑器打开`php.ini`在末尾追加关于`xdebug`的配置
@@ -53,50 +53,50 @@ tags: [php,phpstorm,xdebuge]
     
 重启`wamp`查看配置是否生效
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%8102.png)
+![img、1580998-20190312105534466-205518377.png](https://i.loli.net/2019/10/29/LNVHcO8fKnDxu1l.png)
 
 #### 2. 在谷歌浏览器中添加`xdebug`插件
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%8103.png)
+![img、03.png](https://i.loli.net/2019/10/29/K2l4mNbFM5BonYI.png)
 
 添加完后的效果如图所示，在插件栏中多了一个小甲虫
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%811580998-20190312110407321-1371532303.png)
+![img、1580998-20190312110407321-1371532303.png](https://i.loli.net/2019/10/29/X3dnkbPAIZDRqj4.png)
 
 这时右击小甲虫点击选项，选择`phpstorm` 点击`save`
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%811580998-20190312110552171-855056154.png)
+![img、1580998-20190312110552171-855056154.png](https://i.loli.net/2019/10/29/SNWRsEcBLv4JhH3.png)
 
 #### 3. 配置`phpstorm`
 配置本地执行`php.exe`的位置和检查`php`语法的版本
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%811580998-20190312111149859-502722554.png)
+
 
 
 配置`Debug` ：`Languages & Frameworks` -> `PHP` -> `Debug`，只需要把端口改为`9001`，和`xdebug`的配置保持一致
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%811580998-20190312111325527-1992846745.png)
+![img、1580998-20190312111325527-1992846745.png](https://i.loli.net/2019/10/29/9LMrI1zjXHqAx4d.png)
 
 
 .配置`Server`（就在Debug下面一个） ：`Languages & Frameworks` -> `PHP` -> `Servers`，新建一台本地服务器（绿色加号），填写服务器名字以及`host`，确认`debugger`是`xdebug`
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%811580998-20190312112042013-289121517.png)
+![img、1580998-20190312112042013-289121517.png](https://i.loli.net/2019/10/29/n1yteCR4SVaXcBf.png)
 
 
 启动`xdebug helper`：点击`xdebug helper`图标，选择`Debug`项，灰色图标变成绿色
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%811580998-20190312112258403-1783506273.png)
+![img、1580998-20190312112258403-1783506273.png](https://i.loli.net/2019/10/29/yKG6nELFwfRmVOr.png)
 
 
 在`phpstorm`中将需要调试的代码打上断点，点击右上角电话图标开启调试监听，由一头绿一头红变成两头绿即可
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%811580998-20190312112351263-1881895127.png)
+![img、1580998-20190312112351263-1881895127.png](https://i.loli.net/2019/10/29/bU7kSRq1flCg6Av.png)
 
 #### 4. 开始`debug`
 
 在谷歌浏览器中输入配置好的`Url`,会出现如下图所示，恭喜你`phpstorm`和`xdebug`的配置基本完成,这时候就可以愉快的进行调试了
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img%E3%80%811580998-20190312112749516-731577817.png)
+![img、1580998-20190312112749516-731577817.png](https://i.loli.net/2019/10/29/DGg3os8x5MVlTX9.png)
 
 
 

@@ -2,7 +2,7 @@
 title: windows环境下搭建mysql主从
 categories: [后端,数据库,mysql]
 tags: [mysql]
-date: 2019-10-28 09:11:31
+date: 2019-10-29 09:11:31
 ---
 
 > 参考 [windows环境下mysql主从配置](https://www.cnblogs.com/naruto123/p/8138708.html)
@@ -31,7 +31,7 @@ date: 2019-10-28 09:11:31
 
 下载的是zip包的mysql 将其解压到本机即可
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028092215.png)
+![QQ截图20191028092215.png](https://i.loli.net/2019/10/29/8vUCn4QMHLicwFZ.png)
 
 ### 2.1 主库（master）的安装及配置
 
@@ -78,7 +78,7 @@ date: 2019-10-28 09:11:31
     
 出现以下提示，表示服务安装成功。
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028093401.png)
+![QQ截图20191028093401.png](https://i.loli.net/2019/10/29/5KJAMycda326T1r.png)
 
 > 将里面的路径修改成你自己的主库路径<br/>  
 > 其中的master为主库mysql的服务名称<br/>  
@@ -91,11 +91,11 @@ date: 2019-10-28 09:11:31
 
 > net stop master 为停止命令
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028093656.png)
+![QQ截图20191028093656.png](https://i.loli.net/2019/10/29/15L8XVUb37JiWm4.png)
 
 使用命令` >mysql -uroot -P3306 -p `登录`master`数据库（默认安装好的mysql的root用户是没有密码的）
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028100818.png)
+![QQ截图20191028100818.png](https://i.loli.net/2019/10/29/PA7kI4rBGo2cLTa.png)
 
 　登录上之后修改root用户的密码（这里修改成root）
 
@@ -107,11 +107,11 @@ date: 2019-10-28 09:11:31
     　　flush privileges;
 
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028101003.png)
+![QQ截图20191028101003.png](https://i.loli.net/2019/10/29/DY1852m7vkLgWAj.png)
 
 这样就设置好了root用户的密码了。(记得注销my.ini中的跳过密码配置，并重启master)
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028101235.png)
+![QQ截图20191028101235.png](https://i.loli.net/2019/10/29/JvtpBigN1nkXs8R.png)
 
 ### 2.2 从库（slave）的安装与配置　　
 
@@ -150,17 +150,17 @@ date: 2019-10-28 09:11:31
     cd /d D:\program\mysql-5.6.46-winx64-02\bin
     mysqld --install slave --defaults-file="D:\program\mysql-5.6.46-winx64-02\my.ini"
     
- ![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028101840.png)
+![QQ截图20191028101840.png](https://i.loli.net/2019/10/29/Mci2lnKAwtfCpzD.png)
 
 启动从的mysql服务器
 
     net start slave
     
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028101943.png)
+![QQ截图20191028101943.png](https://i.loli.net/2019/10/29/H6ictSTINPnQuxB.png)
 
 同样的登录从库(`mysql -uroot -P3307 -p`)
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028102101.png)
+![QQ截图20191028102101.png](https://i.loli.net/2019/10/29/BbiImGA3T1ykgsP.png)
 
 修改从库root用户的密码为root
 
@@ -168,11 +168,11 @@ date: 2019-10-28 09:11:31
     　　update  user set password=password("root") where user="root";
     　　flush privileges;    
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028102208.png)
+![QQ截图20191028102208.png](https://i.loli.net/2019/10/29/bUvH2sFkCE6D8NA.png)
 
 注销从库中的my.ini中的跳过密码配置,重启slave服务
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028102348.png)
+![QQ截图20191028102348.png](https://i.loli.net/2019/10/29/tnBrcPdlya3EZIQ.png)
 
 　至此，主、从数据库的安装及配置就完成了。
 
@@ -182,11 +182,11 @@ date: 2019-10-28 09:11:31
 
 master的mysql 执行命令 `show master status`查看master的状态
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028102756.png)
+![QQ截图20191028102756.png](https://i.loli.net/2019/10/29/26ud34PImqpXwFO.png)
 
 slave的mysql  执行命令 `show slave status`查看slave的状态
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028102818.png)
+![QQ截图20191028102818.png](https://i.loli.net/2019/10/29/3mpNBVv4nxtUhr1.png)
 
 我们可以发现 ，master的状态下，生成了一个二进制的日志文件，而slave下是空的，所以我们现在就要把主库与从库关联起来。只需要让从库（slave）知道主库（master）的地址就可以了。
 
@@ -197,17 +197,17 @@ slave的mysql  执行命令 `show slave status`查看slave的状态
     grant replication slave on *.* to '从库用户名(test)'@'从库主机地址(127.0.0.1)'identified by '密码(mysql)';
     flush privileges;
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028103132.png)
+![QQ截图20191028103132.png](https://i.loli.net/2019/10/29/JNXxP3Ub5hdOHQr.png)
 
 现在我们切到从库（slave），把主库与从库联系起来。
 
     change master to master_host='127.0.0.1',master_port=3306,master_user='test',master_password='mysql',master_log_file='master-bin.000001',master_log_pos=0;
     
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028103256.png)
+![QQ截图20191028103256.png](https://i.loli.net/2019/10/29/iT6m37pMKanoBwD.png)
 
 然后执行命令 `start slave;` 开启主从同步   
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028103406.png)
+![QQ截图20191028103406.png](https://i.loli.net/2019/10/29/tEMPkziCAGxfrJc.png)
 
 后执行命令查看 slave的状态
 
@@ -216,17 +216,29 @@ slave的mysql  执行命令 `show slave status`查看slave的状态
 
 出现如下图，则开启主从跟踪成功
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028103506.png)
+![QQ截图20191028103506.png](https://i.loli.net/2019/10/29/Tt1Q2pLnceMH5rz.png)
 
 ## 4. 验证主从同步
 
 我们进入master和slave并查看他们的数据库，如下图：
 然后我们在主库中创建一个数据库user，看一下从库有没有变化。
 
-![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/10/17/QQ%E6%88%AA%E5%9B%BE20191028104211.png)
+![QQ截图20191028104211.png](https://i.loli.net/2019/10/29/ngV4LK8NtQmvXSd.png)
       
 
 至此，主从同步已配置完毕。
 
 > 注意不要往从库中写数据，如果从库写入数据，master_log_pos是不会变化的，主库的信息没有发生变化，当主库又变化和从库一样的操作时就有可能会产生冲突，因此，只能在主库中写数据，从库只能读数据，当然主库也可以读数据。
 
+## 5. 主从恢复(补充)
+
+在主库上使用`show master status`获取`master_log_file`和`master_log_pos`
+再在从库上执行如下命令
+
+    stop slave;
+     change master to master_host='127.0.0.1',master_port=3306,master_user='test',master_password='mysql',master_log_file='master-bin.000001',master_log_pos=0;
+    start slave;
+
+> 注意修改 `master_log_file`和`master_log_pos`以及其他配置信息
+
+在从库上执行查询`show slave status`状态

@@ -62,7 +62,8 @@ date: 2019-10-10 20:18:51
   
   结构大致如下图所示
   
-  ![](https://raw.githubusercontent.com/qnyt1993/picture/master/img/2019/09/24/full.png)
+![](https://i.loli.net/2019/10/29/1NYbrzcOd7mpKk9.png)
+
    
 ### 2.3 初始化
 myPage.js
