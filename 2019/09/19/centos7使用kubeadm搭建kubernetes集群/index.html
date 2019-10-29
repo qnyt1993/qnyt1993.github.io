@@ -1,0 +1,1586 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>centos7使用kubeadm搭建kubernetes集群 | 足迹人生的博客</title>
+  <meta name="keywords" content=" docker , centos7 , k8s集群 ">
+  <meta name="description" content="centos7使用kubeadm搭建kubernetes集群 | 足迹人生的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="about1佛系少年">
+<meta name="keywords" content="足迹人生，博客，分享，人生感悟">
+<meta property="og:type" content="website">
+<meta property="og:title" content="足迹人生的博客">
+<meta property="og:url" content="http://qnyt1993.github.io/about/index.html">
+<meta property="og:site_name" content="足迹人生的博客">
+<meta property="og:description" content="about1佛系少年">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2019-10-29T11:52:26.380Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="足迹人生的博客">
+<meta name="twitter:description" content="about1佛系少年">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/sunburst.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>John</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="email" href="mailto:508110504@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=508110504&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(51)</small></div></li>
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端<small>(11)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="插件">插件<small>(5)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS<small>(4)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="知识点">知识点<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="html5">html5<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="硬件"><i class="fold iconfont icon-right"></i>硬件<small>(8)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="单片机"><i class="fold iconfont icon-right"></i>单片机<small>(8)</small></div>
+                            
+                                <ul class="sub hide">
+                                    
+                                    <li><div data-rel="51">51<small>(8)</small></div>
+                                    </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="运维"><i class="fold iconfont icon-right"></i>运维<small>(6)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="fedora">fedora<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="centos">centos<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="ubuntu">ubuntu<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="容器">容器<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="nginx">nginx<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="后端"><i class="fold iconfont icon-right"></i>后端<small>(14)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="java">java<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="php"><i class="fold iconfont icon-right"></i>php<small>(11)</small></div>
+                            
+                                <ul class="sub hide">
+                                    
+                                    <li><div data-rel="Laravel">Laravel<small>(8)</small></div>
+                                    </li>
+                                    
+                                    <li><div data-rel="开发环境">开发环境<small>(2)</small></div>
+                                    </li>
+                                    
+                                    <li><div data-rel="phpstorm">phpstorm<small>(1)</small></div>
+                                    </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                            
+                        <li><div data-rel="数据库"><i class="fold iconfont icon-right"></i>数据库<small>(1)</small></div>
+                            
+                                <ul class="sub hide">
+                                    
+                                    <li><div data-rel="mysql">mysql<small>(1)</small></div>
+                                    </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                            
+                        <li><div data-rel="微信">微信<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="杂记">杂记<small>(12)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="51">
+<input type="hidden" id="yelog_site_word_count" value="36.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">单片机</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">fedora</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">jdbc</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">php</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">laravel</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">yum</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">centos</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">ubuntu</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">centos7</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">CSS</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">homestead</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">other</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">弹出框</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">layer</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">phpstorm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">xdebuge</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">rsa</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">ssh</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">github</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">https</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">swoole</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">weixin</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">seo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">k8s集群</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 插件 "
+           href="/2019/10/15/360度3D-旋转插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="360度3D 旋转插件">360度3D 旋转插件</span>
+            <span class="post-date" title="2019-10-15 16:44:46">2019/10/15</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/01/51单片机定时静态显示数码管/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机定时静态显示数码管">51单片机定时静态显示数码管</span>
+            <span class="post-date" title="2019-10-01 16:08:57">2019/10/01</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/01/51单片机定时闪烁灯/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机定时闪烁灯">51单片机定时闪烁灯</span>
+            <span class="post-date" title="2019-10-01 10:40:35">2019/10/01</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/03/51单片机实现定时动态数码管/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机实现定时动态数码管">51单片机实现定时动态数码管</span>
+            <span class="post-date" title="2019-10-03 19:25:44">2019/10/03</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/04/51单片机实现独立按键计数数码管显示/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机实现独立按键计数数码管显示">51单片机实现独立按键计数数码管显示</span>
+            <span class="post-date" title="2019-10-04 15:27:47">2019/10/04</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/09/27/51单片机流水灯/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机流水灯">51单片机流水灯</span>
+            <span class="post-date" title="2019-09-27 21:29:24">2019/09/27</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/03/51单片机点阵动画显示/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机点阵动画显示">51单片机点阵动画显示</span>
+            <span class="post-date" title="2019-10-03 19:40:55">2019/10/03</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/04/51单片机独立按键控制灯/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机独立按键控制灯">51单片机独立按键控制灯</span>
+            <span class="post-date" title="2019-10-04 08:54:04">2019/10/04</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/03/51单片机的点阵图形静态显示/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机的点阵图形静态显示">51单片机的点阵图形静态显示</span>
+            <span class="post-date" title="2019-10-03 19:09:54">2019/10/03</span>
+        </a>
+        
+        <a  class="运维 fedora "
+           href="/2019/10/11/Fedora添加软件桌面快捷方式/"
+           data-tag="fedora"
+           data-author="" >
+            <span class="post-title" title="Fedora添加软件桌面快捷方式">Fedora添加软件桌面快捷方式</span>
+            <span class="post-date" title="2019-10-11 12:28:47">2019/10/11</span>
+        </a>
+        
+        <a  class="后端 java "
+           href="/2019/10/11/JDBC插入中文数据出现？号地解决问题/"
+           data-tag="java,jdbc"
+           data-author="" >
+            <span class="post-title" title="JDBC插入中文数据出现？号地解决问题">JDBC插入中文数据出现？号地解决问题</span>
+            <span class="post-date" title="2019-10-11 10:59:39">2019/10/11</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/09/24/Laravel-程序优化/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="Laravel 程序优化">Laravel 程序优化</span>
+            <span class="post-date" title="2019-09-24 15:42:31">2019/09/24</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/09/20/Nginx-配置二级虚拟目录访问-Laravel-重写/"
+           data-tag="php,laravel,nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx 配置二级虚拟目录访问 Laravel 重写">Nginx 配置二级虚拟目录访问 Laravel 重写</span>
+            <span class="post-date" title="2019-09-20 10:30:39">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/09/23/Laravel5-8自定义函数存放位置/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="Laravel5.8自定义函数存放位置">Laravel5.8自定义函数存放位置</span>
+            <span class="post-date" title="2019-09-23 21:42:24">2019/09/23</span>
+        </a>
+        
+        <a  class="运维 centos "
+           href="/2019/10/11/centos-配置本地yum源/"
+           data-tag="yum,centos"
+           data-author="" >
+            <span class="post-title" title="centos6配置本地yum源">centos6配置本地yum源</span>
+            <span class="post-date" title="2019-10-11 11:22:04">2019/10/11</span>
+        </a>
+        
+        <a  class="运维 ubuntu "
+           href="/2019/09/20/Ubuntu-18-04修改默认源为国内源/"
+           data-tag="ubuntu"
+           data-author="" >
+            <span class="post-title" title="Ubuntu 18.04修改默认源为国内源">Ubuntu 18.04修改默认源为国内源</span>
+            <span class="post-date" title="2019-09-20 09:00:16">2019/09/20</span>
+        </a>
+        
+        <a  class="运维 容器 "
+           href="/2019/09/20/centos7安装docker-ce/"
+           data-tag="docker,centos7"
+           data-author="" >
+            <span class="post-title" title="centos7安装docker-ce">centos7安装docker-ce</span>
+            <span class="post-date" title="2019-09-20 09:19:28">2019/09/20</span>
+        </a>
+        
+        <a  class="运维 nginx "
+           href="/2019/09/20/centos7安装最新稳定版nginx/"
+           data-tag="nginx,centos7"
+           data-author="" >
+            <span class="post-title" title="centos7安装最新稳定版nginx">centos7安装最新稳定版nginx</span>
+            <span class="post-date" title="2019-09-20 11:27:56">2019/09/20</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/09/30/css精灵图使用/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="css精灵图使用">css精灵图使用</span>
+            <span class="post-date" title="2019-09-30 11:03:36">2019/09/30</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/23/git删除远程-idea目录/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git删除远程.idea目录">git删除远程.idea目录</span>
+            <span class="post-date" title="2019-09-23 21:32:39">2019/09/23</span>
+        </a>
+        
+        <a  class="后端 php 开发环境 "
+           href="/2019/09/20/homestead修改php版本/"
+           data-tag="php,ubuntu,homestead"
+           data-author="" >
+            <span class="post-title" title="homestead修改php版本">homestead修改php版本</span>
+            <span class="post-date" title="2019-09-20 08:49:10">2019/09/20</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/11/idea-代码部分格式化/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="idea 代码部分格式化">idea 代码部分格式化</span>
+            <span class="post-date" title="2019-10-11 09:09:53">2019/10/11</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/21/idea使用Vue的v-bind，v-on报错/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="idea使用Vue的v-bind，v-on报错">idea使用Vue的v-bind，v-on报错</span>
+            <span class="post-date" title="2019-10-21 17:17:08">2019/10/21</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/21/idea配置less自动编译/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="idea配置less自动编译">idea配置less自动编译</span>
+            <span class="post-date" title="2019-10-21 08:49:05">2019/10/21</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/10/14/jQuery-Easing-js-插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="jQuery Easing.js 插件">jQuery Easing.js 插件</span>
+            <span class="post-date" title="2019-10-14 09:47:58">2019/10/14</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/27/keil格式化项目代码/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="keil格式化项目代码">keil格式化项目代码</span>
+            <span class="post-date" title="2019-09-27 21:00:28">2019/09/27</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/laravel结合webuploader-单页面单个上传插件/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="laravel结合webuploader(单页面单个上传插件)">laravel结合webuploader(单页面单个上传插件)</span>
+            <span class="post-date" title="2019-10-16 17:23:05">2019/10/16</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/09/20/layer弹出框的简易封装和使用/"
+           data-tag="弹出框,layer"
+           data-author="" >
+            <span class="post-title" title="layer弹出框的简易封装和使用">layer弹出框的简易封装和使用</span>
+            <span class="post-date" title="2019-09-20 15:37:10">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 php phpstorm "
+           href="/2019/09/20/phpstorm配合xdebug进行本地调试代码/"
+           data-tag="php,phpstorm,xdebuge"
+           data-author="" >
+            <span class="post-title" title="phpstorm配合xdebug进行本地调试代码">phpstorm配合xdebug进行本地调试代码</span>
+            <span class="post-date" title="2019-09-20 11:15:44">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 数据库 mysql "
+           href="/2019/10/29/windows环境下搭建mysql主从/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="windows环境下搭建mysql主从">windows环境下搭建mysql主从</span>
+            <span class="post-date" title="2019-10-29 09:11:31">2019/10/29</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/11/window下的php命令行输出汉字乱码处理/"
+           data-tag="php"
+           data-author="" >
+            <span class="post-title" title="window下的php命令行输出汉字乱码处理">window下的php命令行输出汉字乱码处理</span>
+            <span class="post-date" title="2019-10-11 11:15:10">2019/10/11</span>
+        </a>
+        
+        <a  class="前端 知识点 "
+           href="/2019/09/24/使用before和after双伪元素清除浮动/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用before和after双伪元素清除浮动">使用before和after双伪元素清除浮动</span>
+            <span class="post-date" title="2019-09-24 23:09:50">2019/09/24</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/10/05/定位的盒子居中对齐完美写法/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="定位的盒子居中对齐完美写法">定位的盒子居中对齐完美写法</span>
+            <span class="post-date" title="2019-10-05 16:16:09">2019/10/05</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/10/05/字体图标的使用/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="字体图标的使用">字体图标的使用</span>
+            <span class="post-date" title="2019-10-05 08:10:58">2019/10/05</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/15/本地代码推送到远程git仓库/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="本地代码推送到远程git仓库">本地代码推送到远程git仓库</span>
+            <span class="post-date" title="2019-10-15 16:55:15">2019/10/15</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/19/本地管理多个rsa的key/"
+           data-tag="rsa,ssh,github"
+           data-author="" >
+            <span class="post-title" title="本地管理多个rsa的key">本地管理多个rsa的key</span>
+            <span class="post-date" title="2019-09-19 15:49:02">2019/09/19</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/10/05/滑动门技术实现/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="滑动门技术实现">滑动门技术实现</span>
+            <span class="post-date" title="2019-10-05 09:02:51">2019/10/05</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/20/腾讯云免费申请https证书/"
+           data-tag="https"
+           data-author="" >
+            <span class="post-title" title="腾讯云免费申请https证书">腾讯云免费申请https证书</span>
+            <span class="post-date" title="2019-09-20 12:32:22">2019/09/20</span>
+        </a>
+        
+        <a  class="前端 html5 "
+           href="/2019/10/14/解决ie低版本不认识html5标签/"
+           data-tag="html"
+           data-author="" >
+            <span class="post-title" title="解决ie低版本不认识html5标签">解决ie低版本不认识html5标签</span>
+            <span class="post-date" title="2019-10-14 20:21:35">2019/10/14</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/10/15/视差滚动插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="视差滚动插件">视差滚动插件</span>
+            <span class="post-date" title="2019-10-15 18:24:37">2019/10/15</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/27/解决keil5中文注释乱码方法/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="解决keil5中文注释乱码方法">解决keil5中文注释乱码方法</span>
+            <span class="post-date" title="2019-09-27 20:40:41">2019/09/27</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/11/谷歌浏览器设置网站信任flash/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="谷歌浏览器设置网站信任flash">谷歌浏览器设置网站信任flash</span>
+            <span class="post-date" title="2019-10-11 11:09:49">2019/10/11</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/17/通过IP获取到对应的地理位置信息/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="通过IP获取到对应的地理位置信息">通过IP获取到对应的地理位置信息</span>
+            <span class="post-date" title="2019-10-17 09:39:57">2019/10/17</span>
+        </a>
+        
+        <a  class="后端 php 开发环境 "
+           href="/2019/09/20/homestead安装swoole扩展/"
+           data-tag="php,ubuntu,swoole"
+           data-author="" >
+            <span class="post-title" title="homestead安装swoole扩展">homestead安装swoole扩展</span>
+            <span class="post-date" title="2019-09-20 09:11:41">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/faker数据填充详解/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="faker数据填充详解">faker数据填充详解</span>
+            <span class="post-date" title="2019-10-16 16:58:14">2019/10/16</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/10/10/fullpage-js全屏插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="fullpage.js全屏插件">fullpage.js全屏插件</span>
+            <span class="post-date" title="2019-10-10 20:18:51">2019/10/10</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/laravel修改用户模块的密码验证/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="laravel修改用户模块的密码验证">laravel修改用户模块的密码验证</span>
+            <span class="post-date" title="2019-10-16 17:28:15">2019/10/16</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/laravel结合webuploader-单页面多上传插件/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="laravel结合webuploader(单页面多上传插件)">laravel结合webuploader(单页面多上传插件)</span>
+            <span class="post-date" title="2019-10-16 17:07:50">2019/10/16</span>
+        </a>
+        
+        <a  class="后端 微信 "
+           href="/2019/10/15/微信JSSdk实现分享功能/"
+           data-tag="weixin"
+           data-author="" >
+            <span class="post-title" title="微信JSSdk实现分享功能">微信JSSdk实现分享功能</span>
+            <span class="post-date" title="2019-10-15 12:06:21">2019/10/15</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/25/Robots-txt-完整使用指南/"
+           data-tag="seo"
+           data-author="" >
+            <span class="post-title" title="Robots.txt 完整使用指南">Robots.txt 完整使用指南</span>
+            <span class="post-date" title="2019-10-25 11:12:17">2019/10/25</span>
+        </a>
+        
+        <a  class="运维 容器 "
+           href="/2019/09/19/centos7使用kubeadm搭建kubernetes集群/"
+           data-tag="docker,centos7,k8s集群"
+           data-author="" >
+            <span class="post-title" title="centos7使用kubeadm搭建kubernetes集群">centos7使用kubeadm搭建kubernetes集群</span>
+            <span class="post-date" title="2019-09-19 16:58:15">2019/09/19</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-centos7使用kubeadm搭建kubernetes集群" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">centos7使用kubeadm搭建kubernetes集群</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="运维">运维</a>/
+            
+                <a href="javascript:" data-rel="容器">容器</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">docker</a>
+            
+            <a href="javascript:" class="color3">centos7</a>
+            
+            <a href="javascript:" class="color1">k8s集群</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-10-29 10:01:25'>2019-09-19 16:58</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:3k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、本地实验环境准备"><span class="toc-text">一、本地实验环境准备</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-软件版本"><span class="toc-text">1. 软件版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-环境初始化操作"><span class="toc-text">2. 环境初始化操作</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-1-配置hostname"><span class="toc-text">2.1 配置hostname</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-2-配置三台虚拟机的-etc-hosts"><span class="toc-text">2.2 配置三台虚拟机的/etc/hosts</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-3-安装必要软件以及升级所有软件-关闭防火墙、selinux、swap"><span class="toc-text">2.3 安装必要软件以及升级所有软件,关闭防火墙、selinux、swap</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-配置CentOS-YUM源"><span class="toc-text">3. 配置CentOS YUM源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-安装一些依赖软件包"><span class="toc-text">4. 安装一些依赖软件包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-时间同步配置"><span class="toc-text">5. 时间同步配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-以上操作后，全部重启一下。"><span class="toc-text">6. 以上操作后，全部重启一下。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-安装docker"><span class="toc-text">7. 安装docker</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#选择你想要得版本，我使用了最新版本"><span class="toc-text">选择你想要得版本，我使用了最新版本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#配置镜像加速器和docker数据存放路径"><span class="toc-text">配置镜像加速器和docker数据存放路径</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#设置自启动"><span class="toc-text">设置自启动</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-安装-kubeadm、kubelet、kubectl-K8S-VERSION-v1-15-3"><span class="toc-text">8.  安装 kubeadm、kubelet、kubectl K8S_VERSION=v1.15.3</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#kubelet启动设置"><span class="toc-text">kubelet启动设置</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-master节点设置-192-168-222-129"><span class="toc-text">9. master节点设置(192.168.222.129)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载相关镜像"><span class="toc-text">下载相关镜像</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#集群安装初始化-192-168-222-129"><span class="toc-text">集群安装初始化(192.168.222.129)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看集群健康状况"><span class="toc-text">查看集群健康状况</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#集群安装过程中遇到问题，重置操作（报错时使用-不报错不用）"><span class="toc-text">集群安装过程中遇到问题，重置操作（报错时使用,不报错不用）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#安装网络插件"><span class="toc-text">安装网络插件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看集群中的组件运行状态"><span class="toc-text">查看集群中的组件运行状态</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-node节点设置-192-168-222-130和192-168-222-131子节点配置"><span class="toc-text">10. node节点设置(192.168.222.130和192.168.222.131子节点配置)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#下载镜像"><span class="toc-text">下载镜像</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#加入节点"><span class="toc-text">加入节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如果执行上述命令报The-connection-to-the-server-localhost-8080-was-refused-did-you-specify-the-right-host-or-port"><span class="toc-text">如果执行上述命令报The connection to the server localhost:8080 was refused - did you specify the right host or port?</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-安装-dashboard组件-我是在主节点上操作的"><span class="toc-text">11. 安装 dashboard组件(我是在主节点上操作的)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#配置dashboard"><span class="toc-text">配置dashboard</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#集群配置，生成浏览器证书-这些证书在后面浏览器打开dashboard时需要导入"><span class="toc-text">集群配置，生成浏览器证书(这些证书在后面浏览器打开dashboard时需要导入)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建admin-user账号，并放在kube-system名称空间下"><span class="toc-text">创建admin-user账号，并放在kube-system名称空间下</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#绑定角色"><span class="toc-text">绑定角色</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#登录dashboard"><span class="toc-text">登录dashboard</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#在打开的页面中选择token方式-获取token的方式如下"><span class="toc-text">在打开的页面中选择token方式,获取token的方式如下</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-集成Heapster"><span class="toc-text">12. 集成Heapster</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Kubeadm安装Kubernetes-1-15-1"><span class="toc-text">Kubeadm安装Kubernetes 1.15.1 </span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kubeadm-虚拟机实践"><span class="toc-text">kubeadm 虚拟机实践</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、本地实验环境准备"><a href="#一、本地实验环境准备" class="headerlink" title="一、本地实验环境准备"></a>一、本地实验环境准备</h2><ol>
+<li>服务器虚拟机准备</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center">IP</th>
+<th align="center">CPU</th>
+<th align="center">内存</th>
+<th align="center">hostname</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">192.168.222.129</td>
+<td align="center">&gt;=2c</td>
+<td align="center">&gt;=2G</td>
+<td align="center">master</td>
+</tr>
+<tr>
+<td align="center">192.168.222.130</td>
+<td align="center">&gt;=2c</td>
+<td align="center">&gt;=2G</td>
+<td align="center">node1</td>
+</tr>
+<tr>
+<td align="center">192.168.222.131</td>
+<td align="center">&gt;=2c</td>
+<td align="center">&gt;=2G</td>
+<td align="center">node2</td>
+</tr>
+</tbody></table>
+<p>本实验我这里用的虚拟机是<code>vmware workstation</code>创建的，我的机器配置较低，所以<code>master</code>给了4G 4C，<code>node</code>每个给了4G 4C，大家根据自己的资源情况，按照上面给的建议最低值创建即可。<br>注意：<code>hostname</code>不能有大写字母，比如<code>Master</code>这样的。</p>
+<h4 id="1-软件版本"><a href="#1-软件版本" class="headerlink" title="1. 软件版本"></a>1. 软件版本</h4><pre><code>系统：CentOS7.5.1804
+Kubernetes：1.15.3
+docker-ce版本：19.03.1</code></pre><h4 id="2-环境初始化操作"><a href="#2-环境初始化操作" class="headerlink" title="2. 环境初始化操作"></a>2. 环境初始化操作</h4><h5 id="2-1-配置hostname"><a href="#2-1-配置hostname" class="headerlink" title="2.1 配置hostname"></a>2.1 配置<code>hostname</code></h5><pre><code>## 192.168.222.129
+hostnamectl set-hostname master
+##  192.168.222.130
+hostnamectl set-hostname node1
+## 192.168.222.131
+hostnamectl set-hostname node2</code></pre><h5 id="2-2-配置三台虚拟机的-etc-hosts"><a href="#2-2-配置三台虚拟机的-etc-hosts" class="headerlink" title="2.2 配置三台虚拟机的/etc/hosts"></a>2.2 配置三台虚拟机的<code>/etc/hosts</code></h5><pre><code>echo &quot;192.168.222.129 master&quot; &gt;&gt; /etc/hosts
+echo &quot;192.168.222.130 node1&quot; &gt;&gt; /etc/hosts
+echo &quot;192.168.222.131 node2&quot; &gt;&gt; /etc/hosts</code></pre><h5 id="2-3-安装必要软件以及升级所有软件-关闭防火墙、selinux、swap"><a href="#2-3-安装必要软件以及升级所有软件-关闭防火墙、selinux、swap" class="headerlink" title="2.3 安装必要软件以及升级所有软件,关闭防火墙、selinux、swap"></a>2.3 安装必要软件以及升级所有软件,关闭防火墙、<code>selinux</code>、<code>swap</code></h5><pre><code>yum -y install vim-enhanced wget curl net-tools conntrack-tools bind-utils socat ipvsadm ipset
+yum -y update
+
+
+## 停防火墙
+systemctl stop firewalld systemctl disable firewalld
+
+## 关闭Selinux
+sed -i &apos;s#SELINUX=enforcing#SELINUX=disabled#g&apos;  /etc/sysconfig/selinux
+sed -i &apos;s#SELINUX=enforcing#SELINUX=disabled#g&apos;  /etc/selinux/config 
+
+## 关闭不必要服务
+systemctl disable auditd
+systemctl disable postfix
+systemctl disable irqbalance
+systemctl disable remote-fs
+systemctl disable tuned
+systemctl disable rhel-configure
+systemctl disable firewalld
+
+## 安装kernel-lt(kernel 4.4.178)
+
+rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+yum -y install https://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
+yum --enablerepo=elrepo-kernel install kernel-lt -y
+
+grub2-set-default 0
+grub2-mkconfig -o /etc/grub2.cfg
+
+## 优化内核
+
+cat &gt;&gt;/etc/sysctl.conf &lt;&lt;EOF
+net.ipv4.ip_forward = 1
+vm.swappiness = 0
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+net.ipv4.tcp_max_syn_backlog = 65536
+net.core.netdev_max_backlog =  32768
+net.core.somaxconn = 32768
+net.core.wmem_default = 8388608
+net.core.rmem_default = 8388608
+net.core.rmem_max = 16777216
+net.core.wmem_max = 16777216
+net.ipv4.tcp_timestamps = 0
+net.ipv4.tcp_synack_retries = 2
+net.ipv4.tcp_syn_retries = 2
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_mem = 94500000 915000000 927000000
+net.ipv4.tcp_max_orphans = 3276800
+net.ipv4.ip_local_port_range = 1024  65535
+EOF
+
+sysctl -p
+
+## 修改文件打开数
+
+cat &gt;&gt;/etc/security/limits.conf &lt;&lt;EOF
+* soft memlock unlimited
+* hard memlock unlimited
+* soft nofile 65535
+* hard nofile 65535
+* soft nproc 65535
+* hard nproc 65535
+EOF
+
+## 系统关闭使用交换内存
+
+echo &quot;swapoff -a&quot;&gt;&gt;/etc/rc.local
+chmod +x /etc/rc.local
+swapoff -a
+
+
+## 注释掉/etc/fstab的swap行
+# /dev/mapper/centos-swap swap                    swap    defaults        0 0
+
+## 创建k8s.conf
+vim /etc/sysctl.d/k8s.conf
+## 写入如下配置
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+
+
+## 加载br_netfilter
+modprobe br_netfilter
+
+sysctl -p /etc/sysctl.d/k8s.conf</code></pre><h4 id="3-配置CentOS-YUM源"><a href="#3-配置CentOS-YUM源" class="headerlink" title="3. 配置CentOS YUM源"></a>3. 配置CentOS YUM源</h4><pre><code>## 配置国内tencent yum源地址、epel源地址、Kubernetes源地址
+mkdir -p /etc/yum.repo.d/repo.bak
+mv /etc/yum.repo.d/*.repo /etc/yum.repo.d/repo.bak
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.cloud.tencent.com/repo/centos7_base.repo
+wget -O /etc/yum.repos.d/epel.repo http://mirrors.cloud.tencent.com/repo/epel-7.repo</code></pre><p> 配置国内Kubernetes源地址<br>  <code>vim  /etc/yum.repos.d/kubernetes.repo</code></p>
+<pre><code>[kubernetes]
+name=Kubernetes Repo
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64/
+gpgcheck=0
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
+enabled=1</code></pre><hr>
+<pre><code>yum clean all &amp;&amp; yum makecache</code></pre><h4 id="4-安装一些依赖软件包"><a href="#4-安装一些依赖软件包" class="headerlink" title="4. 安装一些依赖软件包"></a>4. 安装一些依赖软件包</h4><pre><code>yum install -y conntrack ipvsadm ipset jq sysstat curl iptables libseccomp bash-completion yum-utils device-mapper-persistent-data lvm2 net-tools conntrack-tools vim libtool-ltdl</code></pre><h4 id="5-时间同步配置"><a href="#5-时间同步配置" class="headerlink" title="5. 时间同步配置"></a>5. 时间同步配置</h4><pre><code>yum install chrony –y systemctl enable chronyd.service &amp;&amp; systemctl start chronyd.service &amp;&amp; systemctl status chronyd.service chronyc sources</code></pre><p>   运行<code>date</code>命令看下系统时间，过一会儿时间就会同步。如果同步失败检查是不是因为公司内部网导致无法同步时间</p>
+<h4 id="6-以上操作后，全部重启一下。"><a href="#6-以上操作后，全部重启一下。" class="headerlink" title="6. 以上操作后，全部重启一下。"></a>6. 以上操作后，全部重启一下。</h4><h4 id="7-安装docker"><a href="#7-安装docker" class="headerlink" title="7. 安装docker"></a>7. 安装<code>docker</code></h4><pre><code>## 配置docker yum 源
+cd /etc/yum.repos.d &amp;&amp; wget https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+## 查看docker-ce的可用资源
+yum list docker-ce.x86_64 --showduplicates | sort -r </code></pre><p>会显示如下的<code>docker-ce</code>信息</p>
+<pre><code>Repository cr is listed more than once in the configuration
+Repository fasttrack is listed more than once in the configuration
+已加载插件：fastestmirror, langpacks
+已安装的软件包
+可安装的软件包
+Loading mirror speeds from cached hostfile
+ * elrepo: mirrors.tuna.tsinghua.edu.cn
+docker-ce.x86_64            3:19.03.1-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:19.03.1-3.el7                    @docker-ce-stable
+docker-ce.x86_64            3:19.03.0-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:18.09.8-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:18.09.7-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:18.09.6-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:18.09.5-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:18.09.4-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:18.09.3-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:18.09.2-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:18.09.1-3.el7                    docker-ce-stable 
+docker-ce.x86_64            3:18.09.0-3.el7                    docker-ce-stable 
+docker-ce.x86_64            18.06.3.ce-3.el7                   docker-ce-stable 
+docker-ce.x86_64            18.06.2.ce-3.el7                   docker-ce-stable 
+docker-ce.x86_64            18.06.1.ce-3.el7                   docker-ce-stable 
+docker-ce.x86_64            18.06.0.ce-3.el7                   docker-ce-stable 
+docker-ce.x86_64            18.03.1.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            18.03.0.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            17.12.1.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            17.12.0.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            17.09.1.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            17.09.0.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            17.06.2.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            17.06.1.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            17.06.0.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            17.03.3.ce-1.el7                   docker-ce-stable 
+docker-ce.x86_64            17.03.2.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            17.03.1.ce-1.el7.centos            docker-ce-stable 
+docker-ce.x86_64            17.03.0.ce-1.el7.centos            docker-ce-stable</code></pre><h5 id="选择你想要得版本，我使用了最新版本"><a href="#选择你想要得版本，我使用了最新版本" class="headerlink" title="选择你想要得版本，我使用了最新版本"></a>选择你想要得版本，我使用了最新版本</h5><pre><code>yum -y  install docker-ce </code></pre><h5 id="配置镜像加速器和docker数据存放路径"><a href="#配置镜像加速器和docker数据存放路径" class="headerlink" title="配置镜像加速器和docker数据存放路径"></a>配置镜像加速器和<code>docker</code>数据存放路径</h5><p><code>vim /etc/docker/daemon.json</code><br>写入如下配置</p>
+<pre><code>{ 
+    &quot;registry-mirrors&quot;: [&quot;https://q2hy3fzi.mirror.aliyuncs.com&quot;], 
+    &quot;graph&quot;: &quot;/tol/docker-data&quot; ,
+    &quot;exec-opts&quot;:[&quot;native.cgroupdriver=systemd&quot;]
+} </code></pre><h5 id="设置自启动"><a href="#设置自启动" class="headerlink" title="设置自启动"></a>设置自启动</h5><pre><code>systemctl enable docker &amp;&amp; systemctl start docker</code></pre><h4 id="8-安装-kubeadm、kubelet、kubectl-K8S-VERSION-v1-15-3"><a href="#8-安装-kubeadm、kubelet、kubectl-K8S-VERSION-v1-15-3" class="headerlink" title="8.  安装 kubeadm、kubelet、kubectl K8S_VERSION=v1.15.3"></a>8.  安装 kubeadm、kubelet、kubectl K8S_VERSION=v1.15.3</h4><pre><code> cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
+        http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF
+
+ yum install -y  kubeadm kubelet  kubectl 
+
+ kubelet --version //v1.15.3</code></pre><h5 id="kubelet启动设置"><a href="#kubelet启动设置" class="headerlink" title="kubelet启动设置"></a>kubelet启动设置</h5><p><code>vim /etc/sysconfig/kubelet</code><br>写入如下配置</p>
+<pre><code>KUBELET_EXTRA_ARGS=&quot;--fail-swap-on=false&quot;</code></pre><p>再重启</p>
+<pre><code>systemctl daemon-reload  </code></pre><h4 id="9-master节点设置-192-168-222-129"><a href="#9-master节点设置-192-168-222-129" class="headerlink" title="9. master节点设置(192.168.222.129)"></a>9. master节点设置(192.168.222.129)</h4><h5 id="下载相关镜像"><a href="#下载相关镜像" class="headerlink" title="下载相关镜像"></a>下载相关镜像</h5><pre><code>#!/bin/bash
+# master 节点 shell
+K8S_VERSION=v1.15.3
+ETCD_VERSION=3.3.10
+DNS_VERSION=1.3.1
+PAUSE_VERSION=3.1
+FLANNEL_VERSION=v0.11.0-amd64
+DASHBOARD_VERSION=v1.10.1
+
+// 下载镜像
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:$K8S_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-controller-manager:$K8S_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler:$K8S_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:$K8S_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/pause:$PAUSE_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/etcd:$ETCD_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:$DNS_VERSION
+docker pull jmgao1983/flannel:$FLANNEL_VERSION
+docker pull siriuszg/kubernetes-dashboard-amd64:$DASHBOARD_VERSION
+
+# 修改tag
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:$K8S_VERSION           k8s.gcr.io/kube-apiserver:$K8S_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-controller-manager:$K8S_VERSION  k8s.gcr.io/kube-controller-manager:$K8S_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler:$K8S_VERSION           k8s.gcr.io/kube-scheduler:$K8S_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:$K8S_VERSION               k8s.gcr.io/kube-proxy:$K8S_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/pause:$PAUSE_VERSION                  k8s.gcr.io/pause:$PAUSE_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/etcd:$ETCD_VERSION                    k8s.gcr.io/etcd:$ETCD_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:$DNS_VERSION                   k8s.gcr.io/coredns:$DNS_VERSION
+docker tag jmgao1983/flannel:$FLANNEL_VERSION                                                           quay.io/coreos/flannel:$FLANNEL_VERSION
+docker tag siriuszg/kubernetes-dashboard-amd64:$DASHBOARD_VERSION                                    k8s.gcr.io/kubernetes-dashboard-amd64:$DASHBOARD_VERSION
+
+#删除冗余的images
+docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-apiserver:$K8S_VERSION
+docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-controller-manager:$K8S_VERSION
+docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-scheduler:$K8S_VERSION
+docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:$K8S_VERSION
+docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/pause:$PAUSE_VERSION
+docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/etcd:$ETCD_VERSION
+docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/coredns:$DNS_VERSION
+docker rmi jmgao1983/flannel:$FLANNEL_VERSION
+docker rmi siriuszg/kubernetes-dashboard-amd64:$DASHBOARD_VERSION</code></pre><h5 id="集群安装初始化-192-168-222-129"><a href="#集群安装初始化-192-168-222-129" class="headerlink" title="集群安装初始化(192.168.222.129)"></a>集群安装初始化(192.168.222.129)</h5><pre><code>## 初始化命令
+ kubeadm init --kubernetes-version=v1.15.3 --pod-network-cidr=10.244.0.0/16 --ignore-preflight-errors=Swap </code></pre><p>这时候出现如下信息表明安装成功</p>
+<pre><code>Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+kubeadm join 192.168.222.129:6443 --token 981it6.k4kqs2i73e1bfd1p \
+    --discovery-token-ca-cert-hash sha256:5cc5c1c2ace7b720a178840c951b2a05c679d26b8d6a1cfc81aa7e006e6a6ef9 </code></pre><p>按照上面的提示执行推荐操作</p>
+<pre><code>mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config</code></pre><h5 id="查看集群健康状况"><a href="#查看集群健康状况" class="headerlink" title="查看集群健康状况"></a>查看集群健康状况</h5><pre><code>kubectl get cs</code></pre><h5 id="集群安装过程中遇到问题，重置操作（报错时使用-不报错不用）"><a href="#集群安装过程中遇到问题，重置操作（报错时使用-不报错不用）" class="headerlink" title="集群安装过程中遇到问题，重置操作（报错时使用,不报错不用）"></a>集群安装过程中遇到问题，重置操作（报错时使用,不报错不用）</h5><pre><code>kubeadm reset</code></pre><h5 id="安装网络插件"><a href="#安装网络插件" class="headerlink" title="安装网络插件"></a>安装网络插件</h5><pre><code>kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml</code></pre><h5 id="查看集群中的组件运行状态"><a href="#查看集群中的组件运行状态" class="headerlink" title="查看集群中的组件运行状态"></a>查看集群中的组件运行状态</h5><pre><code>kubectl get pods --all-namespaces</code></pre><h4 id="10-node节点设置-192-168-222-130和192-168-222-131子节点配置"><a href="#10-node节点设置-192-168-222-130和192-168-222-131子节点配置" class="headerlink" title="10. node节点设置(192.168.222.130和192.168.222.131子节点配置)"></a>10. node节点设置(192.168.222.130和192.168.222.131子节点配置)</h4><h5 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h5><pre><code>#!/bin/bash
+# node 节点 shell
+K8S_VERSION=v1.15.3
+ETCD_VERSION=3.3.10
+DNS_VERSION=1.3.1
+PAUSE_VERSION=3.1
+FLANNEL_VERSION=v0.11.0-amd64
+DASHBOARD_VERSION=v1.10.1
+
+## node 安装插件
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:$K8S_VERSION
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/pause:$PAUSE_VERSION
+docker pull jmgao1983/flannel:v0.11.0-amd64
+docker pull siriuszg/kubernetes-dashboard-amd64:$DASHBOARD_VERSION
+
+
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:$K8S_VERSION  k8s.gcr.io/kube-proxy:$K8S_VERSION
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/pause:$PAUSE_VERSION     k8s.gcr.io/pause:$PAUSE_VERSION
+docker tag jmgao1983/flannel:$FLANNEL_VERSION                                           quay.io/coreos/flannel:$FLANNEL_VERSION
+docker tag siriuszg/kubernetes-dashboard-amd64:$DASHBOARD_VERSION                       k8s.gcr.io/kubernetes-dashboard-amd64:$DASHBOARD_VERSION
+
+
+docker rmi jmgao1983/flannel:$FLANNEL_VERSION
+docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/pause:$PAUSE_VERSION
+docker rmi registry.cn-hangzhou.aliyuncs.com/google_containers/kube-proxy:$K8S_VERSION
+docker rmi siriuszg/kubernetes-dashboard-amd64:$DASHBOARD_VERSION</code></pre><h5 id="加入节点"><a href="#加入节点" class="headerlink" title="加入节点"></a>加入节点</h5><p>这里的信息在主节点初始化完成后会出现，按照自己初始化完后的信息操作，这里仅供参考</p>
+<pre><code>kubeadm join 192.168.222.129:6443 --token 9ump71.6fnndushlwn87fnf \
+   --discovery-token-ca-cert-hash sha256:addb0cd073a460331fe4cadd1f02c69e9b1bdad4e62188fae788ff65e0a8fb11 --ignore-preflight-errors=Swap</code></pre><p>出现下面的信息表明子节点加入主节点成功,可以使用该命令<code>kubectl get nodes</code>查看</p>
+<pre><code>This node has joined the cluster:
+* Certificate signing request was sent to master and a response
+  was received.
+* The Kubelet was informed of the new secure connection details.
+
+Run &apos;kubectl get nodes&apos; on the master to see this node join the cluster.</code></pre><h5 id="如果执行上述命令报The-connection-to-the-server-localhost-8080-was-refused-did-you-specify-the-right-host-or-port"><a href="#如果执行上述命令报The-connection-to-the-server-localhost-8080-was-refused-did-you-specify-the-right-host-or-port" class="headerlink" title="如果执行上述命令报The connection to the server localhost:8080 was refused - did you specify the right host or port?"></a>如果执行上述命令报<code>The connection to the server localhost:8080 was refused - did you specify the right host or port?</code></h5><p>操作如下</p>
+<pre><code>1. 将主节点中的【/etc/kubernetes/admin.conf】文件拷贝到从节点相同目录下
+2. echo &quot;export KUBECONFIG=/etc/kubernetes/admin.conf&quot; &gt;&gt; ~/.bash_profile
+3. source ~/.bash_profile</code></pre><h4 id="11-安装-dashboard组件-我是在主节点上操作的"><a href="#11-安装-dashboard组件-我是在主节点上操作的" class="headerlink" title="11. 安装 dashboard组件(我是在主节点上操作的)"></a>11. 安装 dashboard组件(我是在主节点上操作的)</h4><h5 id="配置dashboard"><a href="#配置dashboard" class="headerlink" title="配置dashboard"></a>配置dashboard</h5><pre><code>kubectl create -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta1/aio/deploy/recommended.yaml</code></pre><h5 id="集群配置，生成浏览器证书-这些证书在后面浏览器打开dashboard时需要导入"><a href="#集群配置，生成浏览器证书-这些证书在后面浏览器打开dashboard时需要导入" class="headerlink" title="集群配置，生成浏览器证书(这些证书在后面浏览器打开dashboard时需要导入)"></a>集群配置，生成浏览器证书(这些证书在后面浏览器打开dashboard时需要导入)</h5><pre><code># 生成client-certificate-data
+grep &apos;client-certificate-data&apos; ~/.kube/config | head -n 1 | awk &apos;{print $2}&apos; | base64 -d &gt;&gt; kubecfg.crt
+
+# 生成client-key-data
+grep &apos;client-key-data&apos; ~/.kube/config | head -n 1 | awk &apos;{print $2}&apos; | base64 -d &gt;&gt; kubecfg.key
+
+# 生成p12
+openssl pkcs12 -export -clcerts -inkey kubecfg.key -in kubecfg.crt -out kubecfg.p12 -name &quot;kubernetes-client&quot;
+
+# 导入证书后浏览器重启</code></pre><h5 id="创建admin-user账号，并放在kube-system名称空间下"><a href="#创建admin-user账号，并放在kube-system名称空间下" class="headerlink" title="创建admin-user账号，并放在kube-system名称空间下"></a>创建<code>admin-user</code>账号，并放在<code>kube-system</code>名称空间下</h5><p><code>vim admin-user.yaml</code><br>写入如下配置</p>
+<pre><code>apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kube-system</code></pre><p>使用该命令加载配置</p>
+<pre><code>kubectl create -f admin-user.yaml</code></pre><h5 id="绑定角色"><a href="#绑定角色" class="headerlink" title="绑定角色"></a>绑定角色</h5><p><code>vim admin-user-role-binding.yaml</code><br>写入如下配置</p>
+<pre><code>apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kube-system</code></pre><p>使用该命令加载配置</p>
+<pre><code>kubectl create -f  admin-user-role-binding.yaml</code></pre><h5 id="登录dashboard"><a href="#登录dashboard" class="headerlink" title="登录dashboard"></a>登录<code>dashboard</code></h5><p>在浏览器中访问如下url</p>
+<pre><code>https://127.0.0.1:6443/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</code></pre><h5 id="在打开的页面中选择token方式-获取token的方式如下"><a href="#在打开的页面中选择token方式-获取token的方式如下" class="headerlink" title="在打开的页面中选择token方式,获取token的方式如下"></a>在打开的页面中选择<code>token</code>方式,获取<code>token</code>的方式如下</h5><pre><code>kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk &apos;{print $1}&apos;)</code></pre><h4 id="12-集成Heapster"><a href="#12-集成Heapster" class="headerlink" title="12. 集成Heapster"></a>12. 集成<code>Heapster</code></h4><p><code>Heapster</code>是容器集群监控和性能分析工具</p>
+<p>执行命令</p>
+<pre><code>kubectl create -f http://mirror.faasx.com/kubernetes/heapster/deploy/kube-config/influxdb/influxdb.yaml
+kubectl create -f http://mirror.faasx.com/kubernetes/heapster/deploy/kube-config/influxdb/grafana.yaml
+kubectl create -f http://mirror.faasx.com/kubernetes/heapster/deploy/kube-config/influxdb/heapster.yaml
+kubectl create -f http://mirror.faasx.com/kubernetes/heapster/deploy/kube-config/rbac/heapster-rbac.yaml</code></pre><p>当pod的状态全都变成了running，则能够使用。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><h4 id="Kubeadm安装Kubernetes-1-15-1"><a href="#Kubeadm安装Kubernetes-1-15-1" class="headerlink" title="Kubeadm安装Kubernetes 1.15.1 "></a><a href="https://www.cnblogs.com/ferhat/p/11312516.html" target="_blank" rel="noopener">Kubeadm安装Kubernetes 1.15.1 </a></h4><h4 id="kubeadm-虚拟机实践"><a href="#kubeadm-虚拟机实践" class="headerlink" title="kubeadm 虚拟机实践"></a><a href="https://github.com/G-Bruin/k8s" target="_blank" rel="noopener">kubeadm 虚拟机实践</a></h4>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 508110504@qq.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>centos7使用kubeadm搭建kubernetes集群</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">3k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John">John</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-09-19, 16:58:15</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-29, 10:01:25</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/09/19/centos7使用kubeadm搭建kubernetes集群/" title="centos7使用kubeadm搭建kubernetes集群">http://qnyt1993.github.io/2019/09/19/centos7使用kubeadm搭建kubernetes集群/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 John</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#javascript','#单片机','#fedora','#java','#jdbc','#php','#laravel','#nginx','#yum','#centos','#ubuntu','#docker','#centos7','#CSS','#git','#homestead','#other','#弹出框','#layer','#phpstorm','#xdebuge','#mysql','#rsa','#ssh','#github','#https','#html','#swoole','#weixin','#seo','#k8s集群',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+    .nav-right nav a.hover > span{
+        color: #ffffff !important;
+    }
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

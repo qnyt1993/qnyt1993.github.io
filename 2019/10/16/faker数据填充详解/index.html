@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>faker数据填充详解 | 足迹人生的博客</title>
+  <meta name="keywords" content=" php , laravel ">
+  <meta name="description" content="faker数据填充详解 | 足迹人生的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="about1佛系少年">
+<meta name="keywords" content="足迹人生，博客，分享，人生感悟">
+<meta property="og:type" content="website">
+<meta property="og:title" content="足迹人生的博客">
+<meta property="og:url" content="http://qnyt1993.github.io/about/index.html">
+<meta property="og:site_name" content="足迹人生的博客">
+<meta property="og:description" content="about1佛系少年">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2019-10-29T11:52:26.380Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="足迹人生的博客">
+<meta name="twitter:description" content="about1佛系少年">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/sunburst.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>John</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="email" href="mailto:508110504@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=508110504&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(51)</small></div></li>
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端<small>(11)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="插件">插件<small>(5)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS<small>(4)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="知识点">知识点<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="html5">html5<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="硬件"><i class="fold iconfont icon-right"></i>硬件<small>(8)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="单片机"><i class="fold iconfont icon-right"></i>单片机<small>(8)</small></div>
+                            
+                                <ul class="sub hide">
+                                    
+                                    <li><div data-rel="51">51<small>(8)</small></div>
+                                    </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="运维"><i class="fold iconfont icon-right"></i>运维<small>(6)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="fedora">fedora<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="centos">centos<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="ubuntu">ubuntu<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="容器">容器<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="nginx">nginx<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="后端"><i class="fold iconfont icon-right"></i>后端<small>(14)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="java">java<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="php"><i class="fold iconfont icon-right"></i>php<small>(11)</small></div>
+                            
+                                <ul class="sub hide">
+                                    
+                                    <li><div data-rel="Laravel">Laravel<small>(8)</small></div>
+                                    </li>
+                                    
+                                    <li><div data-rel="开发环境">开发环境<small>(2)</small></div>
+                                    </li>
+                                    
+                                    <li><div data-rel="phpstorm">phpstorm<small>(1)</small></div>
+                                    </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                            
+                        <li><div data-rel="数据库"><i class="fold iconfont icon-right"></i>数据库<small>(1)</small></div>
+                            
+                                <ul class="sub hide">
+                                    
+                                    <li><div data-rel="mysql">mysql<small>(1)</small></div>
+                                    </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                            
+                        <li><div data-rel="微信">微信<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="杂记">杂记<small>(12)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="51">
+<input type="hidden" id="yelog_site_word_count" value="36.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">单片机</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">fedora</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">jdbc</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">php</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">laravel</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">yum</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">centos</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">ubuntu</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">centos7</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">CSS</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">homestead</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">other</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">弹出框</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">layer</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">phpstorm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">xdebuge</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">rsa</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">ssh</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">github</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">https</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">swoole</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">weixin</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">seo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">k8s集群</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 插件 "
+           href="/2019/10/15/360度3D-旋转插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="360度3D 旋转插件">360度3D 旋转插件</span>
+            <span class="post-date" title="2019-10-15 16:44:46">2019/10/15</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/01/51单片机定时静态显示数码管/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机定时静态显示数码管">51单片机定时静态显示数码管</span>
+            <span class="post-date" title="2019-10-01 16:08:57">2019/10/01</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/01/51单片机定时闪烁灯/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机定时闪烁灯">51单片机定时闪烁灯</span>
+            <span class="post-date" title="2019-10-01 10:40:35">2019/10/01</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/03/51单片机实现定时动态数码管/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机实现定时动态数码管">51单片机实现定时动态数码管</span>
+            <span class="post-date" title="2019-10-03 19:25:44">2019/10/03</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/04/51单片机实现独立按键计数数码管显示/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机实现独立按键计数数码管显示">51单片机实现独立按键计数数码管显示</span>
+            <span class="post-date" title="2019-10-04 15:27:47">2019/10/04</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/09/27/51单片机流水灯/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机流水灯">51单片机流水灯</span>
+            <span class="post-date" title="2019-09-27 21:29:24">2019/09/27</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/03/51单片机点阵动画显示/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机点阵动画显示">51单片机点阵动画显示</span>
+            <span class="post-date" title="2019-10-03 19:40:55">2019/10/03</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/04/51单片机独立按键控制灯/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机独立按键控制灯">51单片机独立按键控制灯</span>
+            <span class="post-date" title="2019-10-04 08:54:04">2019/10/04</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/03/51单片机的点阵图形静态显示/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机的点阵图形静态显示">51单片机的点阵图形静态显示</span>
+            <span class="post-date" title="2019-10-03 19:09:54">2019/10/03</span>
+        </a>
+        
+        <a  class="运维 fedora "
+           href="/2019/10/11/Fedora添加软件桌面快捷方式/"
+           data-tag="fedora"
+           data-author="" >
+            <span class="post-title" title="Fedora添加软件桌面快捷方式">Fedora添加软件桌面快捷方式</span>
+            <span class="post-date" title="2019-10-11 12:28:47">2019/10/11</span>
+        </a>
+        
+        <a  class="后端 java "
+           href="/2019/10/11/JDBC插入中文数据出现？号地解决问题/"
+           data-tag="java,jdbc"
+           data-author="" >
+            <span class="post-title" title="JDBC插入中文数据出现？号地解决问题">JDBC插入中文数据出现？号地解决问题</span>
+            <span class="post-date" title="2019-10-11 10:59:39">2019/10/11</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/09/24/Laravel-程序优化/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="Laravel 程序优化">Laravel 程序优化</span>
+            <span class="post-date" title="2019-09-24 15:42:31">2019/09/24</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/09/20/Nginx-配置二级虚拟目录访问-Laravel-重写/"
+           data-tag="php,laravel,nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx 配置二级虚拟目录访问 Laravel 重写">Nginx 配置二级虚拟目录访问 Laravel 重写</span>
+            <span class="post-date" title="2019-09-20 10:30:39">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/09/23/Laravel5-8自定义函数存放位置/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="Laravel5.8自定义函数存放位置">Laravel5.8自定义函数存放位置</span>
+            <span class="post-date" title="2019-09-23 21:42:24">2019/09/23</span>
+        </a>
+        
+        <a  class="运维 centos "
+           href="/2019/10/11/centos-配置本地yum源/"
+           data-tag="yum,centos"
+           data-author="" >
+            <span class="post-title" title="centos6配置本地yum源">centos6配置本地yum源</span>
+            <span class="post-date" title="2019-10-11 11:22:04">2019/10/11</span>
+        </a>
+        
+        <a  class="运维 ubuntu "
+           href="/2019/09/20/Ubuntu-18-04修改默认源为国内源/"
+           data-tag="ubuntu"
+           data-author="" >
+            <span class="post-title" title="Ubuntu 18.04修改默认源为国内源">Ubuntu 18.04修改默认源为国内源</span>
+            <span class="post-date" title="2019-09-20 09:00:16">2019/09/20</span>
+        </a>
+        
+        <a  class="运维 容器 "
+           href="/2019/09/20/centos7安装docker-ce/"
+           data-tag="docker,centos7"
+           data-author="" >
+            <span class="post-title" title="centos7安装docker-ce">centos7安装docker-ce</span>
+            <span class="post-date" title="2019-09-20 09:19:28">2019/09/20</span>
+        </a>
+        
+        <a  class="运维 nginx "
+           href="/2019/09/20/centos7安装最新稳定版nginx/"
+           data-tag="nginx,centos7"
+           data-author="" >
+            <span class="post-title" title="centos7安装最新稳定版nginx">centos7安装最新稳定版nginx</span>
+            <span class="post-date" title="2019-09-20 11:27:56">2019/09/20</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/09/30/css精灵图使用/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="css精灵图使用">css精灵图使用</span>
+            <span class="post-date" title="2019-09-30 11:03:36">2019/09/30</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/23/git删除远程-idea目录/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git删除远程.idea目录">git删除远程.idea目录</span>
+            <span class="post-date" title="2019-09-23 21:32:39">2019/09/23</span>
+        </a>
+        
+        <a  class="后端 php 开发环境 "
+           href="/2019/09/20/homestead修改php版本/"
+           data-tag="php,ubuntu,homestead"
+           data-author="" >
+            <span class="post-title" title="homestead修改php版本">homestead修改php版本</span>
+            <span class="post-date" title="2019-09-20 08:49:10">2019/09/20</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/11/idea-代码部分格式化/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="idea 代码部分格式化">idea 代码部分格式化</span>
+            <span class="post-date" title="2019-10-11 09:09:53">2019/10/11</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/21/idea使用Vue的v-bind，v-on报错/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="idea使用Vue的v-bind，v-on报错">idea使用Vue的v-bind，v-on报错</span>
+            <span class="post-date" title="2019-10-21 17:17:08">2019/10/21</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/21/idea配置less自动编译/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="idea配置less自动编译">idea配置less自动编译</span>
+            <span class="post-date" title="2019-10-21 08:49:05">2019/10/21</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/10/14/jQuery-Easing-js-插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="jQuery Easing.js 插件">jQuery Easing.js 插件</span>
+            <span class="post-date" title="2019-10-14 09:47:58">2019/10/14</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/27/keil格式化项目代码/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="keil格式化项目代码">keil格式化项目代码</span>
+            <span class="post-date" title="2019-09-27 21:00:28">2019/09/27</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/laravel结合webuploader-单页面单个上传插件/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="laravel结合webuploader(单页面单个上传插件)">laravel结合webuploader(单页面单个上传插件)</span>
+            <span class="post-date" title="2019-10-16 17:23:05">2019/10/16</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/09/20/layer弹出框的简易封装和使用/"
+           data-tag="弹出框,layer"
+           data-author="" >
+            <span class="post-title" title="layer弹出框的简易封装和使用">layer弹出框的简易封装和使用</span>
+            <span class="post-date" title="2019-09-20 15:37:10">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 php phpstorm "
+           href="/2019/09/20/phpstorm配合xdebug进行本地调试代码/"
+           data-tag="php,phpstorm,xdebuge"
+           data-author="" >
+            <span class="post-title" title="phpstorm配合xdebug进行本地调试代码">phpstorm配合xdebug进行本地调试代码</span>
+            <span class="post-date" title="2019-09-20 11:15:44">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 数据库 mysql "
+           href="/2019/10/29/windows环境下搭建mysql主从/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="windows环境下搭建mysql主从">windows环境下搭建mysql主从</span>
+            <span class="post-date" title="2019-10-29 09:11:31">2019/10/29</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/11/window下的php命令行输出汉字乱码处理/"
+           data-tag="php"
+           data-author="" >
+            <span class="post-title" title="window下的php命令行输出汉字乱码处理">window下的php命令行输出汉字乱码处理</span>
+            <span class="post-date" title="2019-10-11 11:15:10">2019/10/11</span>
+        </a>
+        
+        <a  class="前端 知识点 "
+           href="/2019/09/24/使用before和after双伪元素清除浮动/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用before和after双伪元素清除浮动">使用before和after双伪元素清除浮动</span>
+            <span class="post-date" title="2019-09-24 23:09:50">2019/09/24</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/10/05/定位的盒子居中对齐完美写法/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="定位的盒子居中对齐完美写法">定位的盒子居中对齐完美写法</span>
+            <span class="post-date" title="2019-10-05 16:16:09">2019/10/05</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/10/05/字体图标的使用/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="字体图标的使用">字体图标的使用</span>
+            <span class="post-date" title="2019-10-05 08:10:58">2019/10/05</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/15/本地代码推送到远程git仓库/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="本地代码推送到远程git仓库">本地代码推送到远程git仓库</span>
+            <span class="post-date" title="2019-10-15 16:55:15">2019/10/15</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/19/本地管理多个rsa的key/"
+           data-tag="rsa,ssh,github"
+           data-author="" >
+            <span class="post-title" title="本地管理多个rsa的key">本地管理多个rsa的key</span>
+            <span class="post-date" title="2019-09-19 15:49:02">2019/09/19</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/10/05/滑动门技术实现/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="滑动门技术实现">滑动门技术实现</span>
+            <span class="post-date" title="2019-10-05 09:02:51">2019/10/05</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/20/腾讯云免费申请https证书/"
+           data-tag="https"
+           data-author="" >
+            <span class="post-title" title="腾讯云免费申请https证书">腾讯云免费申请https证书</span>
+            <span class="post-date" title="2019-09-20 12:32:22">2019/09/20</span>
+        </a>
+        
+        <a  class="前端 html5 "
+           href="/2019/10/14/解决ie低版本不认识html5标签/"
+           data-tag="html"
+           data-author="" >
+            <span class="post-title" title="解决ie低版本不认识html5标签">解决ie低版本不认识html5标签</span>
+            <span class="post-date" title="2019-10-14 20:21:35">2019/10/14</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/10/15/视差滚动插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="视差滚动插件">视差滚动插件</span>
+            <span class="post-date" title="2019-10-15 18:24:37">2019/10/15</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/27/解决keil5中文注释乱码方法/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="解决keil5中文注释乱码方法">解决keil5中文注释乱码方法</span>
+            <span class="post-date" title="2019-09-27 20:40:41">2019/09/27</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/11/谷歌浏览器设置网站信任flash/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="谷歌浏览器设置网站信任flash">谷歌浏览器设置网站信任flash</span>
+            <span class="post-date" title="2019-10-11 11:09:49">2019/10/11</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/17/通过IP获取到对应的地理位置信息/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="通过IP获取到对应的地理位置信息">通过IP获取到对应的地理位置信息</span>
+            <span class="post-date" title="2019-10-17 09:39:57">2019/10/17</span>
+        </a>
+        
+        <a  class="后端 php 开发环境 "
+           href="/2019/09/20/homestead安装swoole扩展/"
+           data-tag="php,ubuntu,swoole"
+           data-author="" >
+            <span class="post-title" title="homestead安装swoole扩展">homestead安装swoole扩展</span>
+            <span class="post-date" title="2019-09-20 09:11:41">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/faker数据填充详解/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="faker数据填充详解">faker数据填充详解</span>
+            <span class="post-date" title="2019-10-16 16:58:14">2019/10/16</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/10/10/fullpage-js全屏插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="fullpage.js全屏插件">fullpage.js全屏插件</span>
+            <span class="post-date" title="2019-10-10 20:18:51">2019/10/10</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/laravel修改用户模块的密码验证/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="laravel修改用户模块的密码验证">laravel修改用户模块的密码验证</span>
+            <span class="post-date" title="2019-10-16 17:28:15">2019/10/16</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/laravel结合webuploader-单页面多上传插件/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="laravel结合webuploader(单页面多上传插件)">laravel结合webuploader(单页面多上传插件)</span>
+            <span class="post-date" title="2019-10-16 17:07:50">2019/10/16</span>
+        </a>
+        
+        <a  class="后端 微信 "
+           href="/2019/10/15/微信JSSdk实现分享功能/"
+           data-tag="weixin"
+           data-author="" >
+            <span class="post-title" title="微信JSSdk实现分享功能">微信JSSdk实现分享功能</span>
+            <span class="post-date" title="2019-10-15 12:06:21">2019/10/15</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/25/Robots-txt-完整使用指南/"
+           data-tag="seo"
+           data-author="" >
+            <span class="post-title" title="Robots.txt 完整使用指南">Robots.txt 完整使用指南</span>
+            <span class="post-date" title="2019-10-25 11:12:17">2019/10/25</span>
+        </a>
+        
+        <a  class="运维 容器 "
+           href="/2019/09/19/centos7使用kubeadm搭建kubernetes集群/"
+           data-tag="docker,centos7,k8s集群"
+           data-author="" >
+            <span class="post-title" title="centos7使用kubeadm搭建kubernetes集群">centos7使用kubeadm搭建kubernetes集群</span>
+            <span class="post-date" title="2019-09-19 16:58:15">2019/09/19</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-faker数据填充详解" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">faker数据填充详解</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="后端">后端</a>/
+            
+                <a href="javascript:" data-rel="php">php</a>/
+            
+                <a href="javascript:" data-rel="Laravel">Laravel</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color4">php</a>
+            
+            <a href="javascript:" class="color3">laravel</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-10-29 10:01:26'>2019-10-16 16:58</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基本用法"><span class="toc-text">基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Formatters-格式化器"><span class="toc-text">Formatters 格式化器</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-Base-基本"><span class="toc-text">Faker\Provider\Base 基本</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-Lorem-文本"><span class="toc-text">Faker\Provider\Lorem 文本</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-en-US-Person-人物"><span class="toc-text">Faker\Provider\en_US\Person 人物</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-en-US-Address-地址"><span class="toc-text">Faker\Provider\en_US\Address  地址</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-en-US-PhoneNumber-电话号码"><span class="toc-text">Faker\Provider\en_US\PhoneNumber 电话号码</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-en-US-Company-公司"><span class="toc-text">Faker\Provider\en_US\Company 公司</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-en-US-Text-文本"><span class="toc-text">Faker\Provider\en_US\Text 文本</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Faker-Provider-DateTime-日期时间"><span class="toc-text">Faker\Provider\DateTime 日期时间</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-Internet-互联网"><span class="toc-text">Faker\Provider\Internet 互联网</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-UserAgent-用户代理"><span class="toc-text">Faker\Provider\UserAgent 用户代理</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Faker-Provider-Payment-支付"><span class="toc-text">Faker\Provider\Payment 支付</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Faker-Provider-Color-颜色"><span class="toc-text">Faker\Provider\Color 颜色</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Faker-Provider-File-文件"><span class="toc-text">Faker\Provider\File 文件</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-Image-图片"><span class="toc-text">Faker\Provider\Image 图片</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-Uuid-UUID"><span class="toc-text">Faker\Provider\Uuid UUID</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Faker-Provider-Barcode-条形码"><span class="toc-text">Faker\Provider\Barcode 条形码</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-Miscellaneous-各种各样的"><span class="toc-text">Faker\Provider\Miscellaneous 各种各样的</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-Biased-偏向的"><span class="toc-text">Faker\Provider\Biased 偏向的</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-HtmlLorem-html文本"><span class="toc-text">Faker\Provider\HtmlLorem html文本</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Language-specific-formatters-特定于语言的格式器"><span class="toc-text">Language specific formatters 特定于语言的格式器</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-zh-CN-Payment"><span class="toc-text">Faker\Provider\zh_CN\Payment</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-zh-TW-Person"><span class="toc-text">Faker\Provider\zh_TW\Person</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Faker-Provider-zh-TW-Company"><span class="toc-text">Faker\Provider\zh_TW\Company</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>在<code>laravel</code>中已经自动集成，无需手动安装。如需在其他地方使用，可使用以下命令进行安装。</p>
+<pre><code>composer require fzaninotto/faker</code></pre><p>为<code>Faker</code>指定中文支持<br>可通过在 <code>config/app.php</code> 增加如下配置使其支持中文：</p>
+<pre><code>&apos;faker_locale&apos; =&gt; &apos;zh_CN&apos;,</code></pre><h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><h5 id="Formatters-格式化器"><a href="#Formatters-格式化器" class="headerlink" title="Formatters 格式化器"></a>Formatters 格式化器</h5><h6 id="Faker-Provider-Base-基本"><a href="#Faker-Provider-Base-基本" class="headerlink" title="Faker\Provider\Base 基本"></a>Faker\Provider\Base 基本</h6><pre><code>$randomDigit = $faker-&gt;randomDigit;//生成0-9之间的随机数
+$randomDigitNotNull = $faker-&gt;randomDigitNotNull;//生成1-9之间的随机数
+$randomNumber = $faker-&gt;randomNumber(5, true);//生成5位整数，true表示严格模式，即只能5位
+$randomFloat = $faker-&gt;randomFloat(2, 0, 10);//生成浮点数，两位小数点，范围是0-10之间
+$numberBetween = $faker-&gt;numberBetween(0, 100);//生成随机整数，范围是0-100之间
+$randomLetter = $faker-&gt;randomLetter;//返回a-z之间任意的一个小写字符
+$randomElements = $faker-&gt;randomElements([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;, &apos;d&apos;], 2);//返回数组中的随机两个元素
+$randomElement = $faker-&gt;randomElement([&apos;aa&apos;, &apos;bb&apos;, &apos;cc&apos;, &apos;dd&apos;]);//随机返回数组中的一个元素
+$suffle = $faker-&gt;shuffle(&apos;hello, world&apos;); //将字串中的字符打乱返回
+$suffle = $faker-&gt;shuffle([&apos;aa&apos;, &apos;bb&apos;, &apos;cc&apos;, &apos;dd&apos;]); //将数组中的元素打乱返回
+$numerify = $faker-&gt;numerify(&apos;Hello #####&apos;);//#####替换为随机数字，输出类似：Hello 03501
+$lexify = $faker-&gt;lexify(&apos;Hello ???&apos;);//???替换为3个随机小写字符，输出类似：Hello krg
+$bothify = $faker-&gt;bothify(&apos;hello ##??&apos;);//#替换为随机数字,?替换为随机小写字符.输出类似：hello 15cr
+$asciify = $faker-&gt;asciify(&apos;hello *****&apos;);//*替换为随机字符，输出类似：hello 5Ynt[
+$regexify = $faker-&gt;regexify(&apos;[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}&apos;);//根据正则表达式返回字串</code></pre><h6 id="Faker-Provider-Lorem-文本"><a href="#Faker-Provider-Lorem-文本" class="headerlink" title="Faker\Provider\Lorem 文本"></a>Faker\Provider\Lorem 文本</h6><pre><code>$word = $faker-&gt;word;//返回一个单词
+$words = $faker-&gt;words(3, false);//返回3个单词，false表示返回一个数组；true表示返回一个字符串，单词之间用空格分开
+$sentence = $faker-&gt;sentence(5, true);//返回一个句子，false表示只能含有5个单词，true表示可以在5个单词左右
+$sentences = $faker-&gt;sentences(3, false);//返回3条句子，false表示返回一个数组，true表示将三条句子拼成一条返回
+$paragraph = $faker-&gt;paragraph(3, true);//返回一个段落，由3条句子组成。false表示只能有3条句子，true表示可以在3条句子左右
+$paragraphs = $faker-&gt;paragraphs(4, false);//返回4个段落。false表示返回一个数组，true表示将段落拼接在一起，并且用换行符分割
+$text = $faker-&gt;text(200);//返回一段文本，最多只能含有200个字符</code></pre><h6 id="Faker-Provider-en-US-Person-人物"><a href="#Faker-Provider-en-US-Person-人物" class="headerlink" title="Faker\Provider\en_US\Person 人物"></a>Faker\Provider\en_US\Person 人物</h6><pre><code>$title = $faker-&gt;title(&apos;female&apos;);//参数：title($gender = null|&apos;male&apos;|&apos;female&apos;) .返回称呼。例如：Mrs.|Prof.|Dr.
+$titleMale = $faker-&gt;titleMale;//返回男性称呼
+$titleFemale = $faker-&gt;titleFemale;//返回女性称呼
+$name = $faker-&gt;name(&apos;female&apos;);//参数：name($gender = null|&apos;male&apos;|&apos;female&apos;) .返回姓名
+$firstName = $faker-&gt;firstName(&apos;female&apos;);//参数：firstName($gender = null|&apos;male&apos;|&apos;female&apos;) .返回名
+$firstNameMale = $faker-&gt;firstNameMale;//男性名字
+$firstNameFemale = $faker-&gt;firstNameFemale;//女性名字
+$lastName = $faker-&gt;lastName;//姓</code></pre><h6 id="Faker-Provider-en-US-Address-地址"><a href="#Faker-Provider-en-US-Address-地址" class="headerlink" title="Faker\Provider\en_US\Address  地址"></a>Faker\Provider\en_US\Address  地址</h6><pre><code>$cityPrefix = $faker-&gt;cityPrefix;//城市前缀.如：Lake
+$secondaryAddress = $faker-&gt;secondaryAddress;//二级地址.如：Suite 061
+$state = $faker-&gt;state;//州、省（如：Colorado、四川省）
+$stateAbbr = $faker-&gt;stateAbbr;//省份简称.如：晋、蒙、浙、冀
+$citySuffix = $faker-&gt;citySuffix;//城市后缀.如：side、land、port、Ville
+$streetSuffix = $faker-&gt;streetSuffix;//街道后缀.如：Ramp、Plains
+$buildingNumber = $faker-&gt;buildingNumber;//建筑物编号
+$city = $faker-&gt;city;//城市
+$streetName = $faker-&gt;streetName;//街道名称
+$streetAddress = $faker-&gt;streetAddress;//街道地址
+$postcode = $faker-&gt;postcode;//邮政编码
+$address = $faker-&gt;address;//地址（城市+区）
+$country = $faker-&gt;country;//国家
+$latitude = $faker-&gt;latitude;//纬度 latitude($min = -90, $max = 90)
+$longitude = $faker-&gt;longitude;//经度 longitude($min = -180, $max = 180)</code></pre><h6 id="Faker-Provider-en-US-PhoneNumber-电话号码"><a href="#Faker-Provider-en-US-PhoneNumber-电话号码" class="headerlink" title="Faker\Provider\en_US\PhoneNumber 电话号码"></a>Faker\Provider\en_US\PhoneNumber 电话号码</h6><pre><code>$phoneNumber = $faker-&gt;phoneNumber;//手机号码
+$tollFreePhoneNumber = $faker-&gt;tollFreePhoneNumber;
+$e164PhoneNumber = $faker-&gt;e164PhoneNumber;</code></pre><h6 id="Faker-Provider-en-US-Company-公司"><a href="#Faker-Provider-en-US-Company-公司" class="headerlink" title="Faker\Provider\en_US\Company 公司"></a>Faker\Provider\en_US\Company 公司</h6><pre><code>$catchPhrase = $faker-&gt;catchPhrase;//口号
+$bs = $faker-&gt;bs;
+$company = $faker-&gt;company;//公司名称
+$companySuffix = $faker-&gt;companySuffix;//公司名称后缀
+$jobTitle = $faker-&gt;jobTitle;//职称</code></pre><h6 id="Faker-Provider-en-US-Text-文本"><a href="#Faker-Provider-en-US-Text-文本" class="headerlink" title="Faker\Provider\en_US\Text 文本"></a>Faker\Provider\en_US\Text 文本</h6><pre><code>$realText = $faker-&gt;realText();//一段叙事文本</code></pre><h5 id="Faker-Provider-DateTime-日期时间"><a href="#Faker-Provider-DateTime-日期时间" class="headerlink" title="Faker\Provider\DateTime 日期时间"></a>Faker\Provider\DateTime 日期时间</h5><pre><code>$unixTime = $faker-&gt;unixTime;//返回随机时间戳
+$unixTime = $faker-&gt;unixTime(&apos;now&apos;);//返回随机时间戳 可选最后截止时间
+$dateTime = $faker-&gt;dateTime;//返回一个随机的DateTime对象
+$dateTime = $faker-&gt;dateTime(&apos;now&apos;, &apos;PRC&apos;);//返回一个随机的DateTime对象，可选择最后截止时间和时区
+$dateTimeAD = $faker-&gt;dateTimeAD;//返回一个随机的DateTime对象
+$dateTimeAD = $faker-&gt;dateTimeAD(&apos;now&apos;, &apos;PRC&apos;);//返回一个随机的DateTime对象，可选择最后截止时间和时区
+$iso8601 = $faker-&gt;iso8601;//返回一个随机的字符串形式的时间
+$iso8601 = $faker-&gt;iso8601(&apos;now&apos;);//返回一个随机的字符串形式的时间,可选择最后截止时间
+$date = $faker-&gt;date(&quot;Y-m-d H:i:s&quot;, &apos;now&apos;);//指定格式返回时间,可选择最后截止时间
+$time = $faker-&gt;time(&apos;Y-m-d H:i:s&apos;, &apos;now&apos;);//(同上)指定格式返回时间,可选择最后截止时间
+$dateTimeBetween = $faker-&gt;dateTimeBetween(&apos;2019-01-01&apos;, &apos;now&apos;, &apos;PRC&apos;);//返回指定时间区间的DateTime对象，可选时区
+$dateTimeInInterval = $faker-&gt;dateTimeInInterval(&apos;-5 years&apos;, &apos;+5 days&apos;, &apos;PRC&apos;);//返回指定时间区间的DateTime对象，可选时区(第一个参数：开始时间，第二个参数：时间范围)
+$dateTimeThisCentury = $faker-&gt;dateTimeThisCentury;//返回一个本世纪内的DateTime对象
+$dateTimeThisCentury = $faker-&gt;dateTimeThisCentury(&apos;1950-01-01&apos;, &apos;PRC&apos;);//返回一个本世纪内的DateTime对象.指定截止时间和时区
+$dateTimeThisDecade = $faker-&gt;dateTimeThisDecade;//返回一个前十年内的DateTime对象
+$dateTimeThisDecade = $faker-&gt;dateTimeThisDecade(&apos;2015-01-01&apos;, &apos;PRC&apos;);//返回一个前十年内的DateTime对象.指定允许的最后时间和时区
+$dateTimeThisYear = $faker-&gt;dateTimeThisYear;//返回一个前一年内的DateTime对象
+$dateTimeThisYear = $faker-&gt;dateTimeThisYear(&apos;now&apos;, &apos;PRC&apos;);//返回一个前一年内的DateTime对象.指定允许的最后时间和时区
+$dateTimeThisMonth = $faker-&gt;dateTimeThisMonth;//返回一个前一个月内的DateTime对象
+$dateTimeThisMonth = $faker-&gt;dateTimeThisMonth(&apos;-15 days&apos;, &apos;PRC&apos;);//返回一个前一个月内的DateTime对象.指定允许的最后时间和时区
+$amPm = $faker-&gt;amPm;//上午/下午
+$dayOfMonth = $faker-&gt;dayOfMonth;//返回几号
+$dayOfWeek = $faker-&gt;dayOfWeek;//返回星期几
+$month = $faker-&gt;month;//返回月份
+$monthName = $faker-&gt;monthName;//返回月份名称
+$year = $faker-&gt;year;//返回年份
+$year = $faker-&gt;year(&apos;2000-01-01&apos;);//返回年份.可指定最后截止日期
+$timezone = $faker-&gt;timezone;//返回时区</code></pre><h6 id="Faker-Provider-Internet-互联网"><a href="#Faker-Provider-Internet-互联网" class="headerlink" title="Faker\Provider\Internet 互联网"></a>Faker\Provider\Internet 互联网</h6><pre><code>$email = $faker-&gt;email;//返回一个随机邮箱
+$safeEmail = $faker-&gt;safeEmail;//返回一个以@example.com结尾的安全邮箱
+$freeEmail = $faker-&gt;freeEmail;//返回一个随机邮箱
+$companyEmail = $faker-&gt;companyEmail;//返回企业邮箱（中文语言包下不可用）
+$freeEmailDomain = $faker-&gt;freeEmailDomain;//返回一个邮件域名
+$safeEmailDomain = $faker-&gt;safeEmailDomain;//返回安全的邮件域名
+$userName = $faker-&gt;userName;//用户名
+$password = $faker-&gt;password;//密码
+$domainName = $faker-&gt;domainName;//域名（中文语言包下不可用）
+$domainWord = $faker-&gt;domainWord;//不带后缀的域名（中文语言包下不可用）
+$tld = $faker-&gt;tld;//域名后缀：如com、org（中文语言包下不可用）
+$url = $faker-&gt;url;//返回一个随机url（中文语言包下不可用）
+$slug = $faker-&gt;slug;
+$ipv4 = $faker-&gt;ipv4;//返回一个ipv4地址
+$ipv6 = $faker-&gt;ipv6;//返回一个ipv6地址
+$localIpv4 = $faker-&gt;localIpv4;
+$macAddress = $faker-&gt;macAddress;//mac地址</code></pre><h6 id="Faker-Provider-UserAgent-用户代理"><a href="#Faker-Provider-UserAgent-用户代理" class="headerlink" title="Faker\Provider\UserAgent 用户代理"></a>Faker\Provider\UserAgent 用户代理</h6><pre><code>$userAgent = $faker-&gt;userAgent;//返回一个随机的用户代理信息
+$chrome = $faker-&gt;chrome;//返回一个chrome浏览器的用户代理信息
+$firefox = $faker-&gt;firefox;//返回一个firefox浏览器的用户代理信息
+$safari = $faker-&gt;safari;//返回一个safari浏览器的用户代理信息
+$opera = $faker-&gt;opera;//返回一个opera浏览器的用户代理信息
+$internetExplorer = $faker-&gt;internetExplorer;//返回一个internetExplorer浏览器的用户代理信息</code></pre><h5 id="Faker-Provider-Payment-支付"><a href="#Faker-Provider-Payment-支付" class="headerlink" title="Faker\Provider\Payment 支付"></a>Faker\Provider\Payment 支付</h5><pre><code>$creditCardType = $faker-&gt;creditCardType;//信用卡类型
+$creditCardNumber = $faker-&gt;creditCardNumber;//信用卡号
+$creditCardExpirationDate = $faker-&gt;creditCardExpirationDate;//信用卡到期日 (DateTime对象)
+$creditCardExpirationDateString = $faker-&gt;creditCardExpirationDateString;//信用卡到期日期字符串
+$creditCardDetails = $faker-&gt;creditCardDetails;//信用卡详情（数组）
+$swiftBicNumber = $faker-&gt;swiftBicNumber;
+$iban = $faker-&gt;iban;//国际银行账户</code></pre><h5 id="Faker-Provider-Color-颜色"><a href="#Faker-Provider-Color-颜色" class="headerlink" title="Faker\Provider\Color 颜色"></a>Faker\Provider\Color 颜色</h5><pre><code>$hexcolor = $faker-&gt;hexcolor;//十六进制的随机色：&apos;#fa3cc2&apos;
+$rgbcolor = $faker-&gt;rgbcolor;//RGB格式的随机色（字串形式）：&apos;0,255,122&apos;
+$rgbColorAsArray = $faker-&gt;rgbColorAsArray;//RGB格式的随机色（数组形式）：array(0,255,122)
+$rgbCssColor = $faker-&gt;rgbCssColor;//RGB格式的随机色的css表示：&apos;rgb(0,255,122)&apos;
+$safeColorName = $faker-&gt;safeColorName;//一个安全的随机色名称
+$colorName = $faker-&gt;colorName;//随机色名称</code></pre><h5 id="Faker-Provider-File-文件"><a href="#Faker-Provider-File-文件" class="headerlink" title="Faker\Provider\File 文件"></a>Faker\Provider\File 文件</h5><pre><code>$fileExtension = $faker-&gt;fileExtension;//文件后缀
+$mimeType = $faker-&gt;mimeType;//mime类型
+// 将一个随机文件从源文件复制到目标目录，并返回fullpath
+$file = $faker-&gt;file($sourceDir = &apos;./up1&apos;, $targetDir = &apos;./up2&apos;);
+// 将一个随机文件从源文件复制到目标目录，并返回basename
+$file = $faker-&gt;file($sourceDir = &apos;./up1&apos;, $targetDir = &apos;./up2&apos;, false);</code></pre><h6 id="Faker-Provider-Image-图片"><a href="#Faker-Provider-Image-图片" class="headerlink" title="Faker\Provider\Image 图片"></a>Faker\Provider\Image 图片</h6><pre><code>$imageUrl = $faker-&gt;imageUrl();//https://lorempixel.com/640/480/?93028
+$imageUrl = $faker-&gt;imageUrl(320, 320, &apos;cats&apos;);//https://lorempixel.com/320/320/cats/?68416
+$imageUrl = $faker-&gt;imageUrl(320, 320, &apos;cats&apos;, true, &apos;Faker&apos;);//https://lorempixel.com/320/320/cats/Faker/?68118
+$imageUrl = $faker-&gt;imageUrl(320, 320, &apos;cats&apos;, true, &apos;Faker&apos;, true);//https://lorempixel.com/gray/320/320/cats/Faker/?28732
+
+//生成图片并保存到本地 &apos;/tmp/13b73edae8443990be1aa8f1a483bc27.jpg&apos;
+$image = $faker-&gt;image(&apos;./tmp&apos;, 320, 320);
+//设置类别并生成图片保存到本地  &apos;tmp/13b73edae8443990be1aa8f1a483bc27.jpg&apos;
+$image = $faker-&gt;image(&apos;./tmp&apos;, 320, 320, &apos;cats&apos;);
+//设置类别并生成图片保存到本地，只返回文件名 &apos;13b73edae8443990be1aa8f1a483bc27.jpg&apos;
+$image = $faker-&gt;image(&apos;./tmp&apos;, 320, 320, &apos;cats&apos;, false);
+// 生成没有随机化的图像
+$image = $faker-&gt;image(&apos;./tmp&apos;, 320, 320, &apos;cats&apos;, true, false);
+//生成图片并加上水印字体  &apos;tmp/13b73edae8443990be1aa8f1a483bc27.jpg&apos;
+$image = $faker-&gt;image(&apos;./tmp&apos;, 320, 320, &apos;cats&apos;, true, true, &apos;Faker&apos;);</code></pre><h6 id="Faker-Provider-Uuid-UUID"><a href="#Faker-Provider-Uuid-UUID" class="headerlink" title="Faker\Provider\Uuid UUID"></a>Faker\Provider\Uuid UUID</h6><pre><code>$uuid = $faker-&gt;uuid;//生成一个uuid</code></pre><h5 id="Faker-Provider-Barcode-条形码"><a href="#Faker-Provider-Barcode-条形码" class="headerlink" title="Faker\Provider\Barcode 条形码"></a>Faker\Provider\Barcode 条形码</h5><pre><code>$ean13 = $faker-&gt;ean13;//8105964964473
+$ean8 = $faker-&gt;ean8;//05994441
+$isbn13 = $faker-&gt;isbn13;//9780971408739
+$isbn10 = $faker-&gt;isbn10;//0813387299</code></pre><h6 id="Faker-Provider-Miscellaneous-各种各样的"><a href="#Faker-Provider-Miscellaneous-各种各样的" class="headerlink" title="Faker\Provider\Miscellaneous 各种各样的"></a>Faker\Provider\Miscellaneous 各种各样的</h6><pre><code>$boolean = $faker-&gt;boolean;//生成一个布尔值
+$md5 = $faker-&gt;md5;//生成一个md5码
+$sha1 = $faker-&gt;sha1;//生成一个sha1
+$sha256 = $faker-&gt;sha256;//生成一个sha256
+$locale = $faker-&gt;locale;//生成一个地区编码：如zh_CN
+$countryCode = $faker-&gt;countryCode;//生成一个国家编码。如：UK
+$languageCode = $faker-&gt;languageCode;//生成一个语言编码.如：en
+$currencyCode = $faker-&gt;currencyCode;//生成一个货币代码.如：EUR
+$emoji = $faker-&gt;emoji;//生成一个emoji表情</code></pre><h6 id="Faker-Provider-Biased-偏向的"><a href="#Faker-Provider-Biased-偏向的" class="headerlink" title="Faker\Provider\Biased 偏向的"></a>Faker\Provider\Biased 偏向的</h6><pre><code>//得到10到20之间的随机数，并且更多机会接近20
+$biasedNumberBetween = $faker-&gt;biasedNumberBetween($min = 10, $max = 20, $function = &apos;sqrt&apos;);</code></pre><h6 id="Faker-Provider-HtmlLorem-html文本"><a href="#Faker-Provider-HtmlLorem-html文本" class="headerlink" title="Faker\Provider\HtmlLorem html文本"></a>Faker\Provider\HtmlLorem html文本</h6><pre><code>//生成不超过2级深度的HTML文档，并且在任何级别上都不超过3个元素。
+$randomHtml = $faker-&gt;randomHtml(2, 3);</code></pre><h4 id="Language-specific-formatters-特定于语言的格式器"><a href="#Language-specific-formatters-特定于语言的格式器" class="headerlink" title="Language specific formatters 特定于语言的格式器"></a>Language specific formatters 特定于语言的格式器</h4><h6 id="Faker-Provider-zh-CN-Payment"><a href="#Faker-Provider-zh-CN-Payment" class="headerlink" title="Faker\Provider\zh_CN\Payment"></a>Faker\Provider\zh_CN\Payment</h6><pre><code>// 生成一个随机的银行名称(基于真实的中国银行的列表)
+echo $faker-&gt;bank; // &apos;中国建设银行&apos;</code></pre><h6 id="Faker-Provider-zh-TW-Person"><a href="#Faker-Provider-zh-TW-Person" class="headerlink" title="Faker\Provider\zh_TW\Person"></a>Faker\Provider\zh_TW\Person</h6><pre><code>// Generates a random personal identify number
+echo $faker-&gt;personalIdentityNumber; // A223456789</code></pre><h6 id="Faker-Provider-zh-TW-Company"><a href="#Faker-Provider-zh-TW-Company" class="headerlink" title="Faker\Provider\zh_TW\Company"></a>Faker\Provider\zh_TW\Company</h6><pre><code>// Generates a random VAT / Company Tax number
+echo $faker-&gt;VAT; //23456789</code></pre>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 508110504@qq.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>faker数据填充详解</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.7k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John">John</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-10-16, 16:58:14</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-29, 10:01:26</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/16/faker数据填充详解/" title="faker数据填充详解">http://qnyt1993.github.io/2019/10/16/faker数据填充详解/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 John</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#javascript','#单片机','#fedora','#java','#jdbc','#php','#laravel','#nginx','#yum','#centos','#ubuntu','#docker','#centos7','#CSS','#git','#homestead','#other','#弹出框','#layer','#phpstorm','#xdebuge','#mysql','#rsa','#ssh','#github','#https','#html','#swoole','#weixin','#seo','#k8s集群',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+    .nav-right nav a.hover > span{
+        color: #ffffff !important;
+    }
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

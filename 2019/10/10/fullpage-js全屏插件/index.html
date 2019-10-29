@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>fullpage.js全屏插件 | 足迹人生的博客</title>
+  <meta name="keywords" content=" javascript ">
+  <meta name="description" content="fullpage.js全屏插件 | 足迹人生的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="about1佛系少年">
+<meta name="keywords" content="足迹人生，博客，分享，人生感悟">
+<meta property="og:type" content="website">
+<meta property="og:title" content="足迹人生的博客">
+<meta property="og:url" content="http://qnyt1993.github.io/about/index.html">
+<meta property="og:site_name" content="足迹人生的博客">
+<meta property="og:description" content="about1佛系少年">
+<meta property="og:locale" content="zh_cn">
+<meta property="og:updated_time" content="2019-10-29T11:52:26.380Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="足迹人生的博客">
+<meta name="twitter:description" content="about1佛系少年">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/sunburst.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1.0.1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value>
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>John</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="email" href="mailto:508110504@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=508110504&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(51)</small></div></li>
+    
+        
+            
+            <li><div data-rel="前端"><i class="fold iconfont icon-right"></i>前端<small>(11)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="插件">插件<small>(5)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="CSS">CSS<small>(4)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="知识点">知识点<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="html5">html5<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="硬件"><i class="fold iconfont icon-right"></i>硬件<small>(8)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="单片机"><i class="fold iconfont icon-right"></i>单片机<small>(8)</small></div>
+                            
+                                <ul class="sub hide">
+                                    
+                                    <li><div data-rel="51">51<small>(8)</small></div>
+                                    </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="运维"><i class="fold iconfont icon-right"></i>运维<small>(6)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="fedora">fedora<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="centos">centos<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="ubuntu">ubuntu<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="容器">容器<small>(2)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="nginx">nginx<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="后端"><i class="fold iconfont icon-right"></i>后端<small>(14)</small></div>
+                
+                    <ul class="sub hide">
+                        
+                        <li><div data-rel="java">java<small>(1)</small></div>
+                            
+                        </li>
+                            
+                        <li><div data-rel="php"><i class="fold iconfont icon-right"></i>php<small>(11)</small></div>
+                            
+                                <ul class="sub hide">
+                                    
+                                    <li><div data-rel="Laravel">Laravel<small>(8)</small></div>
+                                    </li>
+                                    
+                                    <li><div data-rel="开发环境">开发环境<small>(2)</small></div>
+                                    </li>
+                                    
+                                    <li><div data-rel="phpstorm">phpstorm<small>(1)</small></div>
+                                    </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                            
+                        <li><div data-rel="数据库"><i class="fold iconfont icon-right"></i>数据库<small>(1)</small></div>
+                            
+                                <ul class="sub hide">
+                                    
+                                    <li><div data-rel="mysql">mysql<small>(1)</small></div>
+                                    </li>
+                                    
+                                </ul>
+                            
+                        </li>
+                            
+                        <li><div data-rel="微信">微信<small>(1)</small></div>
+                            
+                        </li>
+                            
+                    </ul>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+            <li><div data-rel="杂记">杂记<small>(12)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="51">
+<input type="hidden" id="yelog_site_word_count" value="36.5k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="以 in: 开头进行全文搜索" autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">单片机</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">fedora</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">java</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">jdbc</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">php</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">laravel</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">nginx</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">yum</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">centos</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">ubuntu</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">centos7</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">CSS</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">git</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">homestead</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">other</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">弹出框</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">layer</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">phpstorm</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color3">xdebuge</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">rsa</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">ssh</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">github</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">https</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color5">html</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">swoole</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color2">weixin</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color4">seo</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a href="javascript:" class="color1">k8s集群</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <div id="local-search-result">
+
+    </div>
+    
+    <nav id="title-list-nav">
+        
+        <a  class="前端 插件 "
+           href="/2019/10/15/360度3D-旋转插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="360度3D 旋转插件">360度3D 旋转插件</span>
+            <span class="post-date" title="2019-10-15 16:44:46">2019/10/15</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/01/51单片机定时静态显示数码管/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机定时静态显示数码管">51单片机定时静态显示数码管</span>
+            <span class="post-date" title="2019-10-01 16:08:57">2019/10/01</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/01/51单片机定时闪烁灯/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机定时闪烁灯">51单片机定时闪烁灯</span>
+            <span class="post-date" title="2019-10-01 10:40:35">2019/10/01</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/03/51单片机实现定时动态数码管/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机实现定时动态数码管">51单片机实现定时动态数码管</span>
+            <span class="post-date" title="2019-10-03 19:25:44">2019/10/03</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/04/51单片机实现独立按键计数数码管显示/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机实现独立按键计数数码管显示">51单片机实现独立按键计数数码管显示</span>
+            <span class="post-date" title="2019-10-04 15:27:47">2019/10/04</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/09/27/51单片机流水灯/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机流水灯">51单片机流水灯</span>
+            <span class="post-date" title="2019-09-27 21:29:24">2019/09/27</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/03/51单片机点阵动画显示/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机点阵动画显示">51单片机点阵动画显示</span>
+            <span class="post-date" title="2019-10-03 19:40:55">2019/10/03</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/04/51单片机独立按键控制灯/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机独立按键控制灯">51单片机独立按键控制灯</span>
+            <span class="post-date" title="2019-10-04 08:54:04">2019/10/04</span>
+        </a>
+        
+        <a  class="硬件 单片机 51 "
+           href="/2019/10/03/51单片机的点阵图形静态显示/"
+           data-tag="单片机"
+           data-author="" >
+            <span class="post-title" title="51单片机的点阵图形静态显示">51单片机的点阵图形静态显示</span>
+            <span class="post-date" title="2019-10-03 19:09:54">2019/10/03</span>
+        </a>
+        
+        <a  class="运维 fedora "
+           href="/2019/10/11/Fedora添加软件桌面快捷方式/"
+           data-tag="fedora"
+           data-author="" >
+            <span class="post-title" title="Fedora添加软件桌面快捷方式">Fedora添加软件桌面快捷方式</span>
+            <span class="post-date" title="2019-10-11 12:28:47">2019/10/11</span>
+        </a>
+        
+        <a  class="后端 java "
+           href="/2019/10/11/JDBC插入中文数据出现？号地解决问题/"
+           data-tag="java,jdbc"
+           data-author="" >
+            <span class="post-title" title="JDBC插入中文数据出现？号地解决问题">JDBC插入中文数据出现？号地解决问题</span>
+            <span class="post-date" title="2019-10-11 10:59:39">2019/10/11</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/09/24/Laravel-程序优化/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="Laravel 程序优化">Laravel 程序优化</span>
+            <span class="post-date" title="2019-09-24 15:42:31">2019/09/24</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/09/20/Nginx-配置二级虚拟目录访问-Laravel-重写/"
+           data-tag="php,laravel,nginx"
+           data-author="" >
+            <span class="post-title" title="Nginx 配置二级虚拟目录访问 Laravel 重写">Nginx 配置二级虚拟目录访问 Laravel 重写</span>
+            <span class="post-date" title="2019-09-20 10:30:39">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/09/23/Laravel5-8自定义函数存放位置/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="Laravel5.8自定义函数存放位置">Laravel5.8自定义函数存放位置</span>
+            <span class="post-date" title="2019-09-23 21:42:24">2019/09/23</span>
+        </a>
+        
+        <a  class="运维 centos "
+           href="/2019/10/11/centos-配置本地yum源/"
+           data-tag="yum,centos"
+           data-author="" >
+            <span class="post-title" title="centos6配置本地yum源">centos6配置本地yum源</span>
+            <span class="post-date" title="2019-10-11 11:22:04">2019/10/11</span>
+        </a>
+        
+        <a  class="运维 ubuntu "
+           href="/2019/09/20/Ubuntu-18-04修改默认源为国内源/"
+           data-tag="ubuntu"
+           data-author="" >
+            <span class="post-title" title="Ubuntu 18.04修改默认源为国内源">Ubuntu 18.04修改默认源为国内源</span>
+            <span class="post-date" title="2019-09-20 09:00:16">2019/09/20</span>
+        </a>
+        
+        <a  class="运维 容器 "
+           href="/2019/09/20/centos7安装docker-ce/"
+           data-tag="docker,centos7"
+           data-author="" >
+            <span class="post-title" title="centos7安装docker-ce">centos7安装docker-ce</span>
+            <span class="post-date" title="2019-09-20 09:19:28">2019/09/20</span>
+        </a>
+        
+        <a  class="运维 nginx "
+           href="/2019/09/20/centos7安装最新稳定版nginx/"
+           data-tag="nginx,centos7"
+           data-author="" >
+            <span class="post-title" title="centos7安装最新稳定版nginx">centos7安装最新稳定版nginx</span>
+            <span class="post-date" title="2019-09-20 11:27:56">2019/09/20</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/09/30/css精灵图使用/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="css精灵图使用">css精灵图使用</span>
+            <span class="post-date" title="2019-09-30 11:03:36">2019/09/30</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/23/git删除远程-idea目录/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="git删除远程.idea目录">git删除远程.idea目录</span>
+            <span class="post-date" title="2019-09-23 21:32:39">2019/09/23</span>
+        </a>
+        
+        <a  class="后端 php 开发环境 "
+           href="/2019/09/20/homestead修改php版本/"
+           data-tag="php,ubuntu,homestead"
+           data-author="" >
+            <span class="post-title" title="homestead修改php版本">homestead修改php版本</span>
+            <span class="post-date" title="2019-09-20 08:49:10">2019/09/20</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/11/idea-代码部分格式化/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="idea 代码部分格式化">idea 代码部分格式化</span>
+            <span class="post-date" title="2019-10-11 09:09:53">2019/10/11</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/21/idea使用Vue的v-bind，v-on报错/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="idea使用Vue的v-bind，v-on报错">idea使用Vue的v-bind，v-on报错</span>
+            <span class="post-date" title="2019-10-21 17:17:08">2019/10/21</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/21/idea配置less自动编译/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="idea配置less自动编译">idea配置less自动编译</span>
+            <span class="post-date" title="2019-10-21 08:49:05">2019/10/21</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/10/14/jQuery-Easing-js-插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="jQuery Easing.js 插件">jQuery Easing.js 插件</span>
+            <span class="post-date" title="2019-10-14 09:47:58">2019/10/14</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/27/keil格式化项目代码/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="keil格式化项目代码">keil格式化项目代码</span>
+            <span class="post-date" title="2019-09-27 21:00:28">2019/09/27</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/laravel结合webuploader-单页面单个上传插件/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="laravel结合webuploader(单页面单个上传插件)">laravel结合webuploader(单页面单个上传插件)</span>
+            <span class="post-date" title="2019-10-16 17:23:05">2019/10/16</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/09/20/layer弹出框的简易封装和使用/"
+           data-tag="弹出框,layer"
+           data-author="" >
+            <span class="post-title" title="layer弹出框的简易封装和使用">layer弹出框的简易封装和使用</span>
+            <span class="post-date" title="2019-09-20 15:37:10">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 php phpstorm "
+           href="/2019/09/20/phpstorm配合xdebug进行本地调试代码/"
+           data-tag="php,phpstorm,xdebuge"
+           data-author="" >
+            <span class="post-title" title="phpstorm配合xdebug进行本地调试代码">phpstorm配合xdebug进行本地调试代码</span>
+            <span class="post-date" title="2019-09-20 11:15:44">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 数据库 mysql "
+           href="/2019/10/29/windows环境下搭建mysql主从/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="windows环境下搭建mysql主从">windows环境下搭建mysql主从</span>
+            <span class="post-date" title="2019-10-29 09:11:31">2019/10/29</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/11/window下的php命令行输出汉字乱码处理/"
+           data-tag="php"
+           data-author="" >
+            <span class="post-title" title="window下的php命令行输出汉字乱码处理">window下的php命令行输出汉字乱码处理</span>
+            <span class="post-date" title="2019-10-11 11:15:10">2019/10/11</span>
+        </a>
+        
+        <a  class="前端 知识点 "
+           href="/2019/09/24/使用before和after双伪元素清除浮动/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用before和after双伪元素清除浮动">使用before和after双伪元素清除浮动</span>
+            <span class="post-date" title="2019-09-24 23:09:50">2019/09/24</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/10/05/定位的盒子居中对齐完美写法/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="定位的盒子居中对齐完美写法">定位的盒子居中对齐完美写法</span>
+            <span class="post-date" title="2019-10-05 16:16:09">2019/10/05</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/10/05/字体图标的使用/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="字体图标的使用">字体图标的使用</span>
+            <span class="post-date" title="2019-10-05 08:10:58">2019/10/05</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/15/本地代码推送到远程git仓库/"
+           data-tag="git"
+           data-author="" >
+            <span class="post-title" title="本地代码推送到远程git仓库">本地代码推送到远程git仓库</span>
+            <span class="post-date" title="2019-10-15 16:55:15">2019/10/15</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/19/本地管理多个rsa的key/"
+           data-tag="rsa,ssh,github"
+           data-author="" >
+            <span class="post-title" title="本地管理多个rsa的key">本地管理多个rsa的key</span>
+            <span class="post-date" title="2019-09-19 15:49:02">2019/09/19</span>
+        </a>
+        
+        <a  class="前端 CSS "
+           href="/2019/10/05/滑动门技术实现/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="滑动门技术实现">滑动门技术实现</span>
+            <span class="post-date" title="2019-10-05 09:02:51">2019/10/05</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/20/腾讯云免费申请https证书/"
+           data-tag="https"
+           data-author="" >
+            <span class="post-title" title="腾讯云免费申请https证书">腾讯云免费申请https证书</span>
+            <span class="post-date" title="2019-09-20 12:32:22">2019/09/20</span>
+        </a>
+        
+        <a  class="前端 html5 "
+           href="/2019/10/14/解决ie低版本不认识html5标签/"
+           data-tag="html"
+           data-author="" >
+            <span class="post-title" title="解决ie低版本不认识html5标签">解决ie低版本不认识html5标签</span>
+            <span class="post-date" title="2019-10-14 20:21:35">2019/10/14</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/10/15/视差滚动插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="视差滚动插件">视差滚动插件</span>
+            <span class="post-date" title="2019-10-15 18:24:37">2019/10/15</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/09/27/解决keil5中文注释乱码方法/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="解决keil5中文注释乱码方法">解决keil5中文注释乱码方法</span>
+            <span class="post-date" title="2019-09-27 20:40:41">2019/09/27</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/11/谷歌浏览器设置网站信任flash/"
+           data-tag="other"
+           data-author="" >
+            <span class="post-title" title="谷歌浏览器设置网站信任flash">谷歌浏览器设置网站信任flash</span>
+            <span class="post-date" title="2019-10-11 11:09:49">2019/10/11</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/17/通过IP获取到对应的地理位置信息/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="通过IP获取到对应的地理位置信息">通过IP获取到对应的地理位置信息</span>
+            <span class="post-date" title="2019-10-17 09:39:57">2019/10/17</span>
+        </a>
+        
+        <a  class="后端 php 开发环境 "
+           href="/2019/09/20/homestead安装swoole扩展/"
+           data-tag="php,ubuntu,swoole"
+           data-author="" >
+            <span class="post-title" title="homestead安装swoole扩展">homestead安装swoole扩展</span>
+            <span class="post-date" title="2019-09-20 09:11:41">2019/09/20</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/faker数据填充详解/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="faker数据填充详解">faker数据填充详解</span>
+            <span class="post-date" title="2019-10-16 16:58:14">2019/10/16</span>
+        </a>
+        
+        <a  class="前端 插件 "
+           href="/2019/10/10/fullpage-js全屏插件/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="fullpage.js全屏插件">fullpage.js全屏插件</span>
+            <span class="post-date" title="2019-10-10 20:18:51">2019/10/10</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/laravel修改用户模块的密码验证/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="laravel修改用户模块的密码验证">laravel修改用户模块的密码验证</span>
+            <span class="post-date" title="2019-10-16 17:28:15">2019/10/16</span>
+        </a>
+        
+        <a  class="后端 php Laravel "
+           href="/2019/10/16/laravel结合webuploader-单页面多上传插件/"
+           data-tag="php,laravel"
+           data-author="" >
+            <span class="post-title" title="laravel结合webuploader(单页面多上传插件)">laravel结合webuploader(单页面多上传插件)</span>
+            <span class="post-date" title="2019-10-16 17:07:50">2019/10/16</span>
+        </a>
+        
+        <a  class="后端 微信 "
+           href="/2019/10/15/微信JSSdk实现分享功能/"
+           data-tag="weixin"
+           data-author="" >
+            <span class="post-title" title="微信JSSdk实现分享功能">微信JSSdk实现分享功能</span>
+            <span class="post-date" title="2019-10-15 12:06:21">2019/10/15</span>
+        </a>
+        
+        <a  class="杂记 "
+           href="/2019/10/25/Robots-txt-完整使用指南/"
+           data-tag="seo"
+           data-author="" >
+            <span class="post-title" title="Robots.txt 完整使用指南">Robots.txt 完整使用指南</span>
+            <span class="post-date" title="2019-10-25 11:12:17">2019/10/25</span>
+        </a>
+        
+        <a  class="运维 容器 "
+           href="/2019/09/19/centos7使用kubeadm搭建kubernetes集群/"
+           data-tag="docker,centos7,k8s集群"
+           data-author="" >
+            <span class="post-title" title="centos7使用kubeadm搭建kubernetes集群">centos7使用kubeadm搭建kubernetes集群</span>
+            <span class="post-date" title="2019-09-19 16:58:15">2019/09/19</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-fullpage-js全屏插件" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">fullpage.js全屏插件</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a href="javascript:" data-rel="前端">前端</a>/
+            
+                <a href="javascript:" data-rel="插件">插件</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color1">javascript</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2019-10-29 12:42:18'>2019-10-10 20:18</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.5k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#fullpage-全屏插件"><span class="toc-text">fullpage 全屏插件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-主要功能有："><span class="toc-text">1. 主要功能有：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-使用步骤"><span class="toc-text">2. 使用步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-引入资源文件"><span class="toc-text">2.1 引入资源文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-编写HTML-结构"><span class="toc-text">2.2 编写HTML 结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-初始化"><span class="toc-text">2.3 初始化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-演示效果"><span class="toc-text">3. 演示效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-参数补充"><span class="toc-text">4. 参数补充</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-详细参数"><span class="toc-text">4.1 详细参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-详细参数说明"><span class="toc-text">4.2 详细参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-fullPage-js-方法"><span class="toc-text">4.3 fullPage.js 方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-回调函数"><span class="toc-text">4.4 回调函数</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="fullpage-全屏插件"><a href="#fullpage-全屏插件" class="headerlink" title="fullpage 全屏插件"></a>fullpage 全屏插件</h1><blockquote>
+<p>全屏滚动效果，原生js也很好实现，主要是用 mousewheel  鼠标滚轮滚动事件， 来判断上滚动还是下滚动，之后设置每次滚动的高度为屏幕的高度即可。但是，虽然效果简单，但是兼容性很差，要做很多兼容处理及比较麻烦啦！</p>
+</blockquote>
+<p><code>fullPage.js</code> 是一个基于 <code>jQuery</code> 的插件，它能够帮你很方便、很轻松的制作出全屏网站。</p>
+<p><code>github</code> 官网     <code>https://github.com/alvarotrigo/fullPage.js</code>  </p>
+<p>中文演示地址   <code>http://www.dowebok.com/demo/2014/77/</code> </p>
+<h2 id="1-主要功能有："><a href="#1-主要功能有：" class="headerlink" title="1. 主要功能有："></a>1. 主要功能有：</h2><pre><code>支持鼠标滚动
+
+支持前进后退和键盘控制
+
+多个回调函数
+
+支持手机、平板触摸事件
+
+支持 CSS3 动画
+
+支持窗口缩放
+
+窗口缩放时自动调整
+
+可设置滚动宽度、背景颜色、滚动速度、循环选项、回调、文本对齐方式等等</code></pre><h2 id="2-使用步骤"><a href="#2-使用步骤" class="headerlink" title="2. 使用步骤"></a>2. 使用步骤</h2><h3 id="2-1-引入资源文件"><a href="#2-1-引入资源文件" class="headerlink" title="2.1 引入资源文件"></a>2.1 引入资源文件</h3><pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/jquery.fullPage.css&quot;&gt;
+&lt;!--需要引入jquery--&gt;
+&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;!-- jquery.easings.min.js 是必须的，用于 easing 参数，也可以使用完整的 jQuery UI 代替 --&gt;
+&lt;script src=&quot;js/jquery.easing.1.3.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.fullPage.min.js&quot;&gt;&lt;/script&gt;
+&lt;!--引入初始化js--&gt;
+&lt;script src=&quot;js/myPage.js&quot;&gt;&lt;/script&gt;</code></pre><h3 id="2-2-编写HTML-结构"><a href="#2-2-编写HTML-结构" class="headerlink" title="2.2 编写HTML 结构"></a>2.2 编写HTML 结构</h3><pre><code>&lt;div id=&quot;fullpage&quot;&gt;
+    &lt;div class=&quot;section&quot;&gt;第一屏&lt;/div&gt;
+    &lt;div class=&quot;section&quot;&gt;第二屏&lt;/div&gt;
+    &lt;div class=&quot;section&quot;&gt;
+        &lt;div class=&quot;slide&quot;&gt;第三屏的第一屏&lt;/div&gt;
+        &lt;div class=&quot;slide&quot;&gt;第三屏的第二屏&lt;/div&gt;
+        &lt;div class=&quot;slide&quot;&gt;第三屏的第三屏&lt;/div&gt;
+        &lt;div class=&quot;slide&quot;&gt;第三屏的第四屏&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;section&quot;&gt;第四屏&lt;/div&gt;
+&lt;/div&gt; </code></pre><p>  结构大致如下图所示</p>
+<p><img src="https://i.loli.net/2019/10/29/1NYbrzcOd7mpKk9.png" alt></p>
+<h3 id="2-3-初始化"><a href="#2-3-初始化" class="headerlink" title="2.3 初始化"></a>2.3 初始化</h3><p>myPage.js</p>
+<pre><code>$(document).ready(function() {
+    $(&apos;#fullpage&apos;).fullpage({
+        //options here
+        autoScrolling:true,
+        scrollHorizontally: true
+    });
+
+}); </code></pre><h2 id="3-演示效果"><a href="#3-演示效果" class="headerlink" title="3. 演示效果"></a>3. 演示效果</h2><iframe src="//player.bilibili.com/player.html?aid=70789760&cid=122649501&page=1" scrolling="no" width="100%" height="600" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<h2 id="4-参数补充"><a href="#4-参数补充" class="headerlink" title="4. 参数补充"></a>4. 参数补充</h2><h3 id="4-1-详细参数"><a href="#4-1-详细参数" class="headerlink" title="4.1 详细参数"></a>4.1 详细参数</h3><p>所有选项设置的更复杂的初始化如下所示：</p>
+<pre><code>var myFullpage = new fullpage(&apos;#fullpage&apos;, {
+   //导航
+   menu: &apos;#menu&apos;,
+   lockAnchors: false,
+   anchors:[&apos;firstPage&apos;, &apos;secondPage&apos;],
+   navigation: false,
+   navigationPosition: &apos;right&apos;,
+   navigationTooltips: [&apos;firstSlide&apos;, &apos;secondSlide&apos;],
+   showActiveTooltip: false,
+   slidesNavigation: false,
+   slidesNavPosition: &apos;bottom&apos;,
+
+   //滚动
+   css3: true,
+   scrollingSpeed: 700,
+   autoScrolling: true,
+   fitToSection: true,
+   fitToSectionDelay: 1000,
+   scrollBar: false,
+   easing: &apos;easeInOutCubic&apos;,
+   easingcss3: &apos;ease&apos;,
+   loopBottom: false,
+   loopTop: false,
+   loopHorizontal: true,
+   continuousVertical: false,
+   continuousHorizontal: false,
+   scrollHorizontally: false,
+   interlockedSlides: false,
+   dragAndMove: false,
+   offsetSections: false,
+   resetSliders: false,
+   fadingEffect: false,
+   normalScrollElements: &apos;#element1, .element2&apos;,
+   scrollOverflow: false,
+   scrollOverflowReset: false,
+   scrollOverflowOptions: null,
+   touchSensitivity: 15,
+   bigSectionsDestination: null,
+
+   //可访问
+   keyboardScrolling: true,
+   animateAnchor: true,
+   recordHistory: true,
+
+   //设计
+   controlArrows: true,
+   verticalCentered: true,
+   sectionsColor : [&apos;#ccc&apos;, &apos;#fff&apos;],
+   paddingTop: &apos;3em&apos;,
+   paddingBottom: &apos;10px&apos;,
+   fixedElements: &apos;#header, .footer&apos;,
+   responsiveWidth: 0,
+   responsiveHeight: 0,
+   responsiveSlides: false,
+   parallax: false,
+   parallaxOptions: {type: &apos;reveal&apos;, percentage: 62, property: &apos;translate&apos;},
+   cards: false,
+   cardsOptions: {perspective: 100, fadeContent: true, fadeBackground: true},
+
+
+   //自定义选择器
+   sectionSelector: &apos;.section&apos;,
+   slideSelector: &apos;.slide&apos;,
+
+   lazyLoading: true,
+
+   //事件
+   onLeave: function(origin, destination, direction){},
+   afterLoad: function(origin, destination, direction){},
+   afterRender: function(){},
+   afterResize: function(width, height){},
+   afterReBuild: function(){},
+   afterResponsive: function(isResponsive){},
+   afterSlideLoad: function(section, origin, destination, direction){},
+   onSlideLeave: function(section, origin, destination, direction){}
+});     </code></pre><h3 id="4-2-详细参数说明"><a href="#4-2-详细参数说明" class="headerlink" title="4.2 详细参数说明"></a>4.2 详细参数说明</h3><table>
+<thead>
+<tr>
+<th>选项</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>verticalCentered</td>
+<td>字符串</td>
+<td>true</td>
+<td>内容是否垂直居中</td>
+</tr>
+<tr>
+<td>resize</td>
+<td>布尔值</td>
+<td>false</td>
+<td>字体是否随着窗口缩放而缩放</td>
+</tr>
+<tr>
+<td>sectionColor</td>
+<td>函数</td>
+<td>无</td>
+<td>设置背景颜色</td>
+</tr>
+<tr>
+<td>anchors</td>
+<td>数组</td>
+<td>无</td>
+<td>定义锚链接</td>
+</tr>
+<tr>
+<td>scrollingSpeed</td>
+<td>整数</td>
+<td>700</td>
+<td>滚动速度，单位为毫秒</td>
+</tr>
+<tr>
+<td>easing</td>
+<td>字符串</td>
+<td>easeInQuart</td>
+<td>滚动动画方式</td>
+</tr>
+<tr>
+<td>menu</td>
+<td>布尔值</td>
+<td>false</td>
+<td>绑定菜单，设定的相关属性与 anchors 的值对应后，菜单可以控制滚动</td>
+</tr>
+<tr>
+<td>navigation</td>
+<td>布尔值</td>
+<td>false</td>
+<td>是否显示项目导航</td>
+</tr>
+<tr>
+<td>navigationPosition</td>
+<td>字符串</td>
+<td>right</td>
+<td>项目导航的位置，可选 left 或 right</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>navigationTooltips</td>
+<td>数组</td>
+<td>空</td>
+<td>项目导航的 tip</td>
+</tr>
+<tr>
+<td>slidesNavigation</td>
+<td>布尔值</td>
+<td>false</td>
+<td>是否显示左右滑块的项目导航</td>
+</tr>
+<tr>
+<td>slidesNavPosition</td>
+<td>字符串</td>
+<td>bottom</td>
+<td>左右滑块的项目导航的位置，可选 top 或 bottom</td>
+</tr>
+<tr>
+<td>controlArrowColor</td>
+<td>字符串</td>
+<td>#fff</td>
+<td>左右滑块的箭头的背景颜色</td>
+</tr>
+<tr>
+<td>loopBottom</td>
+<td>布尔值</td>
+<td>false</td>
+<td>滚动到最底部后是否滚回顶部</td>
+</tr>
+<tr>
+<td>loopTop</td>
+<td>布尔值</td>
+<td>false</td>
+<td>滚动到最顶部后是否滚底部</td>
+</tr>
+<tr>
+<td>loopHorizontal</td>
+<td>布尔值</td>
+<td>true</td>
+<td>左右滑块是否循环滑动</td>
+</tr>
+<tr>
+<td>autoScrolling</td>
+<td>布尔值</td>
+<td>true</td>
+<td>是否使用插件的滚动方式，如果选择 false，则会出现浏览器自带的滚动条</td>
+</tr>
+<tr>
+<td>scrollOverflow</td>
+<td>布尔值</td>
+<td>false</td>
+<td>内容超过满屏后是否显示滚动条</td>
+</tr>
+<tr>
+<td>css3</td>
+<td>布尔值</td>
+<td>false</td>
+<td>是否使用 CSS3 transforms 滚动</td>
+</tr>
+<tr>
+<td>paddingTop</td>
+<td>字符串</td>
+<td>0</td>
+<td>与顶部的距离</td>
+</tr>
+<tr>
+<td>paddingBottom</td>
+<td>字符串</td>
+<td>0</td>
+<td>与底部距离</td>
+</tr>
+<tr>
+<td>fixedElements</td>
+<td>字符串</td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>normalScrollElements</td>
+<td></td>
+<td>无</td>
+<td></td>
+</tr>
+<tr>
+<td>keyboardScrolling</td>
+<td>布尔值</td>
+<td>true</td>
+<td>是否使用键盘方向键导航</td>
+</tr>
+<tr>
+<td>touchSensitivity</td>
+<td>整数</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>continuousVertical</td>
+<td>布尔值</td>
+<td>false</td>
+<td>是否循环滚动，与 loopTop 及 loopBottom 不兼容</td>
+</tr>
+<tr>
+<td>animateAnchor</td>
+<td>布尔值</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>normalScrollElementTouchThreshold</td>
+<td>整数</td>
+<td>5</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="4-3-fullPage-js-方法"><a href="#4-3-fullPage-js-方法" class="headerlink" title="4.3 fullPage.js 方法"></a>4.3 fullPage.js 方法</h3><p>注意方法的使用时需要添加：<br>         <code>$.fn.fullpage</code>   比如</p>
+<pre><code>$.fn.fullpage.moveTo(1);</code></pre><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>moveSectionUp()</td>
+<td>向上滚动</td>
+</tr>
+<tr>
+<td>moveSectionDown()</td>
+<td>向下滚动</td>
+</tr>
+<tr>
+<td>moveTo(section, slide)</td>
+<td>滚动到</td>
+</tr>
+<tr>
+<td>moveSlideRight()</td>
+<td>slide 向右滚动</td>
+</tr>
+<tr>
+<td>moveSlideLeft()</td>
+<td>slide 向左滚动</td>
+</tr>
+<tr>
+<td>setAutoScrolling()</td>
+<td>设置页面滚动方式，设置为 true 时自动滚动</td>
+</tr>
+<tr>
+<td>setAllowScrolling()</td>
+<td>添加或删除鼠标滚轮/触控板控制</td>
+</tr>
+<tr>
+<td>setKeyboardScrolling()</td>
+<td>添加或删除键盘方向键控制</td>
+</tr>
+<tr>
+<td>setScrollingSpeed()</td>
+<td>定义以毫秒为单位的滚动速度</td>
+</tr>
+</tbody></table>
+<h3 id="4-4-回调函数"><a href="#4-4-回调函数" class="headerlink" title="4.4 回调函数"></a>4.4 回调函数</h3><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>afterLoad</td>
+<td>滚动到某一屏后的回调函数，接收 anchorLink 和 index 两个参数，anchorLink 是锚链接的名称，index 是序号，从1开始计算</td>
+</tr>
+<tr>
+<td>onLeave</td>
+<td>滚动前的回调函数，接收 index、nextIndex 和 direction 3个参数：index 是离开的“页面”的序号，从1开始计算；nextIndex 是滚动到的“页面”的序号，从1开始计算；direction 判断往上滚动还是往下滚动，值是 up 或 down。</td>
+</tr>
+<tr>
+<td>afterRender</td>
+<td>页面结构生成后的回调函数，或者说页面初始化完成后的回调函数</td>
+</tr>
+<tr>
+<td>afterSlideLoad</td>
+<td>滚动到某一水平滑块后的回调函数，与 afterLoad 类似，接收 anchorLink、index、slideIndex、direction 4个参数</td>
+</tr>
+<tr>
+<td>onSlideLeave</td>
+<td>某一水平滑块滚动前的回调函数，与 onLeave 类似，接收 anchorLink、index、slideIndex、direction 4个参数</td>
+</tr>
+</tbody></table>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 508110504@qq.com </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>fullpage.js全屏插件</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.5k</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John">John</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-10-10, 20:18:51</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-29, 12:42:18</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/10/fullpage-js全屏插件/" title="fullpage.js全屏插件">http://qnyt1993.github.io/2019/10/10/fullpage-js全屏插件/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2019-2020 John</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#javascript','#单片机','#fedora','#java','#jdbc','#php','#laravel','#nginx','#yum','#centos','#ubuntu','#docker','#centos7','#CSS','#git','#homestead','#other','#弹出框','#layer','#phpstorm','#xdebuge','#mysql','#rsa','#ssh','#github','#https','#html','#swoole','#weixin','#seo','#k8s集群',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: ;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+    .nav-right nav a.hover > span{
+        color: #ffffff !important;
+    }
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
