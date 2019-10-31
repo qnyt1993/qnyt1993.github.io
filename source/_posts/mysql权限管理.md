@@ -1,6 +1,6 @@
 ---
 title: mysql权限管理
-categories: [运维,数据库,mysql]
+categories: [运维,database]
 tags: [mysql]
 date: 2019-10-31 10:01:01
 ---

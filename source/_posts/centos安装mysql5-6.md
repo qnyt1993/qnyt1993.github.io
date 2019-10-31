@@ -1,6 +1,6 @@
 ---
 title: centos安装mysql5.6
-categories: [运维,数据库,mysql]
+categories: [运维,database]
 tags: [mysql]
 date: 2019-10-30 20:25:32
 ---
