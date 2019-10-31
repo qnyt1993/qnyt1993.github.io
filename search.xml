@@ -15,9 +15,7 @@
           
           <category> 运维 </category>
           
-          <category> 数据库 </category>
-          
-          <category> mysql </category>
+          <category> database </category>
           
       </categories>
       
@@ -44,9 +42,7 @@
           
           <category> 运维 </category>
           
-          <category> 数据库 </category>
-          
-          <category> mysql </category>
+          <category> database </category>
           
       </categories>
       
@@ -1238,9 +1234,9 @@
       
         <tags>
             
-            <tag> centos7 </tag>
-            
             <tag> nginx </tag>
+            
+            <tag> centos7 </tag>
             
         </tags>
       
