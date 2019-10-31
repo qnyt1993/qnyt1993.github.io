@@ -4,16 +4,45 @@
   
     
     <entry>
-      <title>centos安装mysql5.6</title>
-      <link href="/2019/10/30/centos%E5%AE%89%E8%A3%85mysql5-6/"/>
-      <url>/2019/10/30/centos%E5%AE%89%E8%A3%85mysql5-6/</url>
+      <title>mysql权限管理</title>
+      <link href="/2019/10/31/mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
+      <url>/2019/10/31/mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>环境: centos7<br>mysql版本: mysql-5.6.46</p></blockquote><h2 id="安装mysql5-6"><a href="#安装mysql5-6" class="headerlink" title="安装mysql5.6"></a>安装mysql5.6</h2><pre><code># 1. 使用rz上传tar包# 2. 校验md5值,检查是否和下载页面的md5值一致md5sum mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz# 解压tar zxf mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz yum install libaiogroupadd mysqluseradd -r -g mysql mysqlcd /usr/local/ln -s /root/mysql-5.6.46-linux-glibc2.12-x86_64 mysqlcd mysqlchown -R mysql .chgrp -R mysql .scripts/mysql_install_db --user=mysqlchown -R root .chown -R mysql data# 启动bin/mysqld_safe --user=mysql &amp;# 关闭mysqladmin shutdown# another start/etc/init.d/mysql.server start#         stop/etc/init.d/mysql.server stopcp support-files/mysql.server /etc/init.d/mysql.server</code></pre><h2 id="配置开机自启"><a href="#配置开机自启" class="headerlink" title="配置开机自启"></a>配置开机自启</h2><pre><code># 查看mysql是否开机自启chkconfig --list | grep mysql# 设置开机自启chkconfig --add mysql.server  # 配置 /usr/local/mysql/bin路径到环境变量vim /etc/profile# 在底部追加export PATH=/usr/local/mysql/bin:$PATHsource /etc/profile# 查看mysql 版本mysql -V</code></pre><h2 id="mysql5-7安装脚本"><a href="#mysql5-7安装脚本" class="headerlink" title="mysql5.7安装脚本"></a>mysql5.7安装脚本</h2><pre><code>#!/bin/shgroupadd mysqluseradd -r -g mysql mysqlcd /usr/localif [ -d mysql-5.7.9-linux-glibc2.5-x86_64 ]; then echo &quot;mysql folder is exists&quot;elsetar -xzvf  mysql-5.7.9-linux-glibc2.5-x86_64.tar.gzfiln -s  mysql-5.7.9-linux-glibc2.5-x86_64 mysqlcd mysqlecho &quot;export PATH=/usr/local/mysql/bin:$PATH&quot;&gt;&gt;/etc/profilesource /etc/profileservice iptables stopchkconfig iptables offif [ -d mysql-files ]; thenecho &quot;mysql-files is exists&quot;elsemkdir mysql-filesfichmod 770 mysql-fileschown -R mysql .chgrp -R mysql .if [ -d data ]; thenmv data data_$(date+%Y%m%d)else echo &quot;data is not exist&quot;fi./bin/mysqld --initialize --user=mysqlchown -R root .chown -R mysql data mysql-files./bin/mysqld_safe --user=mysql &amp;cp -rf support-files/mysql.server /etc/init.d/mysql.server#./usr/local/mysql/support-files/mysql.server stopps -ef|grep mysql|grep -v grep |awk -F&apos; &apos; &apos;{print $2}&apos;|xargs kill -s 9       #serivce mysql stop./bin/mysqld_safe --skip-grant-tables &amp;      #service mysql start      #./usr/local/mysql/support-files/mysql.server startmysql -uroot -puse mysql;update mysql.user set authentication_string=password(&apos;123456&apos;) where user=&apos;root&apos;;flush privileges;quit;mysql -uroot -p123456set password for &apos;root&apos;@&apos;localhost&apos;=password(&quot;123456&quot;);flush privileges;</code></pre>]]></content>
+        <content type="html"><![CDATA[<h4 id="1-创建用户"><a href="#1-创建用户" class="headerlink" title="1. 创建用户"></a>1. 创建用户</h4><pre><code>CREATE USER username IDENTIFIED BY &apos;password&apos; ;</code></pre><h4 id="2-用户授权"><a href="#2-用户授权" class="headerlink" title="2. 用户授权"></a>2. 用户授权</h4><p>grant授权格式：<code>grant 权限列表 on 库.表 to &#39;user_name&#39;@&#39;host name&#39; identified by &quot;密码&quot;;</code></p><p>user_name是用户名，host_name为主机名，即用户连接Mysql时所在主机的名字。</p><pre><code>//授予用户增删改查权限grant select,insert,update,delete on *.* to &apos;user&apos;@&apos;%&apos;; //给予全部权限grant all privileges on *.* to &apos;user&apos;@&apos;%&apos; ;//限制john用户只有查询cms数据库的权限,可限制到表grant select on cms.* to &apos;john&apos;@&apos;127.0.0.1&apos;;</code></pre><p>每次操作完要刷新授权</p><pre><code>flush privileges;</code></pre><h4 id="3-查看用户权限"><a href="#3-查看用户权限" class="headerlink" title="3. 查看用户权限"></a>3. 查看用户权限</h4><pre><code>show grants for &apos;用户&apos;@&apos;ip&apos;;# show grants for &apos;root&apos;@&apos;127.0.0.1&apos;;</code></pre><h4 id="4-回收权限"><a href="#4-回收权限" class="headerlink" title="4. 回收权限"></a>4. 回收权限</h4><p> revoke回收权限格式：<code>revoke 权限列表 on 库.表 from 用户名@&#39;ip&#39;;</code></p><pre><code>revoke select,insert,update,delete ON *.* from &apos;user&apos;@&apos;%&apos;;</code></pre><h4 id="5-删除用户"><a href="#5-删除用户" class="headerlink" title="5. 删除用户"></a>5. 删除用户</h4><pre><code>drop user &apos;john&apos;@&apos;127.0.0.1&apos;;    </code></pre>]]></content>
       
       
       <categories>
           
-          <category> 后端 </category>
+          <category> 运维 </category>
+          
+          <category> 数据库 </category>
+          
+          <category> mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>centos安装mysql5.6</title>
+      <link href="/2019/10/30/centos%E5%AE%89%E8%A3%85mysql5-6/"/>
+      <url>/2019/10/30/centos%E5%AE%89%E8%A3%85mysql5-6/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>环境: centos7<br>mysql版本: mysql-5.6.46</p></blockquote><h2 id="安装mysql5-6"><a href="#安装mysql5-6" class="headerlink" title="安装mysql5.6"></a>安装mysql5.6</h2><pre><code># 1. 使用rz上传tar包# 2. 校验md5值,检查是否和下载页面的md5值一致md5sum mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz# 解压tar zxf mysql-5.6.46-linux-glibc2.12-x86_64.tar.gz yum install libaiogroupadd mysqluseradd -r -g mysql mysqlcd /usr/local/ln -s /root/mysql-5.6.46-linux-glibc2.12-x86_64 mysqlcd mysqlchown -R mysql .chgrp -R mysql .scripts/mysql_install_db --user=mysqlchown -R root .chown -R mysql data# 启动bin/mysqld_safe --user=mysql &amp;# 关闭mysqladmin shutdown# another start/etc/init.d/mysql.server start#         stop/etc/init.d/mysql.server stopcp support-files/mysql.server /etc/init.d/mysql.server</code></pre><h2 id="配置开机自启"><a href="#配置开机自启" class="headerlink" title="配置开机自启"></a>配置开机自启</h2><pre><code># 查看mysql是否开机自启chkconfig --list | grep mysql# 设置开机自启chkconfig --add mysql.server  # 配置 /usr/local/mysql/bin路径到环境变量vim /etc/profile# 在底部追加export PATH=/usr/local/mysql/bin:$PATHsource /etc/profile# 查看mysql 版本mysql -V# 设置密码set password = password(&apos;新密码&apos;);</code></pre><h2 id="mysql5-7安装脚本"><a href="#mysql5-7安装脚本" class="headerlink" title="mysql5.7安装脚本"></a>mysql5.7安装脚本</h2><pre><code>#!/bin/shgroupadd mysqluseradd -r -g mysql mysqlcd /usr/localif [ -d mysql-5.7.9-linux-glibc2.5-x86_64 ]; then echo &quot;mysql folder is exists&quot;elsetar -xzvf  mysql-5.7.9-linux-glibc2.5-x86_64.tar.gzfiln -s  mysql-5.7.9-linux-glibc2.5-x86_64 mysqlcd mysqlecho &quot;export PATH=/usr/local/mysql/bin:$PATH&quot;&gt;&gt;/etc/profilesource /etc/profileservice iptables stopchkconfig iptables offif [ -d mysql-files ]; thenecho &quot;mysql-files is exists&quot;elsemkdir mysql-filesfichmod 770 mysql-fileschown -R mysql .chgrp -R mysql .if [ -d data ]; thenmv data data_$(date+%Y%m%d)else echo &quot;data is not exist&quot;fi./bin/mysqld --initialize --user=mysqlchown -R root .chown -R mysql data mysql-files./bin/mysqld_safe --user=mysql &amp;cp -rf support-files/mysql.server /etc/init.d/mysql.server#./usr/local/mysql/support-files/mysql.server stopps -ef|grep mysql|grep -v grep |awk -F&apos; &apos; &apos;{print $2}&apos;|xargs kill -s 9       #serivce mysql stop./bin/mysqld_safe --skip-grant-tables &amp;      #service mysql start      #./usr/local/mysql/support-files/mysql.server startmysql -uroot -puse mysql;update mysql.user set authentication_string=password(&apos;123456&apos;) where user=&apos;root&apos;;flush privileges;quit;mysql -uroot -p123456set password for &apos;root&apos;@&apos;localhost&apos;=password(&quot;123456&quot;);flush privileges;</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
           
           <category> 数据库 </category>
           
