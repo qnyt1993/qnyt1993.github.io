@@ -1,6 +1,6 @@
 ---
 title: centos安装mysql5.6
-categories: [后端,数据库,mysql]
+categories: [运维,数据库,mysql]
 tags: [mysql]
 date: 2019-10-30 20:25:32
 ---
@@ -59,6 +59,9 @@ date: 2019-10-30 20:25:32
     
     # 查看mysql 版本
     mysql -V
+    
+    # 设置密码
+    set password = password('新密码');
     
 ## mysql5.7安装脚本
 
