@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>mysql5.7单机多实例安装</title>
+      <link href="/2019/10/31/mysql5-7%E5%8D%95%E6%9C%BA%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%AE%89%E8%A3%85/"/>
+      <url>/2019/10/31/mysql5-7%E5%8D%95%E6%9C%BA%E5%A4%9A%E5%AE%9E%E4%BE%8B%E5%AE%89%E8%A3%85/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>基于之前的mysql5.7单实例安装</p></blockquote><p>修改<code>/etc/my.cnf</code>文件如下(这里配置4个实例，可自行修改数目)</p><pre><code>## 多实例配置文件，可以mysqld_multi --example 查看例子#[root@MyServer /]&gt; cat /etc/my.cnf #[client]           # 这个标签如果配置了用户和密码，                    # 并且[mysqld_multi]下没有配置用户名密码，                    # 则mysqld_multi stop时, 会使用这个密码                    # 如果没有精确的匹配，则匹配[client]标签#user = root        #password = 123#-------------[mysqld_multi]mysqld = /usr/local/mysql/bin/mysqld_safemysqladmin = /usr/local/mysql/bin/mysqladminuser = multi_adminpass = 123  # 官方文档中写的password，但是存在bug，需要改成pass(v5.7.9)            # 写成password，start时正常，stop时，报如下错误            # Access denied for user &apos;multi_admin&apos;@&apos;localhost&apos; (using password: YES)log = /var/log/mysqld_multi.log[mysqld1]            server-id = 11socket = /tmp/mysql.sock1port = 3306bind_address = 0.0.0.0datadir = /data1user = mysqlperformance_schema = offinnodb_buffer_pool_size = 32Mskip_name_resolve = 1log_error = error.logpid-file = /data1/mysql.pid1[mysqld2]server-id = 12socket = /tmp/mysql.sock2port = 3307bind_address = 0.0.0.0datadir = /data2user = mysqlperformance_schema = offinnodb_buffer_pool_size = 32Mskip_name_resolve = 1log_error = error.logpid-file = /data2/mysql.pid2[mysqld3]server-id = 13socket = /tmp/mysql.sock3port = 3308bind_address = 0.0.0.0datadir = /data3user = mysqlperformance_schema = offinnodb_buffer_pool_size = 32Mskip_name_resolve = 1log_error = error.logpid-file = /data3/mysql.pid3[mysqld4]server-id = 14socket = /tmp/mysql.sock4port = 3309bind_address = 0.0.0.0datadir = /data4user = mysqlperformance_schema = offinnodb_buffer_pool_size = 32Mskip_name_resolve = 1log_error = error.logpid-file = /data4/mysql.pid4</code></pre><hr><h3 id="准备好数据目录，并初始化安装"><a href="#准备好数据目录，并初始化安装" class="headerlink" title="准备好数据目录，并初始化安装"></a>准备好数据目录，并初始化安装</h3><pre><code>[root@MyServer ~]&gt; mkdir /data1[root@MyServer ~]&gt; mkdir /data2[root@MyServer ~]&gt; mkdir /data3[root@MyServer ~]&gt; mkdir /data4[root@MyServer ~]&gt; chown mysql.mysql /data{1..4}[root@MyServer ~]&gt; mysqld --initialize --user=mysql --datadir=/data1## 一些日志输出，并提示临时密码，下同#[root@MyServer ~]&gt; mysqld --initialize --user=mysql --datadir=/data2[root@MyServer ~]&gt; mysqld --initialize --user=mysql --datadir=/data3[root@MyServer ~]&gt; mysqld --initialize --user=mysql --datadir=/data4  # 安装后，需要检查error.log 确保没有错误出现[root@MyServer ~]&gt; cp /usr/local/mysql/support-files/mysqld_multi.server  /etc/init.d/mysqld_multid # 拷贝启动脚本，方便自启[root@MyServer ~]&gt; chkconfig mysqld_multid on  [root@MyServer ~]&gt; mysqld_multi  start[root@MyServer ~]&gt; mysqld_multi  reportReporting MySQL serversMySQL server from group: mysqld1 is runningMySQL server from group: mysqld2 is runningMySQL server from group: mysqld3 is runningMySQL server from group: mysqld4 is running[root@MyServer ~]&gt; netstat -tunlp | grep mysql[root@MyServer ~]&gt; netstat -tunlp | grep mysqltcp        0      0 :::3307                     :::*                        LISTEN      6221/mysqld         tcp        0      0 :::3308                     :::*                        LISTEN      6232/mysqld         tcp        0      0 :::3309                     :::*                        LISTEN      6238/mysqld         tcp        0      0 :::3306                     :::*                        LISTEN      6201/mysqld         [root@MyServer ~]&gt; mysql -u root -S /tmp/mysql.sock1 -p -P3306## 使用-S /tmp/mysql.sock1 进行登录，并输入临时密码后，修改密码，下同#[root@MyServer ~]&gt; mysql -u root -S /tmp/mysql.sock2 -p -P3307[root@MyServer ~]&gt; mysql -u root -S /tmp/mysql.sock3 -p -P3308[root@MyServer ~]&gt; mysql -u root -S /tmp/mysql.sock4 -p -P3309#输入临时密码,开始修改密码#MySQL版本5.7.6版本以前用户可以使用如下命令：mysql&gt; SET PASSWORD = PASSWORD(&apos;123456&apos;); #MySQL版本5.7.6版本开始的用户可以使用如下命令：mysql&gt; ALTER USER USER() IDENTIFIED BY &apos;123456&apos;;  ---- mysql1--mysql&gt; show variables like &quot;port&quot;; +---------------+-------+| Variable_name | Value |+---------------+-------+| port          | 3306  |+---------------+-------+1 row in set (0.00 sec)mysql&gt; show variables like &quot;socket&quot;;+---------------+------------------+| Variable_name | Value            |+---------------+------------------+| socket        | /tmp/mysql.sock1 |+---------------+------------------+1 row in set (0.01 sec)mysql&gt; show variables like &quot;datadir&quot;;+---------------+---------+| Variable_name | Value   |+---------------+---------+| datadir       | /data1/ |+---------------+---------+1 row in set (0.00 sec)---- mysql2, mysql3, mysql4 类似。可以看到与my.cnf中对应的port和socket--## 关闭数据库(mysqld_multi stop 好像不起作用)pkill -9 mysql  </code></pre><blockquote><p>如果使用    mysqld_multi report 发现有配置的数据库实例没有running ，查看配置datadir中错误日志，如果没有错误日志的话，可以删除datadir中的文件,检查my.cnf中是否有错误，重新执行初始化</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mysql低版本升级到5.7</title>
       <link href="/2019/10/31/mysql%E4%BD%8E%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E5%88%B05-7/"/>
       <url>/2019/10/31/mysql%E4%BD%8E%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E5%88%B05-7/</url>

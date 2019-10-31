@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>360度3D 旋转插件 | 足迹人生的博客</title>
-  <meta name="keywords" content=" javascript ">
-  <meta name="description" content="360度3D 旋转插件 | 足迹人生的博客">
+  <title>mysql5.7单机多实例安装 | 足迹人生的博客</title>
+  <meta name="keywords" content=" mysql ">
+  <meta name="description" content="mysql5.7单机多实例安装 | 足迹人生的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content=".article-header {         padding: 0;         padding-top: 26px;         border-left: none;         text-align: center;     }     .article-header:hover {         border-left: none;     }     .art">
 <meta name="keywords" content="足迹人生，博客，分享，人生感悟">
@@ -945,9 +945,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-360度3D-旋转插件" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-mysql5-7单机多实例安装" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">360度3D 旋转插件</h1>
+        <h1 class="article-title">mysql5.7单机多实例安装</h1>
     
     <div class="article-meta">
         
@@ -955,28 +955,28 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="前端">前端</a>/
+                <a href="javascript:" data-rel="运维">运维</a>/
             
-                <a href="javascript:" data-rel="插件">插件</a>
+                <a href="javascript:" data-rel="database">database</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color1">javascript</a>
+            <a href="javascript:" class="color1">mysql</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-29 12:36:27'>2019-10-15 16:44</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-31 21:50:22'>2019-10-31 21:41</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:867</span>
+        <span>字数:842</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -995,7 +995,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#特点"><span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码基本使用"><span class="toc-text">代码基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-引用js文件包"><span class="toc-text">1. 引用js文件包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-书写结构："><span class="toc-text">2.书写结构：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-书写css"><span class="toc-text">3. 书写css</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-调用文件对象"><span class="toc-text">4.调用文件对象</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数和方法"><span class="toc-text">参数和方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关代码资源"><span class="toc-text">相关代码资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-text">参考</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备好数据目录，并初始化安装"><span class="toc-text">准备好数据目录，并初始化安装</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1011,168 +1011,166 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p><code>Circlr</code>插件是一款基于<code>jQuery</code>的可以对图片进行360度全方位旋转展示的插件。<code>Circlr</code>通过按一定角度规律拍摄的产品图片，制作出可以使用鼠标拖动、鼠标滚轮和移动触摸来进行图片逐帧旋转的效果。比先前的<code>Rollerblade</code>，动画顺畅，也更易于控制，非常适合于商品的展示。</p>
+<p>基于之前的mysql5.7单实例安装</p>
 </blockquote>
-<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><pre><code>1. 支持水平或垂直方向旋转。
+<p>修改<code>/etc/my.cnf</code>文件如下(这里配置4个实例，可自行修改数目)</p>
+<pre><code>#
+# 多实例配置文件，可以mysqld_multi --example 查看例子
+#
+[root@MyServer /]&gt; cat /etc/my.cnf 
+#[client]           # 这个标签如果配置了用户和密码，
+                    # 并且[mysqld_multi]下没有配置用户名密码，
+                    # 则mysqld_multi stop时, 会使用这个密码
+                    # 如果没有精确的匹配，则匹配[client]标签
+#user = root        
+#password = 123
+#-------------
+[mysqld_multi]
+mysqld = /usr/local/mysql/bin/mysqld_safe
+mysqladmin = /usr/local/mysql/bin/mysqladmin
+user = multi_admin
+pass = 123  # 官方文档中写的password，但是存在bug，需要改成pass(v5.7.9)
+            # 写成password，start时正常，stop时，报如下错误
+            # Access denied for user &apos;multi_admin&apos;@&apos;localhost&apos; (using password: YES)
+log = /var/log/mysqld_multi.log
 
-2. 支持移动触摸事件。
 
-3. 支持滚动事件。
+[mysqld1]            
+server-id = 11
+socket = /tmp/mysql.sock1
+port = 3306
+bind_address = 0.0.0.0
+datadir = /data1
+user = mysql
+performance_schema = off
+innodb_buffer_pool_size = 32M
+skip_name_resolve = 1
+log_error = error.log
+pid-file = /data1/mysql.pid1
 
-4. 图片预加载处理。
 
-5. 可以反向和循环旋转图片。</code></pre><h2 id="代码基本使用"><a href="#代码基本使用" class="headerlink" title="代码基本使用"></a>代码基本使用</h2><p>使用方法：</p>
-<h4 id="1-引用js文件包"><a href="#1-引用js文件包" class="headerlink" title="1. 引用js文件包"></a>1. 引用js文件包</h4><pre><code>&lt;script src=&quot;js/jquery.min.js&quot;&gt;&lt;/script&gt;
+[mysqld2]
+server-id = 12
+socket = /tmp/mysql.sock2
+port = 3307
+bind_address = 0.0.0.0
+datadir = /data2
+user = mysql
+performance_schema = off
+innodb_buffer_pool_size = 32M
+skip_name_resolve = 1
+log_error = error.log
+pid-file = /data2/mysql.pid2
 
-&lt;script src=&quot;js/circlr.min.js&quot;&gt;&lt;/script&gt;</code></pre><h4 id="2-书写结构："><a href="#2-书写结构：" class="headerlink" title="2.书写结构："></a>2.书写结构：</h4><pre><code>&lt;div class=&quot;container&quot;&gt;
-        &lt;div id=&quot;circlr&quot;&gt;
-             &lt;img data-src=&quot;picture/1.png&quot; /&gt;
-             &lt;img data-src=&quot;picture/2.png&quot; /&gt; 
-             &lt;img data-src=&quot;picture/3.png&quot; /&gt;  
-             ...  //  这里放入所需图片即可， 图片太多可用js动态添加
-            &lt;div id=&quot;loader&quot;&gt;&lt;/div&gt;
-        &lt;/div&gt;
- &lt;/div&gt;</code></pre><p>注意， 是 自定义属性  <code>data-src</code> 里面写路径    2.  <code>loader</code> 是 加载项 </p>
-<p>图片太多了可以用js动态添加</p>
-<pre><code>&lt;div class=&quot;container&quot;&gt;
-    &lt;div id=&quot;circlr&quot;&gt;
-        &lt;div id=&quot;loader&quot;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;script&gt;
-        // 需要准备 74个图片
-        for (var i = 1; i &lt;= 74; i++) {
-            // 创建图片   别忘更换属性
-            var img = $(&quot;&lt;img  data-src=&apos;images/&quot; + i + &quot;.png&apos;/&gt;&quot;);
-            // 追加到 circlr里面
-            $(&quot;#circlr&quot;).append(img);// prepend 内部的前面添加  append 内部的后面添加
-        }
-    &lt;/script&gt;
-&lt;/div&gt;</code></pre><h4 id="3-书写css"><a href="#3-书写css" class="headerlink" title="3. 书写css"></a>3. 书写css</h4><pre><code>#circlr {
-  cursor: move;
-  margin: 0 auto;
-  min-height: 100px;
-  position: relative;
-}
-#circlr #loader {
-  background: url(../images/loader.gif) center center no-repeat;
-  bottom: 0;
-  display: none;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}</code></pre><h4 id="4-调用文件对象"><a href="#4-调用文件对象" class="headerlink" title="4.调用文件对象"></a>4.调用文件对象</h4><pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
-    var crl = circlr(&apos;circlr&apos;, {
-      scroll : true,
-      loader : &apos;loader&apos;
-    });
-&lt;/script&gt;</code></pre><p><img src="https://i.loli.net/2019/10/29/FwSnUcdk2OM3Xp4.png" alt></p>
-<h2 id="参数和方法"><a href="#参数和方法" class="headerlink" title="参数和方法"></a>参数和方法</h2><p>参数</p>
-<table>
-<thead>
-<tr>
-<th align="left">参数名</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">mouse</td>
-<td align="left">是否通过鼠标进行图片旋转，默认值为true。</td>
-</tr>
-<tr>
-<td align="left">scroll</td>
-<td align="left">是否通过scroll进行图片旋转，默认值为false。</td>
-</tr>
-<tr>
-<td align="left">vertical</td>
-<td align="left">是否在垂直方向上移动鼠标时旋转图片，默认值为false。</td>
-</tr>
-<tr>
-<td align="left">reverse</td>
-<td align="left">是否反转方向，默认值为false。</td>
-</tr>
-<tr>
-<td align="left">cycle</td>
-<td align="left">是否循环旋转图片，默认值为true。</td>
-</tr>
-<tr>
-<td align="left">start</td>
-<td align="left">开始动画帧，默认值为0。</td>
-</tr>
-<tr>
-<td align="left">speed</td>
-<td align="left">动画帧通过circlr.turn(i)切换的速度，默认值为50毫秒。</td>
-</tr>
-<tr>
-<td align="left">autoplay</td>
-<td align="left">是否自动进行图片360度旋转播放，默认值为false。</td>
-</tr>
-<tr>
-<td align="left">playSpeed</td>
-<td align="left">动画序列的播放速度，默认值为100毫秒。</td>
-</tr>
-<tr>
-<td align="left">loader</td>
-<td align="left">预加载DOM元素的ID。</td>
-</tr>
-<tr>
-<td align="left">ready</td>
-<td align="left">图片加载完成后的回调函数。</td>
-</tr>
-<tr>
-<td align="left">change</td>
-<td align="left">动画帧改编之后的回调函数（以当前帧和总帧数为参数）。</td>
-</tr>
-</tbody></table>
-<p>方法</p>
-<table>
-<thead>
-<tr>
-<th align="left">方法名</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">crl.el</td>
-<td align="left">返回对象的DOM元素节点。</td>
-</tr>
-<tr>
-<td align="left">crl.length</td>
-<td align="left">返回对象的总的动画帧数。</td>
-</tr>
-<tr>
-<td align="left">crl.turn(i)</td>
-<td align="left">动画旋转到第i帧。</td>
-</tr>
-<tr>
-<td align="left">crl.go(i)</td>
-<td align="left">动画跳转到第i帧。</td>
-</tr>
-<tr>
-<td align="left">crl.play()</td>
-<td align="left">开始动画序列的播放。</td>
-</tr>
-<tr>
-<td align="left">crl.stop()</td>
-<td align="left">停止动画播放。</td>
-</tr>
-<tr>
-<td align="left">crl.hide()</td>
-<td align="left">隐藏对象的DOM元素节点。</td>
-</tr>
-<tr>
-<td align="left">crl.show()</td>
-<td align="left">显示对象的DOM元素节点。</td>
-</tr>
-<tr>
-<td align="left">crl.set(options)</td>
-<td align="left">在插件初始化之后改变对象的参数：vertical reverse cycle speed playSpeed</td>
-</tr>
-</tbody></table>
-<h2 id="相关代码资源"><a href="#相关代码资源" class="headerlink" title="相关代码资源"></a>相关代码资源</h2><p>码云<br><a href="https://gitee.com/an1993/3D-car" target="_blank" rel="noopener">3d旋转car</a></p>
-<p>微云<br><a href="https://share.weiyun.com/5NzLozb" target="_blank" rel="noopener">3d旋转car</a></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://blog.csdn.net/zero________________/article/details/80373248" target="_blank" rel="noopener">基于jquery Circlr插件实现360度3D旋转 商品展示案例</a></p>
-<p><a href="https://www.jb51.net/article/72460.htm" target="_blank" rel="noopener">基于jQuery Circlr插件实现产品图片360度旋转</a></p>
+
+[mysqld3]
+server-id = 13
+socket = /tmp/mysql.sock3
+port = 3308
+bind_address = 0.0.0.0
+datadir = /data3
+user = mysql
+performance_schema = off
+innodb_buffer_pool_size = 32M
+skip_name_resolve = 1
+log_error = error.log
+pid-file = /data3/mysql.pid3
+
+
+[mysqld4]
+server-id = 14
+socket = /tmp/mysql.sock4
+port = 3309
+bind_address = 0.0.0.0
+datadir = /data4
+user = mysql
+performance_schema = off
+innodb_buffer_pool_size = 32M
+skip_name_resolve = 1
+log_error = error.log
+pid-file = /data4/mysql.pid4</code></pre><hr>
+<h3 id="准备好数据目录，并初始化安装"><a href="#准备好数据目录，并初始化安装" class="headerlink" title="准备好数据目录，并初始化安装"></a>准备好数据目录，并初始化安装</h3><pre><code>[root@MyServer ~]&gt; mkdir /data1
+[root@MyServer ~]&gt; mkdir /data2
+[root@MyServer ~]&gt; mkdir /data3
+[root@MyServer ~]&gt; mkdir /data4
+[root@MyServer ~]&gt; chown mysql.mysql /data{1..4}
+[root@MyServer ~]&gt; mysqld --initialize --user=mysql --datadir=/data1
+#
+# 一些日志输出，并提示临时密码，下同
+#
+[root@MyServer ~]&gt; mysqld --initialize --user=mysql --datadir=/data2
+[root@MyServer ~]&gt; mysqld --initialize --user=mysql --datadir=/data3
+[root@MyServer ~]&gt; mysqld --initialize --user=mysql --datadir=/data4  
+
+# 安装后，需要检查error.log 确保没有错误出现
+[root@MyServer ~]&gt; cp /usr/local/mysql/support-files/mysqld_multi.server  /etc/init.d/mysqld_multid 
+# 拷贝启动脚本，方便自启
+[root@MyServer ~]&gt; chkconfig mysqld_multid on  
+
+[root@MyServer ~]&gt; mysqld_multi  start
+[root@MyServer ~]&gt; mysqld_multi  report
+Reporting MySQL servers
+MySQL server from group: mysqld1 is running
+MySQL server from group: mysqld2 is running
+MySQL server from group: mysqld3 is running
+MySQL server from group: mysqld4 is running
+[root@MyServer ~]&gt; netstat -tunlp | grep mysql
+[root@MyServer ~]&gt; netstat -tunlp | grep mysql
+tcp        0      0 :::3307                     :::*                        LISTEN      6221/mysqld         
+tcp        0      0 :::3308                     :::*                        LISTEN      6232/mysqld         
+tcp        0      0 :::3309                     :::*                        LISTEN      6238/mysqld         
+tcp        0      0 :::3306                     :::*                        LISTEN      6201/mysqld         
+
+[root@MyServer ~]&gt; mysql -u root -S /tmp/mysql.sock1 -p -P3306
+#
+# 使用-S /tmp/mysql.sock1 进行登录，并输入临时密码后，修改密码，下同
+#
+[root@MyServer ~]&gt; mysql -u root -S /tmp/mysql.sock2 -p -P3307
+[root@MyServer ~]&gt; mysql -u root -S /tmp/mysql.sock3 -p -P3308
+[root@MyServer ~]&gt; mysql -u root -S /tmp/mysql.sock4 -p -P3309
+#输入临时密码,开始修改密码
+
+#MySQL版本5.7.6版本以前用户可以使用如下命令：
+mysql&gt; SET PASSWORD = PASSWORD(&apos;123456&apos;); 
+
+#MySQL版本5.7.6版本开始的用户可以使用如下命令：
+mysql&gt; ALTER USER USER() IDENTIFIED BY &apos;123456&apos;;  
+
+--
+-- mysql1
+--
+mysql&gt; show variables like &quot;port&quot;; 
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| port          | 3306  |
++---------------+-------+
+1 row in set (0.00 sec)
+
+mysql&gt; show variables like &quot;socket&quot;;
++---------------+------------------+
+| Variable_name | Value            |
++---------------+------------------+
+| socket        | /tmp/mysql.sock1 |
++---------------+------------------+
+1 row in set (0.01 sec)
+
+mysql&gt; show variables like &quot;datadir&quot;;
++---------------+---------+
+| Variable_name | Value   |
++---------------+---------+
+| datadir       | /data1/ |
++---------------+---------+
+1 row in set (0.00 sec)
+
+--
+-- mysql2, mysql3, mysql4 类似。可以看到与my.cnf中对应的port和socket
+--
+
+## 关闭数据库(mysqld_multi stop 好像不起作用)
+pkill -9 mysql  </code></pre><blockquote>
+<p>如果使用    mysqld_multi report 发现有配置的数据库实例没有running ，查看配置datadir中错误日志，如果没有错误日志的话，可以删除datadir中的文件,检查my.cnf中是否有错误，重新执行初始化</p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 508110504@qq.com </span>
@@ -1182,12 +1180,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>360度3D 旋转插件</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">867</span></p>
+    <p><span class="copy-title">文章标题:</span>mysql5.7单机多实例安装</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">842</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John">John</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-15, 16:44:46</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-29, 12:36:27</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/15/360度3D-旋转插件/" title="360度3D 旋转插件">http://qnyt1993.github.io/2019/10/15/360度3D-旋转插件/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-31, 21:41:22</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-31, 21:50:22</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/31/mysql5-7单机多实例安装/" title="mysql5.7单机多实例安装">http://qnyt1993.github.io/2019/10/31/mysql5-7单机多实例安装/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
