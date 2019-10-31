@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>mysql低版本升级到5.7</title>
+      <link href="/2019/10/31/mysql%E4%BD%8E%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E5%88%B05-7/"/>
+      <url>/2019/10/31/mysql%E4%BD%8E%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7%E5%88%B05-7/</url>
+      
+        <content type="html"><![CDATA[<h2 id="升级步骤"><a href="#升级步骤" class="headerlink" title="升级步骤"></a>升级步骤</h2><pre><code>#安全的停止数据库的运行/etc/init.d/mysql.server stop# 解压mysql tar包tar zxf mysql-5.7.28-linux-glibc2.12-x86_64.tar.gzmv mysql-5.7.28-linux-glibc2.12-x86_64 /usr/local/cd /usr/local/# 删除原先软连接,建立新的软连接unlink mysqlln -s mysql-5.7.28-linux-glibc2.12-x86_64/ mysql        #此时，MySQL的应用程序版本已经升级完成        #/etc/init.d/mysqld        #/etc/profile中PATH增加的/usr/local/mysql/bin        #都不需要做任何的改变，即可将当前系统的mysql版本升级完成        #注意：此时只是应用程序升级完成，系统表仍然还是5.6的版本cd /usr/local/mysqlchown root.mysql . -R/etc/init.d/mysql.server start # 执行更新系统表，输入密码为原先的密码mysql_upgrade -p -s        #参数 -s 一定要加,表示只更新系统表，-s: upgrade-system-tables        #如果不加-s,则会把所有库的表以5.7.9的方式重建，线上千万别这样操作        #因为数据库二进制文件是兼容的，无需升级        #什么时候不需要-s ? 当一些老的版本的存储格式需要新的特性，        #                 来提升性能时，不加-s        #即使通过slave进行升级，也推荐使用该方式升级，速度比较快# 查看升级后的版本mysql -V# mysql  Ver 14.14 Distrib 5.7.28, for linux-glibc2.12 (x86_64) using  EditLine wrapper</code></pre><blockquote><p>5.1.X<code>、</code>5.5.X<code>、</code>5.6.X<code>是可以直接通过该方式升级到</code>5.7.X<code>。</code>5.0.X`未知，需要测试</p></blockquote><h2 id="升级完毕后登录"><a href="#升级完毕后登录" class="headerlink" title="升级完毕后登录"></a>升级完毕后登录</h2><pre><code>[root@localhost mysql]# mysql -uroot -pEnter password: Welcome to the MySQL monitor.  Commands end with ; or \g.Your MySQL connection id is 3Server version: 5.7.28 MySQL Community Server (GPL)Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.Oracle is a registered trademark of Oracle Corporation and/or itsaffiliates. Other names may be trademarks of their respectiveowners.Type &apos;help;&apos; or &apos;\h&apos; for help. Type &apos;\c&apos; to clear the current input statement.mysql&gt; show databases;+--------------------+| Database           |+--------------------+| information_schema || cms                || mysql              || performance_schema || sys                |   # 5.7 新的sys库| test               |+--------------------+6 rows in set (0.00 sec)mysql&gt; </code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+          <category> database </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mysql权限管理</title>
       <link href="/2019/10/31/mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/"/>
       <url>/2019/10/31/mysql%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86/</url>
