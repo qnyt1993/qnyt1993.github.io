@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>51单片机定时闪烁灯 | 足迹人生的博客</title>
-  <meta name="keywords" content=" 单片机 ">
-  <meta name="description" content="51单片机定时闪烁灯 | 足迹人生的博客">
+  <title>docker常用命令 | 足迹人生的博客</title>
+  <meta name="keywords" content>
+  <meta name="description" content="docker常用命令 | 足迹人生的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content=".article-header {         padding: 0;         padding-top: 26px;         border-left: none;         text-align: center;     }     .article-header:hover {         border-left: none;     }     .art">
 <meta name="keywords" content="足迹人生，博客，分享，人生感悟">
@@ -953,40 +953,24 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-51单片机定时闪烁灯" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-docker常用命令" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">51单片机定时闪烁灯</h1>
+        <h1 class="article-title">docker常用命令</h1>
     
     <div class="article-meta">
         
         
         
-        <span class="book">
-            
-                <a href="javascript:" data-rel="硬件">硬件</a>/
-            
-                <a href="javascript:" data-rel="单片机">单片机</a>/
-            
-                <a href="javascript:" data-rel="51">51</a>
-            
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="javascript:" class="color4">单片机</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-29 12:29:12'>2019-10-01 10:40</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-04 11:02:15'>2019-11-04 09:01</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:389</span>
+        <span>字数:387</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1005,7 +989,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#0-开发环境"><span class="toc-text">0. 开发环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-定时器存储寄存器"><span class="toc-text">1. 定时器存储寄存器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-使用定时器的方法"><span class="toc-text">2. 使用定时器的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-代码实现"><span class="toc-text">3. 代码实现</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-centos6启动docker"><span class="toc-text">1.  centos6启动docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-centos6设置docker开机自启"><span class="toc-text">2.  centos6设置docker开机自启</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-centos7启动docker"><span class="toc-text">3.  centos7启动docker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-centos7设置docker开机自启"><span class="toc-text">4.  centos7设置docker开机自启</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-查看docker信息"><span class="toc-text">5.  查看docker信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-centos7检查docker守护进程状态"><span class="toc-text">6. centos7检查docker守护进程状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-centos7停止docker守护进程"><span class="toc-text">7. centos7停止docker守护进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-centos7开启docker守护进程"><span class="toc-text">8. centos7开启docker守护进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-查看当前系统中所有容器列表"><span class="toc-text">9.  查看当前系统中所有容器列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-查看当前系统中运行的容器列表"><span class="toc-text">10.  查看当前系统中运行的容器列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-创建带名字的容器"><span class="toc-text">11. 创建带名字的容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-docker删除容器"><span class="toc-text">12. docker删除容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-重新启动已经停止的容器"><span class="toc-text">13. 重新启动已经停止的容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-为运行的容器创建会话"><span class="toc-text">14.  为运行的容器创建会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-获取守护式容器日志"><span class="toc-text">15.  获取守护式容器日志</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-查看守护式容器的进程"><span class="toc-text">16. 查看守护式容器的进程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-显示容器的统计信息"><span class="toc-text">17. 显示容器的统计信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-在容器中运行后台任务"><span class="toc-text">18.  在容器中运行后台任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19-为守护进程容器创建交互会话"><span class="toc-text">19.   为守护进程容器创建交互会话</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20-获取容器更多信息"><span class="toc-text">20. 获取容器更多信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21-列出docker镜像"><span class="toc-text">21.   列出docker镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22-本地拉取指定版本的镜像"><span class="toc-text">22.  本地拉取指定版本的镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23-查找镜像"><span class="toc-text">23.  查找镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24-登录到dockerhub"><span class="toc-text">24.   登录到dockerhub</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1020,55 +1004,19 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="0-开发环境"><a href="#0-开发环境" class="headerlink" title="0. 开发环境"></a>0. 开发环境</h4><blockquote>
-<p>单片机: stc89c52<br>开发板: 清翔单片机(QX-MCS51 V2.0)</p>
-</blockquote>
-<h4 id="1-定时器存储寄存器"><a href="#1-定时器存储寄存器" class="headerlink" title="1. 定时器存储寄存器"></a>1. 定时器存储寄存器</h4><blockquote>
-<p>时钟周期：单片机时序中的最小单位，具体计算的方法就是时钟源分之一。</p>
-</blockquote>
-<blockquote>
-<p>机器周期：我们的单片机完成一个操作的最短时间。</p>
-</blockquote>
-<blockquote>
-<p>定时器：打开定时器后，定时器”存储寄存器”的值经过一个机器周期自动加1，也就是说，机器周期是定时器的计数周期</p>
-</blockquote>
-<p><img src="https://i.loli.net/2019/10/29/f4CWuqZrQzSUbTm.png" alt></p>
-<p><img src="https://i.loli.net/2019/10/29/NFLPp4jk5XYtbe2.png" alt></p>
-<p><img src="https://i.loli.net/2019/10/29/G4dpytS1WmaZewO.png" alt></p>
-<p><img src="https://i.loli.net/2019/10/29/DCg3Z2XqbQPNHEx.png" alt></p>
-<h4 id="2-使用定时器的方法"><a href="#2-使用定时器的方法" class="headerlink" title="2. 使用定时器的方法"></a>2. 使用定时器的方法</h4><pre><code>第一：设置特殊功能寄存器TMOD，配置好工作模式。
-
-第二：设置计数寄存器TH0和TL0的初值。
-
-第三：设置TCON，通过TR0置1来让定时器开始计数。
-
-第四：判断TCON寄存器的TF0位，监测定时器溢出情况</code></pre><h4 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="3. 代码实现"></a>3. 代码实现</h4><pre><code>#include&lt;Reg52.h&gt;
-#define uchar unsigned char
-
-sbit LED = P1^0;
-
-//实现1s闪烁灯
-void main() {
-    uchar count = 0; //定义一个计数初值
-
-    TMOD = 0x01;        //设置定时器0为一个16位的定时器
-    TH0 = 0xB8;        //因为定时器分高八位和低八位，根据累加到溢出从而实现定时，因此需要给定时器0设置累加初值
-    TL0 = 0x00;        //1011 1000 0000 0000 等于十进制的134000 ,x*12/11059200 = 0.02 x=18432 设置初始值为65536-18432 = 47104 转为16进制就是B800
-    TR0 = 1;            //开启定时器
-
-    while(1) {
-        if(TF0 == 1) {
-            TF0 = 0;        //清除定时器0溢出
-            TH0 = 0xB8;    //重新设置定时器0的初始累加值
-            TL0 = 0x00;
-            count++;
-            if(count &gt;= 50) {
-                count = 0;
-                LED = ~LED;
-            }
-        }
-    }
-}   </code></pre><iframe src="//player.bilibili.com/player.html?aid=69633830&cid=120678978&page=1" width="100%" height="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>    
+        <h4 id="1-centos6启动docker"><a href="#1-centos6启动docker" class="headerlink" title="1.  centos6启动docker"></a>1.  centos6启动docker</h4><pre><code>service docker start</code></pre><h4 id="2-centos6设置docker开机自启"><a href="#2-centos6设置docker开机自启" class="headerlink" title="2.  centos6设置docker开机自启"></a>2.  centos6设置docker开机自启</h4><pre><code>service docker enable</code></pre><h4 id="3-centos7启动docker"><a href="#3-centos7启动docker" class="headerlink" title="3.  centos7启动docker"></a>3.  centos7启动docker</h4><pre><code>systemctl start docker</code></pre><h4 id="4-centos7设置docker开机自启"><a href="#4-centos7设置docker开机自启" class="headerlink" title="4.  centos7设置docker开机自启"></a>4.  centos7设置docker开机自启</h4><pre><code>systemctl enable docker</code></pre><h4 id="5-查看docker信息"><a href="#5-查看docker信息" class="headerlink" title="5.  查看docker信息"></a>5.  查看docker信息</h4><pre><code>docker info</code></pre><h4 id="6-centos7检查docker守护进程状态"><a href="#6-centos7检查docker守护进程状态" class="headerlink" title="6. centos7检查docker守护进程状态"></a>6. centos7检查docker守护进程状态</h4><pre><code>systemctl status docker</code></pre><h4 id="7-centos7停止docker守护进程"><a href="#7-centos7停止docker守护进程" class="headerlink" title="7. centos7停止docker守护进程"></a>7. centos7停止docker守护进程</h4><pre><code>systemctl stop docker</code></pre><h4 id="8-centos7开启docker守护进程"><a href="#8-centos7开启docker守护进程" class="headerlink" title="8. centos7开启docker守护进程"></a>8. centos7开启docker守护进程</h4><pre><code>systemctl start docker</code></pre><h4 id="9-查看当前系统中所有容器列表"><a href="#9-查看当前系统中所有容器列表" class="headerlink" title="9.  查看当前系统中所有容器列表"></a>9.  查看当前系统中所有容器列表</h4><pre><code>docker ps -a</code></pre><h4 id="10-查看当前系统中运行的容器列表"><a href="#10-查看当前系统中运行的容器列表" class="headerlink" title="10.  查看当前系统中运行的容器列表"></a>10.  查看当前系统中运行的容器列表</h4><pre><code>docker ps</code></pre><h4 id="11-创建带名字的容器"><a href="#11-创建带名字的容器" class="headerlink" title="11. 创建带名字的容器"></a>11. 创建带名字的容器</h4><pre><code>//带交互会话
+docker run --name 容器名 -i -t 镜像名 /bin/bash 
+//创建守护式容器
+docker run --name 容器名 -d 镜像名  </code></pre><h4 id="12-docker删除容器"><a href="#12-docker删除容器" class="headerlink" title="12. docker删除容器"></a>12. docker删除容器</h4><pre><code>docker rm 容器名</code></pre><h4 id="13-重新启动已经停止的容器"><a href="#13-重新启动已经停止的容器" class="headerlink" title="13. 重新启动已经停止的容器"></a>13. 重新启动已经停止的容器</h4><pre><code>docker start 容器名
+docker restart 容器名</code></pre><h4 id="14-为运行的容器创建会话"><a href="#14-为运行的容器创建会话" class="headerlink" title="14.  为运行的容器创建会话"></a>14.  为运行的容器创建会话</h4><pre><code>docker attach 容器名</code></pre><h4 id="15-获取守护式容器日志"><a href="#15-获取守护式容器日志" class="headerlink" title="15.  获取守护式容器日志"></a>15.  获取守护式容器日志</h4><pre><code>docker logs -f 容器名
+//获取日志最后的10条数据
+docker logs --tail 10 容器名
+//获取最新日志
+docker logs  --tail 0 -f  容器名
+//使用-t为日志加上时间戳
+docker logs -ft 容器名</code></pre><h4 id="16-查看守护式容器的进程"><a href="#16-查看守护式容器的进程" class="headerlink" title="16. 查看守护式容器的进程"></a>16. 查看守护式容器的进程</h4><pre><code>docker top 容器名</code></pre><h4 id="17-显示容器的统计信息"><a href="#17-显示容器的统计信息" class="headerlink" title="17. 显示容器的统计信息"></a>17. 显示容器的统计信息</h4><pre><code>docker stats 容器名1 容器名2</code></pre><h4 id="18-在容器中运行后台任务"><a href="#18-在容器中运行后台任务" class="headerlink" title="18.  在容器中运行后台任务"></a>18.  在容器中运行后台任务</h4><pre><code>docker exec -d 容器名 任务
+//demo
+docker exec -d daemon_dave touch /etc/new_config_file</code></pre><h4 id="19-为守护进程容器创建交互会话"><a href="#19-为守护进程容器创建交互会话" class="headerlink" title="19.   为守护进程容器创建交互会话"></a>19.   为守护进程容器创建交互会话</h4><pre><code>docker exec -i -t 容器名 /bin/bash</code></pre><h4 id="20-获取容器更多信息"><a href="#20-获取容器更多信息" class="headerlink" title="20. 获取容器更多信息"></a>20. 获取容器更多信息</h4><pre><code>docker inspect 容器名</code></pre><h4 id="21-列出docker镜像"><a href="#21-列出docker镜像" class="headerlink" title="21.   列出docker镜像"></a>21.   列出docker镜像</h4><pre><code>docker images</code></pre><h4 id="22-本地拉取指定版本的镜像"><a href="#22-本地拉取指定版本的镜像" class="headerlink" title="22.  本地拉取指定版本的镜像"></a>22.  本地拉取指定版本的镜像</h4><pre><code>docker pull ubuntu:12.04</code></pre><h4 id="23-查找镜像"><a href="#23-查找镜像" class="headerlink" title="23.  查找镜像"></a>23.  查找镜像</h4><pre><code>docker search 镜像名</code></pre><h4 id="24-登录到dockerhub"><a href="#24-登录到dockerhub" class="headerlink" title="24.   登录到dockerhub"></a>24.   登录到dockerhub</h4><pre><code>docker login</code></pre>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 508110504@qq.com </span>
     </div>
@@ -1077,12 +1025,12 @@ void main() {
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>51单片机定时闪烁灯</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">389</span></p>
+    <p><span class="copy-title">文章标题:</span>docker常用命令</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">387</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John">John</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-01, 10:40:35</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-29, 12:29:12</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/01/51单片机定时闪烁灯/" title="51单片机定时闪烁灯">http://qnyt1993.github.io/2019/10/01/51单片机定时闪烁灯/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-04, 09:01:13</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-04, 11:02:15</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/04/docker常用命令/" title="docker常用命令">http://qnyt1993.github.io/2019/11/04/docker常用命令/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
