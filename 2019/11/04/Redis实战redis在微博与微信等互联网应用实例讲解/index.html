@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Robots.txt 完整使用指南 | 足迹人生的博客</title>
-  <meta name="keywords" content=" seo ">
-  <meta name="description" content="Robots.txt 完整使用指南 | 足迹人生的博客">
+  <title>Redis实战redis在微博与微信等互联网应用实例讲解 | 足迹人生的博客</title>
+  <meta name="keywords" content=" redis ">
+  <meta name="description" content="Redis实战redis在微博与微信等互联网应用实例讲解 | 足迹人生的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content=".article-header {         padding: 0;         padding-top: 26px;         border-left: none;         text-align: center;     }     .article-header:hover {         border-left: none;     }     .art">
 <meta name="keywords" content="足迹人生，博客，分享，人生感悟">
@@ -981,9 +981,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Robots-txt-完整使用指南" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Redis实战redis在微博与微信等互联网应用实例讲解" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Robots.txt 完整使用指南</h1>
+        <h1 class="article-title">Redis实战redis在微博与微信等互联网应用实例讲解</h1>
     
     <div class="article-meta">
         
@@ -991,26 +991,28 @@
         
         <span class="book">
             
-                <a href="javascript:" data-rel="杂记">杂记</a>
+                <a href="javascript:" data-rel="后端">后端</a>/
+            
+                <a href="javascript:" data-rel="redis">redis</a>
             
         </span>
         
         
         <span class="tag">
             
-            <a href="javascript:" class="color4">seo</a>
+            <a href="javascript:" class="color1">redis</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-29 10:01:26'>2019-10-25 11:12</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-04 21:17:01'>2019-11-04 19:06</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:5k</span>
+        <span>字数:394</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -1029,7 +1031,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Robots-txt如何工作"><span class="toc-text">Robots.txt如何工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户代理指令"><span class="toc-text">用户代理指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#禁止指令"><span class="toc-text">禁止指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#允许指令"><span class="toc-text">允许指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通配符"><span class="toc-text">通配符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阻止一切"><span class="toc-text">阻止一切</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#允许一切"><span class="toc-text">允许一切</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sitemap-指令"><span class="toc-text">Sitemap 指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-Robots-txt的常见错误"><span class="toc-text">使用 Robots.txt的常见错误</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#当你去制作时忘记隐藏"><span class="toc-text">当你去制作时忘记隐藏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#试图阻止敌对爬虫"><span class="toc-text">试图阻止敌对爬虫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#试图保持目录的秘密"><span class="toc-text">试图保持目录的秘密</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#意外阻止不相关的页面"><span class="toc-text">意外阻止不相关的页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#试图将Robots-txt放在子目录中"><span class="toc-text">试图将Robots.txt放在子目录中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#尝试定位特定的子域"><span class="toc-text">尝试定位特定的子域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用不一致的类型情况"><span class="toc-text">使用不一致的类型情况</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#忘记了用户代理线"><span class="toc-text">忘记了用户代理线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他用户代理陷阱"><span class="toc-text">其他用户代理陷阱</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#忘记路径中的主要斜线"><span class="toc-text">忘记路径中的主要斜线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-Robots-txt的提示"><span class="toc-text">使用 Robots.txt的提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#竞争允许和不允许"><span class="toc-text">竞争允许和不允许</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阻止特定的查询参数"><span class="toc-text">阻止特定的查询参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阻止包含不安全字符的URL"><span class="toc-text">阻止包含不安全字符的URL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何匹配美元符号"><span class="toc-text">如何匹配美元符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#补充"><span class="toc-text">补充</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#概要"><span class="toc-text">概要</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-对象缓存"><span class="toc-text">1. 对象缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-计数器"><span class="toc-text">2. 计数器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-web集群session共享"><span class="toc-text">3. web集群session共享</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-分布式系统全局序列号"><span class="toc-text">4. 分布式系统全局序列号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-redis实现电商购物车"><span class="toc-text">5. redis实现电商购物车</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hash结构优缺点"><span class="toc-text">Hash结构优缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列的使用"><span class="toc-text">队列的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set的使用"><span class="toc-text">set的使用</span></a>
     
 <style>
     .left-col .switch-btn,
@@ -1044,213 +1046,81 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>转载: <a href="https://www.simcf.cc/3442.html" target="_blank" rel="noopener">Robots.txt 完整使用指南</a></p>
+        <h3 id="1-对象缓存"><a href="#1-对象缓存" class="headerlink" title="1. 对象缓存"></a>1. 对象缓存</h3><table>
+<thead>
+<tr>
+<th>id</th>
+<th>user</th>
+<th>balance</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>john</td>
+<td>1200</td>
+</tr>
+<tr>
+<td>2</td>
+<td>tom</td>
+<td>3000</td>
+</tr>
+</tbody></table>
+<p>对于这种存储，redis可以使用mset or hmset实现</p>
+<pre><code>mset user:{userId}:name john user:{userId}:balance:1200
+mget user:{userId}:name user:{userId}:balance
+mset user:1:name john user:1:balance:1200
+mget user:1:name user:1:balance
+
+or
+
+hmset user {userId}:name john {userId}:balance 1888
+hmget user {userId}:name {userId}:balance
+hmset user 1:name john 1:balance 1888
+hmget user 1:name 1:balance</code></pre><h3 id="2-计数器"><a href="#2-计数器" class="headerlink" title="2. 计数器"></a>2. 计数器</h3><pre><code>incr article:readcount:{文章id}    
+get article:readcount:{文章id}</code></pre><h3 id="3-web集群session共享"><a href="#3-web集群session共享" class="headerlink" title="3. web集群session共享"></a>3. web集群session共享</h3><pre><code>spring session + redis实现session共享   </code></pre><h3 id="4-分布式系统全局序列号"><a href="#4-分布式系统全局序列号" class="headerlink" title="4. 分布式系统全局序列号"></a>4. 分布式系统全局序列号</h3><blockquote>
+<p>分库分表情况下，自行生成主键id,高并发情况下，每次批量取出1000个id存入内存中供使用，用完再取</p>
 </blockquote>
-<p><code>Robots.txt</code>是一个小文本文件，位于网站的根目录中。它告诉抓取工具是否要抓取网站的某些部分。该文件使用简单的语法，以便爬虫可以放置到位。</p>
-<p>写得好，你将在索引天堂。写得不好，最终可能会从搜索引擎中隐藏整个网站,该文件没有官方标准。但你可以使用<code>Robots.txt</code>做更多的工作，而不是网站大纲，比如使用通配符，站点地图链接，和<code>Allow</code>指令，所有主要搜索引擎都支持这些 扩展。</p>
-<p>在一个完美的世界里，没有人需要<code>Robots.txt</code>。如果网站上的所有页面都是供公众使用的，那么理想情况下，应该允许搜索引擎抓取所有页面。但我们并不是生活在一个完美的世界里。许多站点都有蜘蛛陷阱，规范URL问题以及需要远离搜索引擎的非公共页面，而<code>Robots.txt</code>用于使您的网站更接近完美。</p>
-<h2 id="Robots-txt如何工作"><a href="#Robots-txt如何工作" class="headerlink" title="Robots.txt如何工作"></a><code>Robots.txt</code>如何工作</h2><p>如果你已经熟悉了<code>Robots.txt</code>的指令，但担心你做错了，请跳到常见错误部分。如果你是新手，请继续阅读 。</p>
-<p>可以使用任何纯文本编辑器制作<code>Robots.txt</code>文件，但它必须位于站点的根目录中，并且必须命名为<code>Robots.txt</code>，您不能在子目录中使用该文件。</p>
-<p>如果域名是example.com，则<code>Robots.txt</code>网址应为：</p>
-<pre><code>http://example.com/`Robots.txt`</code></pre><p>HTTP规范将<code>user-agent</code>定义为发送请求的东西（与接收请求的<code>服务器</code>相对）。严格来说，用户代理可以是请求网页的任何内容，包括搜索引擎抓取工具，Web浏览器或模糊的命令行 实用程序。</p>
-<h2 id="用户代理指令"><a href="#用户代理指令" class="headerlink" title="用户代理指令"></a>用户代理指令</h2><p>在<code>Robots.txt</code>文件中，<code>user-agent</code>指令用于指定哪个爬网程序应遵守给定的规则集。该指令可以是通配符，用于指定规则适用于所有爬网程序：</p>
-<pre><code>User-agent： *</code></pre><p>或者它可以是特定爬虫的名称：</p>
-<pre><code>User-agent：Googlebot</code></pre><h2 id="禁止指令"><a href="#禁止指令" class="headerlink" title="禁止指令"></a>禁止指令</h2><p>您应该通过一个或多个<code>disallow</code>指令来遵循用户代理行 ：</p>
-<pre><code>User-agent：* 
-Disallow：/junk-page</code></pre><p>上面的示例将阻止路径以<code>/junk-page</code>开头的所有URL ：</p>
-<pre><code>http://example.com/junk-page 
-http://example.com/junk-page?usefulness=0 
-http://example.com/junk-page/whatever </code></pre><p>它不会阻止任何路径不以<code>/junk-page</code>开头的URL 。以下网址不会被 阻止：</p>
-<pre><code>http://example.com/subdir/junk-page</code></pre><p>这里的关键是<code>disallow</code>是一个简单的文本匹配。无论<code>Disallow：</code>之后出现什么都被视为一个简单的字符串（除了*和$之外，我将在下面提到）。将此字符串与URL的路径部分的开头（从域之后的第一个斜杠到URL的末尾的所有内容）进行比较，该字符串也被视为简单字符串。如果匹配，则会阻止该URL。如果他们不这样做，那就 不是。</p>
-<h2 id="允许指令"><a href="#允许指令" class="headerlink" title="允许指令"></a>允许指令</h2><p><code>Allow</code>指令不是原始标准的一部分，但现在所有主要搜索引擎都支持它。</p>
-<p>您可以使用此伪指令指定禁止规则的例外，例如，如果您有一个要阻止的子目录，但希望抓取该子目录中的一个页面：</p>
-<pre><code>User-agent：* 
-Allow：/nothing-good-in-here/except-this-one-page 
-Disallow：/nothing-good-in-here/</code></pre><p>此示例将阻止以下 URL：</p>
-<pre><code>http://example.com/nothing-good-in-here/
-http://example.com/nothing-good-in-here/somepage 
-http://example.com/nothing-good-in-here/otherpage 
-http://example.com/nothing-good-in-here/?x=y</code></pre><p>但它不会阻止以下任何一种情况：</p>
-<pre><code>http://example.com/nothing-good-in-here/except-this-one-page 
-http://example.com/nothing-good-in-here/except-this-one-page-because-i -said-so 
-http://example.com/nothing-good-in-here/except-this-one-page/that-is-really-a-directory </code></pre><p>同样，这是一个简单的文本匹配。将<code>Allow：</code>之后的文本与URL的路径部分的开头进行比较。如果它们匹配，即使在通常阻止它的其他地方禁止该页面，也将允许该页面。</p>
-<h2 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h2><p>所有主要搜索引擎也支持通配符运算符。这允许您在路径的一部分未知或可变时阻止页面。对于 例如：</p>
-<pre><code>Disallow：/users/*/settings</code></pre><p>*（星号）表示<code>匹配任何文本。</code>上述指令将阻止以下所有 URL：</p>
-<pre><code>http://example.com/users/alice/settings 
-http://example.com/users/bob/settings 
-http://example.com/users/tinkerbell/settings </code></pre><p>小心！以上还将阻止以下URL（可能不是您想要的）：</p>
-<pre><code>http://example.com/users/alice/extra/directory/levels/settings 
-http://example.com/users/alice/search?q=/settings </code></pre><p>字符串结束运算符<br>另一个有用的扩展是字符串结尾运算符：</p>
-<pre><code>Disallow：/useless-page $</code></pre><p>$表示URL必须在该点结束，该指令将阻止以下 URL：</p>
-<pre><code>http://example.com/useless-page</code></pre><p>但它不会阻止 以下任何一种情况：</p>
-<pre><code>http://example.com/useless-pages-and-how-to-avoid-creating-them 
-http://example.com/useless-page/
-http://example.com/useless-page?a=b</code></pre><h2 id="阻止一切"><a href="#阻止一切" class="headerlink" title="阻止一切"></a>阻止一切</h2><p>您可能希望使用<code>Robots.txt</code>阻止所有暂存站点（稍后会详细介绍）或镜像站点。如果您有一个私人网站供少数知道如何找到它的人使用，那么您还希望阻止整个网站被抓取。</p>
-<p>要阻止整个站点，请使用禁止后跟斜杠：</p>
-<pre><code>User-agent：* 
-Disallow：/</code></pre><h2 id="允许一切"><a href="#允许一切" class="headerlink" title="允许一切"></a>允许一切</h2><p>当您计划允许 所有内容时，我可以想到您可能选择创建<code>Robots.txt</code>文件的两个原因：</p>
-<p>作为占位符，要向在网站上工作的任何其他人明确表示您允许一切都是故意的。</p>
-<p>防止对<code>Robots.txt</code>的请求失败，以显示在请求日志中。</p>
-<p>要允许整个站点，您可以使用空的禁令：</p>
-<pre><code>User-agent：* 
-Disallow：</code></pre><p>或者，您可以将<code>Robots.txt</code>文件留空，或者根本没有。爬行者会抓取所有内容，除非你告诉他们不要 。</p>
-<h2 id="Sitemap-指令"><a href="#Sitemap-指令" class="headerlink" title="Sitemap 指令"></a>Sitemap 指令</h2><p>虽然它是可选的，但许多<code>Robots.txt</code>文件都包含一个<code>sitemap</code> 指令：</p>
-<p>网站地图：http：//example.com/sitemap.xml</p>
-<p>这指定了站点地图文件的位置。站点地图是一种特殊格式的文件，列出了您要抓取的所有网址。如果您的站点具有XML网站地图，则最好包含此指令。</p>
-<h2 id="使用-Robots-txt的常见错误"><a href="#使用-Robots-txt的常见错误" class="headerlink" title="使用 Robots.txt的常见错误"></a>使用 <code>Robots.txt</code>的常见错误</h2><p>我看到很多很多不正确的<code>Robots.txt</code>用法。其中最严重的是尝试使用该文件保密某些目录或尝试使用它来阻止恶意爬虫。</p>
-<p>滥用<code>Robots.txt</code>的最严重后果是意外地将您的整个网站隐藏在抓取工具中。密切关注这些 事情。</p>
-<h3 id="当你去制作时忘记隐藏"><a href="#当你去制作时忘记隐藏" class="headerlink" title="当你去制作时忘记隐藏"></a>当你去制作时忘记隐藏</h3><p>所有暂存站点（尚未隐藏在密码后面）都应该包含<code>Robots.txt</code>文件，因为它们不适合公众查看。但是当您的网站上线时，您会希望每个人都能看到它。不要忘记删除或编辑此 文件。</p>
-<p>否则，整个实时网站将从搜索结果中消失。</p>
-<pre><code>User-agent：* 
-Disallow：/</code></pre><p>您可以在测试时检查实时<code>Robots.txt</code>文件，或进行设置，这样您就不必记住这一额外步骤。使用摘要式身份验证等简单协议将登台服务器置于密码之后。然后，您可以为登台服务器提供您打算在实际站点上部署的相同<code>Robots.txt</code>文件。部署时，只需复制所有内容即可。</p>
-<h3 id="试图阻止敌对爬虫"><a href="#试图阻止敌对爬虫" class="headerlink" title="试图阻止敌对爬虫"></a>试图阻止敌对爬虫</h3><p>我见过<code>Robots.txt</code>文件试图明确阻止已知的恶意抓取程序，如下所示：</p>
-<pre><code>User-agent：DataCha0s/2.0 
-Disallow：/
-User-agent：ExtractorPro 
-Disallow：/
-User-agent：EmailSiphon 
-Disallow：/
-User-agent：EmailWolf 1.00 
-Disallow：/</code></pre><p>这就像在汽车仪表板上留下一张纸条说：<code>亲爱的小偷：请不要偷这辆车。 谢谢！</code></p>
-<p>这毫无意义。这就像在汽车仪表板上留下一张纸条说：<code>亲爱的小偷：请不要偷这辆车。 谢谢！</code></p>
-<p><code>Robots.txt</code>完全是自愿的，像搜索引擎这样的礼貌爬虫会遵守它。敌意爬行器，如电子邮件收割机，不会。爬虫没有义务遵守<code>Robots.txt</code>中的指南，但主要的选择是这样做的。</p>
-<p>如果您正在尝试阻止错误的抓取工具，请使用用户代理阻止或IP阻止 。</p>
-<h3 id="试图保持目录的秘密"><a href="#试图保持目录的秘密" class="headerlink" title="试图保持目录的秘密"></a>试图保持目录的秘密</h3><p>如果您要保留对公众隐藏的文件或目录，请不要将它们全部列在<code>Robots.txt</code>中，如下所示：</p>
-<pre><code>User-agent：* 
-Disallow：/secret-stuff/
-Disallow：/compromising-photo.jpg 
-Disallow：/big-list-of-plaintext-passwords.csv</code></pre><p>出于显而易见的原因，这将弊大于利。它为敌对爬虫提供了一种快速，简便的方法来查找您不希望他们找到的文件 。</p>
-<p>这就像在你的车上留下一张纸条上写着：<code>亲爱的小偷：请不要看着隐藏在这辆车的杂物箱中的标有’紧急现金’的黄色信封。 谢谢！</code></p>
-<p>保持目录隐藏的唯一可靠方法是将其置于密码之后。如果你绝对不能把它放在密码后面，这里有三个创可贴解决方案。</p>
+<pre><code>INCRBY orderId 1000   //redis批量生成序列号提升性能</code></pre><h3 id="5-redis实现电商购物车"><a href="#5-redis实现电商购物车" class="headerlink" title="5. redis实现电商购物车"></a>5. redis实现电商购物车</h3><p><img src="https://i.loli.net/2019/11/04/HEqJpk3SeBGciXf.png" alt="QQ截图20191104194310.png"></p>
+<p><img src="https://i.loli.net/2019/11/04/Esj9roxkvXbVwRZ.png" alt="QQ截图20191104193724.png"></p>
+<blockquote>
+<p>电商购物车</p>
 <ol>
-<li>基于目录名称的前几个字符进行阻止。<br>如果目录是<code>/xyz-secret-stuff/</code>，则将其阻塞如下：</li>
+<li>以用户id为key</li>
+<li>商品id为field</li>
+<li>商品数量为value</li>
 </ol>
-<pre><code>Disallow：/xyz-</code></pre><ol start="2">
-<li>阻止机器人元标记<br>将以下内容添加到HTML代码中：</li>
-</ol>
-<pre><code>&lt;meta name =`robots`content =`noindex，nofollow`&gt;</code></pre><ol start="3">
-<li>使用X-Robots-Tag标头阻止。<br>将这样的内容添加到目录的.htaccess文件中：</li>
-</ol>
-<pre><code>标题集X-Robots-Tag`noindex，nofollow`</code></pre><p>同样，这些是创可贴解决方案，这些都不是实际安全的替代品。如果确实需要保密，那么它确实需要在密码后面。</p>
-<h2 id="意外阻止不相关的页面"><a href="#意外阻止不相关的页面" class="headerlink" title="意外阻止不相关的页面"></a>意外阻止不相关的页面</h2><p>假设您需要阻止该 页面：</p>
-<pre><code>http://example.com/admin</code></pre><p>还有 目录中的所有内容：</p>
-<pre><code>http://example.com/admin/</code></pre><p>显而易见的方法是这样做 ：</p>
-<pre><code>Disallow：/admin</code></pre><p>这会阻止你想要的东西，但现在你也不小心阻止了关于宠物护理的文章页面：</p>
-<pre><code>http://example.com/administer-medication-to-your-cat-the-easy-way.html</code></pre><p>本文将与您实际尝试 阻止的页面一起从搜索结果中消失。</p>
-<p>是的，这是一个人为的例子，但我已经看到这种事情发生在现实世界中。最糟糕的是，它通常会被忽视很长一段时间。</p>
-<p>阻止/admin和/admin/而不阻塞任何其他内容的最安全方法是使用两个单独的行：</p>
-<pre><code>Disallow：/admin $ 
-Disallow：/admin/</code></pre><p>请记住，美元符号是一个字符串结尾的运算符，表示<code>URL必须在此处结束。</code>该指令将匹配/admin但不匹配/管理。</p>
-<h2 id="试图将Robots-txt放在子目录中"><a href="#试图将Robots-txt放在子目录中" class="headerlink" title="试图将Robots.txt放在子目录中"></a>试图将<code>Robots.txt</code>放在子目录中</h2><p>假设您只能控制一个巨大网站的一个子目录。</p>
-<pre><code>http://example.com/userpages/yourname/</code></pre><p>如果您需要阻止某些页面，可能会尝试添加<code>Robots.txt</code>文件，如下所示：</p>
-<pre><code>http://example.com/userpages/yourname/`Robots.txt`</code></pre><p>这不起作用，该文件将被忽略。您可以放置​​<code>Robots.txt</code>文件的唯一位置是站点根目录。</p>
-<p>如果您无权访问站点根目录，则无法使用<code>Robots.txt</code>。一些替代选项是使用机器人元标记来阻止页面。或者，如果您可以控制<code>.htaccess</code>文件（或等效文件），则还可以使用X-Robots-Tag标头阻止页面。</p>
-<h2 id="尝试定位特定的子域"><a href="#尝试定位特定的子域" class="headerlink" title="尝试定位特定的子域"></a>尝试定位特定的子域</h2><p>假设您有一个包含许多不同子域的站点：</p>
-<pre><code>http://example.com/
-http://admin.example.com/
-http://members.example.com/
-http://blog.example.com/
-http://store.example.com/</code></pre><p>您可能想要创建单个<code>Robots.txt</code>文件，然后尝试阻止它的子域，如下所示：</p>
-<p><a href="http://example.com/`Robots.txt`" target="_blank" rel="noopener">http://example.com/`Robots.txt`</a> </p>
-<pre><code> User-agent：* 
-Disallow：admin.example.com 
-Disallow：members.example.com</code></pre><p>这不起作用，无法在<code>Robots.txt</code>文件中指定子域（或域）。给定的<code>Robots.txt</code>文件仅适用于从中加载的子域 。</p>
-<p>那么有没有办法阻止某些子域？是。要阻止某些子域而不阻止其他子域，您需要提供来自不同子域的不同<code>Robots.txt</code>文件。</p>
-<p>这些<code>Robots.txt</code>文件会阻止所有内容：</p>
-<pre><code>http://admin.example.com/`Robots.txt` 
-http://members.example.com/`Robots.txt` </code></pre><hr>
-<pre><code>User-agent：* 
-Disallow：/</code></pre><p>这些将允许一切：</p>
-<pre><code>http://example.com/
-http://blog.example.com/
-http://store.example.com/</code></pre><hr>
-<pre><code>User-agent：* 
-Disallow：</code></pre><h2 id="使用不一致的类型情况"><a href="#使用不一致的类型情况" class="headerlink" title="使用不一致的类型情况"></a>使用不一致的类型情况</h2><p>路径区分大小写。</p>
-<pre><code>Disallow：/acme/</code></pre><p>不会阻止<code>/Acme/</code>或 <code>/ACME/</code>。</p>
-<p>如果你需要全部阻止它们，你需要为每个禁用一行：</p>
-<pre><code>Disallow：/acme/
-Disallow：/Acme/
-Disallow：/ACME/</code></pre><h2 id="忘记了用户代理线"><a href="#忘记了用户代理线" class="headerlink" title="忘记了用户代理线"></a>忘记了用户代理线</h2><p>所述用户代理线是使用<code>Robots.txt</code>关键的。在任何允许或禁止之前，文件必须具有用户代理行。如果整个文件看起来像这样：</p>
-<pre><code>Disallow：/this 
-Disallow：/that 
-Disallow：/what</code></pre><p>实际上什么都不会被阻止，因为顶部没有用户代理行。该文件必须为：</p>
-<pre><code>User-agent：* 
-Disallow：/this 
-Disallow：/that 
-Disallow：/whatever</code></pre><h2 id="其他用户代理陷阱"><a href="#其他用户代理陷阱" class="headerlink" title="其他用户代理陷阱"></a>其他用户代理陷阱</h2><p>使用不正确的用户代理还存在其他缺陷。假设您有三个目录需要为所有抓取工具阻止，还有一个页面应该仅在Google上明确允许。显而易见（但不正确）的方法可能是尝试这样的事情 ：</p>
-<pre><code>User-agent：* 
-Disallow：/admin/
-Disallow：/private/
-Disallow：/dontcrawl/
-User-agent：Googlebot 
-Allow：/dontcrawl/exception</code></pre><p>此文件实际上允许Google抓取网站上的所有内容。Googlebot（以及大多数其他抓取工具）只会遵守更具体的用户代理行下的规则，并会忽略所有其他规则。在此示例中，它将遵守<code>User-agent：Googlebot</code>下的规则，并将忽略<code>User-agent： *</code> 下的规则。</p>
-<p>要实现此目标，您需要为每个用户代理块重复相同的禁止规则，如下所示：</p>
-<pre><code>User-agent：* 
-Disallow：/admin/
-Disallow：/private/
-Disallow：/dontcrawl/
-User-agent：Googlebot 
-Disallow：/admin/
-Disallow：/private/
-Disallow：/dontcrawl/
-Allow：/dontcrawl/exception</code></pre><h2 id="忘记路径中的主要斜线"><a href="#忘记路径中的主要斜线" class="headerlink" title="忘记路径中的主要斜线"></a>忘记路径中的主要斜线</h2><p>假设您要阻止该 URL：</p>
-<pre><code>http://example.com/badpage</code></pre><p>你有以下（不正确的）<code>Robots.txt</code> 文件：</p>
-<pre><code>User-agent：* 
-Disallow：错误页面</code></pre><p>这根本不会阻止任何事情，路径必须以斜杠开头。如果没有，它永远不会匹配任何东西。阻止URL的正确方法 是：</p>
-<pre><code>User-agent：* 
-Disallow：/badpage</code></pre><h2 id="使用-Robots-txt的提示"><a href="#使用-Robots-txt的提示" class="headerlink" title="使用 Robots.txt的提示"></a>使用 <code>Robots.txt</code>的提示</h2><p>既然您知道如何不将敌对抓取工具发送到您的秘密内容或从搜索结果中消失您的网站，这里有一些提示可以帮助您改进<code>Robots.txt</code>文件。做得好不会提高你的排名（这是战略搜索引擎优化和内容的用途），但至少你会知道爬虫正在找到你想要他们找到的东西。</p>
-<h2 id="竞争允许和不允许"><a href="#竞争允许和不允许" class="headerlink" title="竞争允许和不允许"></a>竞争允许和不允许</h2><p>allow指令用于指定disallow规则的例外。disallow规则阻塞整个目录（例如），allow规则取消阻止该目录中的某些URL。这提出了一个问题，如果给定的URL可以匹配两个规则中的任何一个，爬虫如何决定使用哪个？</p>
-<p>并非所有抓取工具都以完全相同的方式处理竞争允许和禁止，但Google优先考虑路径较长的规则（就字符数而言）。如果两个路径长度相同，则allow优先于disallow。例如，假设<code>Robots.txt</code>文件 是：</p>
-<pre><code>User-agent：* 
-Allow：/baddir/goodpage 
-Disallow：/baddir/</code></pre><p>路径<code>/baddir/goodpage</code>长度为16个字符，路径<code>/baddir/</code>长度仅为8个字符。在这种情况下，允许胜过 不允许。</p>
-<p>将 允许以下URL ：</p>
-<pre><code>http://example.com/baddir/goodpage 
-http://example.com/baddir/goodpagesarehardtofind 
-http://example.com/baddir/goodpage?x=y</code></pre><p>以下内容将被 阻止：</p>
-<pre><code>http://example.com/baddir/
-http://example.com/baddir/otherpage</code></pre><p>现在考虑以下示例：</p>
-<pre><code>User-agent：* 
-Aloow：/某些
-Disallow：/*页面</code></pre><p>这些指令会阻止以下 URL吗？</p>
-<pre><code>http://example.com/somepage</code></pre><p>是。路径<code>/some</code>长度为5个字符，路径<code>/* page</code>长度为6个字符，因此disallow获胜。允许被忽略，URL将被阻止。</p>
-<h2 id="阻止特定的查询参数"><a href="#阻止特定的查询参数" class="headerlink" title="阻止特定的查询参数"></a>阻止特定的查询参数</h2><p>假设您要阻止包含查询参数<code>id</code>的所有URL，例如 ：</p>
-<pre><code>http://example.com/somepage?id=123 
-http://example.com/somepage?a=b&amp;id=123</code></pre><p>你可能想做这样的事情 ：</p>
-<pre><code>Disallow：/* id =</code></pre><p>这将阻止您想要的URL，但也会阻止以 <code>id</code> 结尾的任何其他查询参数：</p>
-<pre><code>http://example.com/users?userid=a0f3e8201b 
-http://example.com/auction?num=9172&amp;bid=1935.00</code></pre><p>那么如何在不阻止<code>用户ID</code>或 <code>出价</code>的情况下阻止<code>id</code>？</p>
-<p>如果您知道<code>id</code>将始终是第一个参数，请使用问号，如下 所示：</p>
-<pre><code>Disallow：/*？id =</code></pre><p>该指令将阻止：</p>
-<pre><code>http://example.com/somepage?id=123</code></pre><p>但它不会阻止：</p>
-<pre><code>http://example.com/somepage?a=b&amp;id=123</code></pre><p>如果您知道<code>id</code>永远不会是第一个参数，请使用＆符号，如下 所示：</p>
-<pre><code>Disallow：/*＆id =</code></pre><p>该指令将阻止：</p>
-<pre><code>http://example.com/somepage?a=b&amp;id=123</code></pre><p>但它不会阻止：</p>
-<pre><code>http://example.com/somepage?id=123</code></pre><p>最安全的方法是 两者兼顾：</p>
-<pre><code>Disallow：/*？id = 
-Disallow：/*＆id =</code></pre><p>没有可靠的方法来匹配两条线。</p>
-<h2 id="阻止包含不安全字符的URL"><a href="#阻止包含不安全字符的URL" class="headerlink" title="阻止包含不安全字符的URL"></a>阻止包含不安全字符的URL</h2><p>假设您需要阻止包含不安全URL的字符的URL，可能发生这种情况的一种常见情况是服务器端模板代码意外暴露给Web。对于 例如：</p>
-<pre><code>http://example.com/search?q=&lt;% var_name％&gt;</code></pre><p>如果您尝试像这样阻止该URL，它将无法 工作：</p>
-<pre><code>User-agent：* 
-Disallow：/search？q=&lt;％var_name％&gt;</code></pre><p>如果您在Google的<code>Robots.txt</code>测试工具（在Search Console中提供）中测试此指令，您会发现它不会阻止该网址。为什么？因为该指令实际上是根据 URL 检查的：</p>
-<pre><code>http://example.com/search?q=%3C%%20var_name%20%%3E</code></pre><p>所有Web 用户代理（包括抓取工具）都会自动对任何不符合URL安全的字符进行URL编码。这些字符包括：空格，小于或大于符号，单引号， 双引号和非ASCII 字符。</p>
-<p>阻止包含不安全字符的URL的正确方法是阻止转义版本：</p>
-<pre><code>User-agent：* 
-Disallow：/search？q =％3C %% 20var_name％20 %% 3E</code></pre><p>获取URL的转义版本的最简单方法是单击浏览器中的链接，然后从地址 字段中复制并粘贴URL 。</p>
-<h2 id="如何匹配美元符号"><a href="#如何匹配美元符号" class="headerlink" title="如何匹配美元符号"></a>如何匹配美元符号</h2><p>假设您要阻止包含美元符号的所有网址，例如 ：</p>
-<pre><code>http://example.com/store?price=$10</code></pre><p>以下内容 不起作用：</p>
-<pre><code>Disallow：/* $</code></pre><p>该指令实际上会阻止站点上的所有内容。当在指令末尾使用时，美元符号表示<code>URL在此处结束。</code>因此，上面将阻止路径以斜杠开头的每个URL，后跟零个或多个字符，后跟URL的结尾。此规则适用于任何有效的URL。为了解决这个问题，诀窍是在美元符号后添加一个额外的星号，如下所示：</p>
-<pre><code>Disallow：/* $ *</code></pre><p>在这里，美元符号不再位于路径的尽头，因此它失去了它的特殊含义。该指令将匹配包含文字美元符号的任何URL。请注意，最终星号的唯一目的是防止美元符号成为最后一个 字符。</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>有趣的事实：谷歌在进行语义搜索的过程中，通常会正确地解释拼写错误或格式错误的指令。例如，Google会在没有投诉的情况下接受以下任何内容：</p>
-<pre><code>UserAgent：* 
-Disallow /this 
-Dissalow：/that</code></pre><p>这并不意味着你应该忽略指令的格式和拼写，但如果你确实犯了错误，谷歌通常会让你逃脱它。但是，其他爬虫可能 不会。</p>
-<p>人们经常在<code>Robots.txt</code>文件中使用尾随通配符。这是无害的，但它也没用; 我认为这是糟糕的形式。</p>
-<p>对于例如：</p>
-<pre><code>Disallow：/somedir/*</code></pre><p>与以下内容完全相同 ：</p>
-<pre><code>Disallow：/somedir/</code></pre><p>当我看到这个时，我想，<code>这个人不明白</code>Robots.txt<code>是如何工作的。</code>我看到它很多。</p>
-<h2 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h2><p>请记住，<code>Robots.txt</code>必须位于根目录中，必须以用户代理行开头，不能阻止恶意爬虫，也不应该用于保密目录。使用此文件的许多困惑源于人们期望它比它更复杂的事实。</p>
+</blockquote>
+<pre><code>//向购物车添加商品
+hset cart:1001 10099 1
+hset cart:1001 20088 1
+hset cart:1001 30088 1
+//往存在购物车中的商品增加数量
+hincrby cart:1001 10099 1
+//获取购物车中商品的数目
+hget cart:1001 10099
+//获取购物车中存在的不同商品总数
+hlen cart:1001
+//删除商品
+hdel cart:1001 10099
+//获取所有商品
+hgetall cart:1001</code></pre><h2 id="Hash结构优缺点"><a href="#Hash结构优缺点" class="headerlink" title="Hash结构优缺点"></a>Hash结构优缺点</h2><p>优点</p>
+<pre><code>1. 同类数据归类整合存储，方便数据管理
+2. 相比string操作消耗内存与cpu更小
+3. 相比string存储更节省空间</code></pre><p>缺点</p>
+<pre><code>1. 过期功能不能使用在field，只能用在key上
+2. redis集群架构下不适合大规模使用</code></pre><h2 id="队列的使用"><a href="#队列的使用" class="headerlink" title="队列的使用"></a>队列的使用</h2><p><img src="https://i.loli.net/2019/11/04/7Evrx9gh2qzoiyc.png" alt="QQ截图20191104200122.png"></p>
+<p> <img src="https://i.loli.net/2019/11/04/64smEOFCHcTUifn.png" alt="QQ截图20191104195602.png"></p>
+<p><img src="https://i.loli.net/2019/11/04/zSvhRjodqPYrK9W.png" alt="QQ截图20191104201553.png">   </p>
+<p><img src="https://i.loli.net/2019/11/04/u7yVOxZUdN9b256.png" alt="QQ截图20191104201812.png">  </p>
+<h2 id="set的使用"><a href="#set的使用" class="headerlink" title="set的使用"></a>set的使用</h2><p><img src="https://i.loli.net/2019/11/04/hPgcO9ST68apvIj.png" alt="QQ截图20191104202540.png"></p>
+<p><img src="https://i.loli.net/2019/11/04/12PcU3pBNx95aDr.png" alt="QQ截图20191104202755.png"></p>
+<p><img src="https://i.loli.net/2019/11/04/1OgNustcvXbFP3j.png" alt="QQ截图20191104203538.png"></p>
+<p><img src="https://i.loli.net/2019/11/04/l8eH5NxEfQvtbSY.png" alt="QQ截图20191104204144.png"></p>
+<p><img src="https://i.loli.net/2019/11/04/AlP8MBRJ2YsSwOF.png" alt="QQ截图20191104205121.png"></p>
+<p><img src="https://i.loli.net/2019/11/04/SKsmqYcXoz4iQkO.png" alt="QQ截图20191104205147.png"></p>
+<p><img src="https://i.loli.net/2019/11/04/3EtWFzD2ZscH7mJ.png" alt="QQ截图20191104205202.png"></p>
+<p><img src="https://i.loli.net/2019/11/04/F7PQhZVLAeTEOWr.png" alt="QQ截图20191104205332.png"></p>
+<p><img src="https://i.loli.net/2019/11/04/1YlfP3tQDynvKWa.png" alt="QQ截图20191104205413.png"></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 508110504@qq.com </span>
@@ -1260,12 +1130,12 @@ Dissalow：/that</code></pre><p>这并不意味着你应该忽略指令的格式
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Robots.txt 完整使用指南</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">5k</span></p>
+    <p><span class="copy-title">文章标题:</span>Redis实战redis在微博与微信等互联网应用实例讲解</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">394</span></p>
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John">John</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-25, 11:12:17</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-29, 10:01:26</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/25/Robots-txt-完整使用指南/" title="Robots.txt 完整使用指南">http://qnyt1993.github.io/2019/10/25/Robots-txt-完整使用指南/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-04, 19:06:56</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-04, 21:17:01</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/04/Redis实战redis在微博与微信等互联网应用实例讲解/" title="Redis实战redis在微博与微信等互联网应用实例讲解">http://qnyt1993.github.io/2019/11/04/Redis实战redis在微博与微信等互联网应用实例讲解/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
