@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>404 Not Found：该页无法显示 | 足迹人生的博客</title>
-  <meta name="keywords" content>
-  <meta name="description" content="404 Not Found：该页无法显示 | 足迹人生的博客">
+  <title>vim编辑Dockerfile时语法高亮 | 足迹人生的博客</title>
+  <meta name="keywords" content=" docker , centos7 ">
+  <meta name="description" content="vim编辑Dockerfile时语法高亮 | 足迹人生的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content=".article-header {         padding: 0;         padding-top: 26px;         border-left: none;         text-align: center;     }     .article-header:hover {         border-left: none;     }     .art">
 <meta name="keywords" content="足迹人生，博客，分享，人生感悟">
@@ -961,24 +961,40 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+        <article id="post-vim编辑Dockerfile时语法高亮" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">404 Not Found：该页无法显示</h1>
+        <h1 class="article-title">vim编辑Dockerfile时语法高亮</h1>
     
     <div class="article-meta">
         
         
         
+        <span class="book">
+            
+                <a href="javascript:" data-rel="运维">运维</a>/
+            
+                <a href="javascript:" data-rel="容器">容器</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="javascript:" class="color2">docker</a>
+            
+            <a href="javascript:" class="color3">centos7</a>
+            
+        </span>
         
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-29 19:52:26'>2019-10-29 19:52</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-04 15:22:47'>2019-11-04 15:16</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:94</span>
+        <span>字数:334</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -997,7 +1013,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-usr-share-vim-vimfiles-doc-dockerfile-txt"><span class="toc-text">1. /usr/share/vim/vimfiles/doc/dockerfile.txt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-usr-share-vim-vimfiles-ftdetect-dockerfile-vim"><span class="toc-text">2. /usr/share/vim/vimfiles/ftdetect/dockerfile.vim</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-usr-share-vim-vimfiles-syntax-dockerfile-vim"><span class="toc-text">3. /usr/share/vim/vimfiles/syntax/dockerfile.vim</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#效果展示"><span class="toc-text">效果展示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#附录"><span class="toc-text">附录</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -1012,69 +1028,78 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <style type="text/css">
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover {
-        border-left: none;
-    }
-    .article-title {
-        font-size: 2.1em;
-    }
-    strong a {
-        color: #747474;
-    }
-    .article-meta {
-        display: none;
-    }
-    .share {
-        display: none;
-    }
-    .ds-meta {
-        display: none;
-    }
-    .player {
-        margin-left: -10px;
-    }
-    .sign {
-        text-align: right;
-        font-style: italic;
-    }
-      #page-visit {
-        display: none;
-    }
-    .center {
-        text-align: center;
-        height: 2.5em;
-        font-weight: bold;
-    }
-    .article-entry hr {
-        margin: 0;
-    }
-    .pic {
-        text-align: center;
-        margin: 0;
-    }
-    .pic br {
-          display: none;
-      }
-    #container .article-info-post.article-info {
-      display: none;
-      }
-    #container .article .article-title {
-    padding: 0;
-    }
-</style>
+        <blockquote>
+<p>参考<a href="https://www.cnblogs.com/chenglee/p/10315498.html" target="_blank" rel="noopener">Dockerfile构建容器—语法高亮</a></p>
+</blockquote>
+<p>三个文件扔进相关的目录即可</p>
+<h4 id="1-usr-share-vim-vimfiles-doc-dockerfile-txt"><a href="#1-usr-share-vim-vimfiles-doc-dockerfile-txt" class="headerlink" title="1. /usr/share/vim/vimfiles/doc/dockerfile.txt"></a>1. <code>/usr/share/vim/vimfiles/doc/dockerfile.txt</code></h4><pre><code>*dockerfile.txt*  Syntax highlighting for Dockerfiles
+
+Author: Honza Pokorny &lt;https://honza.ca&gt;
+License: BSD
+
+INSTALLATION                                                     *installation*
+
+Drop it on your Pathogen path and you&apos;re all set.
+
+FEATURES                                                             *features*
+
+The syntax highlighting includes:
+
+* The directives (e.g. FROM)
+* Strings
+* Comments
+
+ vim:tw=78:et:ft=help:norl:</code></pre><h4 id="2-usr-share-vim-vimfiles-ftdetect-dockerfile-vim"><a href="#2-usr-share-vim-vimfiles-ftdetect-dockerfile-vim" class="headerlink" title="2. /usr/share/vim/vimfiles/ftdetect/dockerfile.vim"></a>2. <code>/usr/share/vim/vimfiles/ftdetect/dockerfile.vim</code></h4><pre><code>au BufNewFile,BufRead [Dd]ockerfile,Dockerfile.*,*.Dockerfile set filetype=dockerfile</code></pre><h4 id="3-usr-share-vim-vimfiles-syntax-dockerfile-vim"><a href="#3-usr-share-vim-vimfiles-syntax-dockerfile-vim" class="headerlink" title="3. /usr/share/vim/vimfiles/syntax/dockerfile.vim"></a>3. <code>/usr/share/vim/vimfiles/syntax/dockerfile.vim</code></h4><pre><code>&quot; dockerfile.vim - Syntax highlighting for Dockerfiles
+&quot; Maintainer:   Honza Pokorny &lt;https://honza.ca&gt;
+&quot; Version:      0.5
+
+
+if exists(&quot;b:current_syntax&quot;)
+    finish
+endif
+
+let b:current_syntax = &quot;dockerfile&quot;
+
+syntax case ignore
+
+syntax match dockerfileKeyword /\v^\s*(ONBUILD\s+)?(ADD|ARG|CMD|COPY|ENTRYPOINT|ENV|EXPOSE|FROM|HEALTHCHECK|LABEL|MAINTAINER|RUN|SHELL|STOPSIGNAL|USER|VOLUME|WORKDIR)\s/
+highlight link dockerfileKeyword Keyword
+
+syntax region dockerfileString start=/\v&quot;/ skip=/\v\\./ end=/\v&quot;/
+highlight link dockerfileString String
+
+syntax match dockerfileComment &quot;\v^\s*#.*$&quot;
+highlight link dockerfileComment Comment
+
+set commentstring=#\ %s
+
+&quot; match &quot;RUN&quot;, &quot;CMD&quot;, and &quot;ENTRYPOINT&quot; lines, and parse them as shell
+let s:current_syntax = b:current_syntax
+unlet b:current_syntax
+syntax include @SH syntax/sh.vim
+let b:current_syntax = s:current_syntax
+syntax region shLine matchgroup=dockerfileKeyword start=/\v^\s*(RUN|CMD|ENTRYPOINT)\s/ end=/\v$/ contains=@SH
+&quot; since @SH will handle &quot;\&quot; as part of the same line automatically, this &quot;just works&quot; for line continuation too, but with the caveat that it will highlight &quot;RUN echo &apos;&quot; followed by a newline as if it were a block because the &quot;&apos;&quot; is shell line continuation...  not sure how to fix that just yet (TODO)</code></pre><h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h4><p><img src="https://i.loli.net/2019/11/04/x982NLrgtIqFZwy.png" alt="QQ截图20191104152050.png"></p>
+<h4 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h4><p><a href="https://github.com/qnyt1993/Docker" target="_blank" rel="noopener">上面三个文件的git地址</a></p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 508110504@qq.com </span>
     </div>
 </article>
 
 
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>vim编辑Dockerfile时语法高亮</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">334</span></p>
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John">John</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-11-04, 15:16:12</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-04, 15:22:47</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/04/vim编辑Dockerfile时语法高亮/" title="vim编辑Dockerfile时语法高亮">http://qnyt1993.github.io/2019/11/04/vim编辑Dockerfile时语法高亮/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
 
 
 

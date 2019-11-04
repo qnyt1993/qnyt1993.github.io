@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>vim编辑Dockerfile时语法高亮</title>
+      <link href="/2019/11/04/vim%E7%BC%96%E8%BE%91Dockerfile%E6%97%B6%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE/"/>
+      <url>/2019/11/04/vim%E7%BC%96%E8%BE%91Dockerfile%E6%97%B6%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>参考<a href="https://www.cnblogs.com/chenglee/p/10315498.html" target="_blank" rel="noopener">Dockerfile构建容器—语法高亮</a></p></blockquote><p>三个文件扔进相关的目录即可</p><h4 id="1-usr-share-vim-vimfiles-doc-dockerfile-txt"><a href="#1-usr-share-vim-vimfiles-doc-dockerfile-txt" class="headerlink" title="1. /usr/share/vim/vimfiles/doc/dockerfile.txt"></a>1. <code>/usr/share/vim/vimfiles/doc/dockerfile.txt</code></h4><pre><code>*dockerfile.txt*  Syntax highlighting for DockerfilesAuthor: Honza Pokorny &lt;https://honza.ca&gt;License: BSDINSTALLATION                                                     *installation*Drop it on your Pathogen path and you&apos;re all set.FEATURES                                                             *features*The syntax highlighting includes:* The directives (e.g. FROM)* Strings* Comments vim:tw=78:et:ft=help:norl:</code></pre><h4 id="2-usr-share-vim-vimfiles-ftdetect-dockerfile-vim"><a href="#2-usr-share-vim-vimfiles-ftdetect-dockerfile-vim" class="headerlink" title="2. /usr/share/vim/vimfiles/ftdetect/dockerfile.vim"></a>2. <code>/usr/share/vim/vimfiles/ftdetect/dockerfile.vim</code></h4><pre><code>au BufNewFile,BufRead [Dd]ockerfile,Dockerfile.*,*.Dockerfile set filetype=dockerfile</code></pre><h4 id="3-usr-share-vim-vimfiles-syntax-dockerfile-vim"><a href="#3-usr-share-vim-vimfiles-syntax-dockerfile-vim" class="headerlink" title="3. /usr/share/vim/vimfiles/syntax/dockerfile.vim"></a>3. <code>/usr/share/vim/vimfiles/syntax/dockerfile.vim</code></h4><pre><code>&quot; dockerfile.vim - Syntax highlighting for Dockerfiles&quot; Maintainer:   Honza Pokorny &lt;https://honza.ca&gt;&quot; Version:      0.5if exists(&quot;b:current_syntax&quot;)    finishendiflet b:current_syntax = &quot;dockerfile&quot;syntax case ignoresyntax match dockerfileKeyword /\v^\s*(ONBUILD\s+)?(ADD|ARG|CMD|COPY|ENTRYPOINT|ENV|EXPOSE|FROM|HEALTHCHECK|LABEL|MAINTAINER|RUN|SHELL|STOPSIGNAL|USER|VOLUME|WORKDIR)\s/highlight link dockerfileKeyword Keywordsyntax region dockerfileString start=/\v&quot;/ skip=/\v\\./ end=/\v&quot;/highlight link dockerfileString Stringsyntax match dockerfileComment &quot;\v^\s*#.*$&quot;highlight link dockerfileComment Commentset commentstring=#\ %s&quot; match &quot;RUN&quot;, &quot;CMD&quot;, and &quot;ENTRYPOINT&quot; lines, and parse them as shelllet s:current_syntax = b:current_syntaxunlet b:current_syntaxsyntax include @SH syntax/sh.vimlet b:current_syntax = s:current_syntaxsyntax region shLine matchgroup=dockerfileKeyword start=/\v^\s*(RUN|CMD|ENTRYPOINT)\s/ end=/\v$/ contains=@SH&quot; since @SH will handle &quot;\&quot; as part of the same line automatically, this &quot;just works&quot; for line continuation too, but with the caveat that it will highlight &quot;RUN echo &apos;&quot; followed by a newline as if it were a block because the &quot;&apos;&quot; is shell line continuation...  not sure how to fix that just yet (TODO)</code></pre><h4 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h4><p><img src="https://i.loli.net/2019/11/04/x982NLrgtIqFZwy.png" alt="QQ截图20191104152050.png"></p><h4 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h4><p><a href="https://github.com/qnyt1993/Docker" target="_blank" rel="noopener">上面三个文件的git地址</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 运维 </category>
+          
+          <category> 容器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> centos7 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>docker常用命令</title>
       <link href="/2019/11/04/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
       <url>/2019/11/04/docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
@@ -265,9 +294,9 @@
       
         <tags>
             
-            <tag> php </tag>
-            
             <tag> laravel </tag>
+            
+            <tag> php </tag>
             
         </tags>
       
@@ -296,9 +325,9 @@
       
         <tags>
             
-            <tag> php </tag>
-            
             <tag> laravel </tag>
+            
+            <tag> php </tag>
             
         </tags>
       
@@ -327,9 +356,9 @@
       
         <tags>
             
-            <tag> php </tag>
-            
             <tag> laravel </tag>
+            
+            <tag> php </tag>
             
         </tags>
       
@@ -358,9 +387,9 @@
       
         <tags>
             
-            <tag> php </tag>
-            
             <tag> laravel </tag>
+            
+            <tag> php </tag>
             
         </tags>
       
@@ -389,9 +418,9 @@
       
         <tags>
             
-            <tag> php </tag>
-            
             <tag> laravel </tag>
+            
+            <tag> php </tag>
             
         </tags>
       
@@ -1178,9 +1207,9 @@
       
         <tags>
             
-            <tag> php </tag>
-            
             <tag> laravel </tag>
+            
+            <tag> php </tag>
             
         </tags>
       
@@ -1209,9 +1238,9 @@
       
         <tags>
             
-            <tag> php </tag>
-            
             <tag> laravel </tag>
+            
+            <tag> php </tag>
             
         </tags>
       
@@ -1381,9 +1410,9 @@
       
         <tags>
             
-            <tag> php </tag>
-            
             <tag> laravel </tag>
+            
+            <tag> php </tag>
             
             <tag> nginx </tag>
             
